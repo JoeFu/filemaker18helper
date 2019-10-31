@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>调试脚本</title><link rel="Prev" href="custom-menu-sets.html" title="上一个" /><link rel="Next" href="disabling-script-steps.html" title="下一个" /><link rel="StyleSheet" href="css/fmpa_tools.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/fmpa_tools_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/debugging-scripts.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pe0Az4RfXjRnuA5Po3ldnDQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/debugging-scripts.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/using-advanced.html#wwconnect_header">使用高级工具</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">调试脚本</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1033267" class="h2-head2">调试脚本</h1><p id="ww1066815" class="n-note"><span class="zan-autonum">注释&nbsp;&nbsp;</span>选中"<strong class="o-onscreen">使用高级工具</strong>"常规首选项时，可以使用此功能。请参阅<span class="zh-hyper"><a href="../FMP_Help/using-advanced.html#ww1029978" title="使用高级工具">使用高级工具</a></span>。</p><p id="ww1027551" class="b-body">"脚本调试器"是一种用于解决 FileMaker <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081005" title="术语表">脚本</a></span>问题的交互式工具。</p><p id="ww1058322" class="b-body">您可以调试从"脚本"菜单或键盘快捷方式运行的脚本；调试由<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081011" title="术语表">脚本触发器</a></span>、<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079825" title="术语表">按钮</a></span>或<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078423" title="术语表">自定义菜单</a></span>激活的脚本；使用"脚本调试器"时，还可以临时禁用或启用脚本触发器</p><h2 id="ww1027567" class="hs1-headsub1">要调试脚本：</h2><p id="ww1027568" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>通过执行以下操作之一启用"脚本调试器"：</p><p id="ww1050507" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>选择"<strong class="o-onscreen">工具</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">脚本调试器</strong>"，然后运行您的脚本。</p><div class="ww_skin_page_overflow"><p id="ww1053272" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>选择"<strong class="o-onscreen">脚本</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">脚本工作区</strong>"，选择您的脚本，然后单击 <img class="Default" src="../FMP_Help/images/icon_sw_debug.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="解锁按钮以取消验证脚本或数据查看器" />。要保存所有打开的脚本，然后调试该脚本，请按住 Shift 键 (Windows) 或 Option 键 (macOS)，然后单击 <img class="Default" src="../FMP_Help/images/icon_sw_debug.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="解锁按钮以取消验证脚本或数据查看器" />。</p></div><p id="ww1053273" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>使用这些控件来调试该脚本：</p><p id="ww1035716" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 110.25pt"><p id="ww1035613" class="th-tablehead"><span>选择</span></p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 339.75pt"><p id="ww1035615" class="th-tablehead">目的</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035617" class="td-tabledata">单步执行</p><div class="ww_skin_page_overflow"><p id="ww1035621" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerStepOver2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="“脚本调试器”中的“鉴定/取消鉴定脚本”按钮" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035623" class="td-tabledata">一次一步地执行脚本，不进入子脚本。</p><p id="ww1035624" class="td-tabledata">如果脚本步骤是"执行脚本"，"脚本调试器"将执行子脚本，并继续调用脚本的下一行。"脚本调试器"将执行所有子脚本步骤，直到遇到断点。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035626" class="td-tabledata">步入</p><div class="ww_skin_page_overflow"><p id="ww1035630" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerStepIn2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="“脚本调试器”中的“鉴定/取消鉴定脚本”按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035632" class="td-tabledata">一次一步地执行脚本，并进入子脚本且显示其步骤。</p><p id="ww1035633" class="td-tabledata">如果脚本步骤是"执行脚本"，则"脚本调试器"将步入子脚本的第一行，等待用户输入，然后才继续执行下一个子脚本步骤。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035635" class="td-tabledata">步出</p><div class="ww_skin_page_overflow"><p id="ww1035639" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerStepOut2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="单步执行按钮" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035756" class="td-tabledata">执行当前脚本中的所有脚本步骤，如果脚本是子脚本，则返回调用脚本中"执行脚本"步骤后面的那一行。</p><p id="ww1035642" class="td-tabledata">如果脚本不是子脚本，则"步出"命令会让"脚本调试器"执行所有剩余脚本和子脚本步骤，直到遇到断点。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035644" class="td-tabledata">设置下一步</p><div class="ww_skin_page_overflow"><p id="ww1035648" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerStepToStep2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="步入按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035650" class="td-tabledata">在高亮显示的脚本步骤中设置步骤执行指针。</p><div class="ww_skin_page_overflow"><p id="ww1035651" class="td-tabledata">此命令会将控制传递到高亮显示的步骤，但不执行该步骤。继续执行脚本或调试步骤时，会执行高亮显示的步骤。但不会执行任何介于上一个已执行步骤和下一个已分配步骤之间的脚本步骤。单击某个步骤以突出显示它，然后单击 <img class="Default" src="../FMP_Help/images/DebuggerStepToStep2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="单步执行按钮" />。</p></div></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035653" class="td-tabledata">运行</p><div class="ww_skin_page_overflow"><p id="ww1035657" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerRun2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="步出按钮" /></p></div><p id="ww1035658" class="td-tabledata">暂停</p><div class="ww_skin_page_overflow"><p id="ww1035662" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerPause2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="设置下一步按钮" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035664" class="td-tabledata">在执行所有脚本步骤直到脚本结束或遇到断点与暂停之间切换。如果某脚本已暂停，可以双击"<strong class="o-onscreen">调用堆栈</strong>"列表中的脚本来进行编辑。每个活动脚本都会在"脚本工作区"中单独的选项卡中打开，这样您就可以编辑多个脚本。脚本执行不会暂停，直到您保存更改为止。</p><div class="ww_skin_page_overflow"><p id="ww1035665" class="td-tabledata">脚本暂停后，可以使用 <img class="Default" src="../FMP_Help/images/DebuggerStepIn2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="步入按钮" /> 来单步调试脚本。</p></div></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035667" class="td-tabledata">中断脚本</p><div class="ww_skin_page_overflow"><p id="ww1035671" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerStop2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="运行按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035673" class="td-tabledata">暂停执行脚本。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1036418" class="td-tabledata">启用/禁用脚本触发器</p><div class="ww_skin_page_overflow"><p id="ww1036297" class="td-tabledata"><img class="Default" src="../FMP_Help/images/icon_debug_trigger.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="锁定按钮以验证脚本或数据查看器" /> </p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1036299" class="td-tabledata">临时禁用或启用文件中的所有脚本触发器。</p><p id="ww1036302" class="td-tabledata">您必须具有"完全访问"权限，才能禁用脚本触发器。默认情况下，脚本触发器已启用。当您关闭"脚本调试器"时，所有已禁用的脚本触发器都将启用。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1054041" class="td-tabledata">编辑脚本</p><div class="ww_skin_page_overflow"><p id="ww1035689" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerEditScript2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="暂停按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035691" class="td-tabledata">在"编辑脚本"对话框中打开当前脚本。您可以在执行脚本时对其进行更改，但保存脚本更改后，会暂停执行。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035694" class="td-tabledata">打开/关闭数据查看器</p><div class="ww_skin_page_overflow"><p id="ww1035698" class="td-tabledata"><img class="Default" src="../FMP_Help/images/DebuggerDataViewer2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="“脚本调试器”中的“步入”按钮" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1035700" class="td-tabledata">打开（或关闭）"数据查看器"窗口，以便监视指定的字段、变量和计算公式。请参阅<span class="zh-hyper"><a href="../FMP_Help/data-viewer.html#ww1047189" title="使用数据查看器">使用数据查看器</a></span>。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051289" class="td-tabledata">鉴定/取消鉴定脚本</p><div class="ww_skin_page_overflow"><p id="ww1051296" class="td-tabledata"><img class="Default" src="../FMP_Help/images/icon_debug_lock.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="中断脚本按钮" /> <img class="Default" src="../FMP_Help/images/icon_debug_unlock.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="编辑脚本按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1051298" class="td-tabledata">解锁不允许修改权限的脚本的"脚本调试器"或"数据查看器"。</p><p id="ww1051299" class="td-tabledata">您必须具有"完全访问"权限，才能验证脚本。高级别的权限适用于所有脚本，但不适用于其他文件元素，如记录和布局。您的编辑权限会一直有效，直到关闭"脚本调试器"和"数据查看器"。</p></td></tr></table></div><p id="ww1027670" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>遇到错误时，如果要暂停脚本，请选择"<strong class="o-onscreen">发生错误暂停</strong>"。</p><h2 id="ww1027675" class="hs1-headsub1">查看子脚本</h2><p id="ww1027676" class="b-body">在"脚本调试器"中单步调试脚本时，可以查看子脚本。例如，如果"脚本 A"调用"脚本 B"，"脚本 B"又调用"脚本 C"，则可以查看这三个脚本中的步骤。</p><p id="ww1050633" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>选择"<strong class="o-onscreen">工具</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">脚本调试器</strong>"。</p><p id="ww1050637" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>执行调用子脚本的脚本。</p><p id="ww1050630" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>单击"<strong class="o-onscreen">步入</strong>"。</p><p id="ww1027687" class="b1-body1">"<strong class="o-onscreen">调用堆栈</strong>"列表显示子脚本。</p><p id="ww1027688" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>选择"<strong class="o-onscreen">调用堆栈</strong>"列表中的脚本，在显示区域中查看该脚本的步骤。</p><h2 id="ww1053364" class="hs1n-headsub1notes"><span>注释</span>&nbsp;</h2><p id="ww1051209" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要设置或清除断点，请单击脚本步骤左侧的行号。断点允许"脚本调试器"执行大部分脚本，只暂停观察标有断点的部分。未使用"脚本调试器"时 FileMaker&nbsp;Pro Advanced 会忽略断点。您可以在多个步骤中设置断点。您不能对由按钮或自定义菜单调用的步骤设置断点。</p><div class="ww_skin_page_overflow"><p id="ww1051210" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>为便于正确调试脚本，"脚本调试器"会替代一些脚本步骤。"允许用户异常中断"脚本步骤选项设为关闭，不会阻止您停止执行脚本。具有隐藏或最小化选项的"调整窗口"脚本步骤不会隐藏或最小化在 <img class="Default" src="../FMP_Help/images/DebuggerStepOver2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="“脚本调试器”中的“鉴定/取消鉴定脚本”按钮" /> 或 <img class="Default" src="../FMP_Help/images/DebuggerStepIn2x.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="“脚本调试器”中的“鉴定/取消鉴定脚本”按钮" /> 按钮执行时遇到的窗口。</p></div><div class="ww_skin_page_overflow"><p id="ww1051370" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果访问权限设置为"可修改"的脚本执行具有"只可执行"访问权限的脚本，则"只可执行"脚本将完整执行，而不在"脚本调试器"中显示其步骤。如果"只可执行"脚本执行权限设置为"可修改"的脚本，则只有"可修改"脚本中的步骤会显示在"脚本调试器"中。要编辑脚本，请在"脚本调试器"中单击 <img class="Default" src="../FMP_Help/images/icon_debug_lock.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="锁定按钮" />。有关脚本权限和以完全访问权限运行脚本的更多信息，请参阅<span class="zh-hyper"><a href="../FMP_Help/scripts-privileges.html#ww1029102" title="编辑脚本权限">编辑脚本权限</a></span>。</p></div><div class="ww_skin_page_overflow"><p id="ww1051374" class="b1-body1">如果在单击 <img class="Default" src="../FMP_Help/images/icon_debug_lock.png" width="100%" style="display: inline; left: 0.0pt; max-height: 25px; max-width: 25px; top: 0.0pt" alt="锁定按钮" /> 后打开"数据查看器"，在"数据查看器"和"脚本调试器"中都会保留您的访问权限，直到关闭"脚本调试器"。</p></div><p id="ww1027698" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>您可以在打开数据库文件之前打开"脚本调试器"，来调试启动脚本。</p><p id="ww1027699" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果在脚本暂停时关闭"脚本调试器"，该脚本会继续执行直到完成。</p><h2 id="ww1027701" class="rh-relatedhead"><span>相关主题</span>&nbsp;</h2><p id="ww1027705" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/creating-editing-scripts.html#ww1059866" title="创建并编辑脚本">创建并编辑脚本</a></span></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

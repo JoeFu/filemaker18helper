@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>脚本步骤参考（按字母顺序排序的列表）</title><link rel="Prev" href="script-steps-category.html" title="上一个" /><link rel="Next" href="control-script-steps.html" title="下一个" /><link rel="StyleSheet" href="css/help_script_alpha.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/help_script_alpha_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/script-steps-alphabetical.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pN01dy4CnWpK7Qtg59ReoEjA" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/script-steps-alphabetical.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/reference.html#wwconnect_header">参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/script-steps-reference.html#wwconnect_header">脚本步骤参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">脚本步骤参考（按字母顺序排序的列表）</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww66468" class="h3-head3">脚本步骤参考（按字母顺序排序的列表）</h1><div class="zssa-scriptalphaheadAPL"><a name="368332">#</a></div><p id="ww368334" class="ssh-scriptheadAPL"><a href="../FMP_Help/comment.html#wwconnect_header" title="# (注释)"># (注释)</a></p><div class="zssa-scriptalphaheadAPL"><a name="368336">A, B</a></div><p id="ww368338" class="ssh-scriptheadAPL"><a href="../FMP_Help/avplayer-play.html#wwconnect_header" title="AVPlayer 播放">AVPlayer 播放</a></p><p id="ww368340" class="ssh-scriptheadAPL"><a href="../FMP_Help/avplayer-set-playback-state.html#wwconnect_header" title="AVPlayer 设置回放状态">AVPlayer 设置回放状态</a></p><p id="ww368342" class="ssh-scriptheadAPL"><a href="../FMP_Help/avplayer-set-options.html#wwconnect_header" title="AVPlayer 设置选项">AVPlayer 设置选项</a></p><p id="ww368730" class="ssh-scriptheadAPL"><a href="../FMP_Help/install-ontimer-script.html#wwconnect_header" title="安装 OnTimer 脚本">安装 OnTimer 脚本</a></p><p id="ww368732" class="ssh-scriptheadAPL"><a href="../FMP_Help/install-menu-set.html#wwconnect_header" title="安装菜单集">安装菜单集</a></p><p id="ww368734" class="ssh-scriptheadAPL"><a href="../FMP_Help/install-plug-in-file.html#wwconnect_header" title="安装插件文件">安装插件文件</a></p><p id="ww368736" class="ssh-scriptheadAPL"><a href="../FMP_Help/sort-records-by-field.html#wwconnect_header" title="按字段对记录排序">按字段对记录排序</a></p><p id="ww368738" class="ssh-scriptheadAPL"><a href="../FMP_Help/edit-user-dictionary.html#wwconnect_header" title="编辑用户字典">编辑用户字典</a></p><p id="ww368843" class="ssh-scriptheadAPL"><a href="../FMP_Help/dial-phone.html#wwconnect_header" title="拨打电话">拨打电话</a></p><div class="zssa-scriptalphaheadAPL"><a name="368344">C</a></div><p id="ww368766" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-pdf.html#wwconnect_header" title="插入 PDF">插入 PDF</a></p><p id="ww368768" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-current-date.html#wwconnect_header" title="插入当前日期">插入当前日期</a></p><p id="ww368770" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-current-time.html#wwconnect_header" title="插入当前时间">插入当前时间</a></p><p id="ww368772" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-current-user-name.html#wwconnect_header" title="插入当前用户名">插入当前用户名</a></p><p id="ww368774" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-calculated-result.html#wwconnect_header" title="插入计算结果">插入计算结果</a></p><p id="ww368776" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-picture.html#wwconnect_header" title="插入图片">插入图片</a></p><p id="ww368778" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-text.html#wwconnect_header" title="插入文本">插入文本</a></p><p id="ww368780" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-file.html#wwconnect_header" title="插入文件">插入文件</a></p><p id="ww368782" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-audio-video.html#wwconnect_header" title="插入音频/视频">插入音频/视频</a></p><p id="ww368784" class="ssh-scriptheadAPL"><a href="../FMP_Help/view-as.html#wwconnect_header" title="查看方式">查看方式</a></p><p id="ww368786" class="ssh-scriptheadAPL"><a href="../FMP_Help/find-matching-records.html#wwconnect_header" title="查找匹配记录">查找匹配记录</a></p><p id="ww368788" class="ssh-scriptheadAPL"><a href="../FMP_Help/undo-redo.html#wwconnect_header" title="撤消/恢复">撤消/恢复</a></p><p id="ww369358" class="ssh-scriptheadAPL"><a href="../FMP_Help/rename-file.html#wwconnect_header" title="重命名文件">重命名文件</a></p><p id="ww369360" class="ssh-scriptheadAPL"><a href="../FMP_Help/relookup-field-contents.html#wwconnect_header" title="重新查找字段内容">重新查找字段内容</a></p><p id="ww369362" class="ssh-scriptheadAPL"><a href="../FMP_Help/re-login.html#wwconnect_header" title="重新登录">重新登录</a></p><p id="ww369364" class="ssh-scriptheadAPL"><a href="../FMP_Help/reset-account-password.html#wwconnect_header" title="重置帐户密码">重置帐户密码</a></p><p id="ww368790" class="ssh-scriptheadAPL"><a href="../FMP_Help/create-data-file.html#wwconnect_header" title="创建数据文件">创建数据文件</a></p><p id="ww368792" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-from-url.html#wwconnect_header" title="从 URL 插入">从 URL 插入</a></p><p id="ww368794" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-from-device.html#wwconnect_header" title="从设备插入">从设备插入</a></p><p id="ww368796" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-from-index.html#wwconnect_header" title="从索引插入">从索引插入</a></p><p id="ww368798" class="ssh-scriptheadAPL"><a href="../FMP_Help/insert-from-last-visited.html#wwconnect_header" title="从最后一次访问处插入">从最后一次访问处插入</a></p><div class="zssa-scriptalphaheadAPL"><a name="368346">D</a></div><p id="ww368883" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-url.html#wwconnect_header" title="打开 URL">打开 URL</a></p><p id="ww368885" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-help.html#wwconnect_header" title="打开帮助">打开帮助</a></p><p id="ww368887" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-edit-saved-finds.html#wwconnect_header" title="打开编辑已保存的查找条件">打开编辑已保存的查找条件</a></p><p id="ww368889" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-find-replace.html#wwconnect_header" title="打开查找/替换">打开查找/替换</a></p><p id="ww368891" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-my-apps.html#wwconnect_header" title="打开个人收藏">打开个人收藏</a></p><p id="ww368893" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-sharing.html#wwconnect_header" title="打开共享">打开共享</a></p><p id="ww368895" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-layouts.html#wwconnect_header" title="打开管理布局">打开管理布局</a></p><p id="ww368897" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-containers.html#wwconnect_header" title="打开管理容器">打开管理容器</a></p><p id="ww368899" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-database.html#wwconnect_header" title="打开管理数据库">打开管理数据库</a></p><p id="ww368901" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-data-sources.html#wwconnect_header" title="打开管理数据源">打开管理数据源</a></p><p id="ww368903" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-value-lists.html#wwconnect_header" title="打开管理值列表">打开管理值列表</a></p><p id="ww368905" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-manage-themes.html#wwconnect_header" title="打开管理主题">打开管理主题</a></p><p id="ww368907" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-record-request.html#wwconnect_header" title="打开记录/请求">打开记录/请求</a></p><p id="ww368909" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-script-workspace.html#wwconnect_header" title="打开脚本工作区">打开脚本工作区</a></p><p id="ww368911" class="ssh-scriptheadAPL"><a href="../FMP_Help/upload-to-server.html#wwconnect_header" title="打开上传到主机">打开上传到主机</a></p><p id="ww368913" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-preferences.html#wwconnect_header" title="打开首选项">打开首选项</a></p><p id="ww368915" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-data-file.html#wwconnect_header" title="打开数据文件">打开数据文件</a></p><p id="ww368917" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-file.html#wwconnect_header" title="打开文件">打开文件</a></p><p id="ww368919" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-file-options.html#wwconnect_header" title="打开文件选项">打开文件选项</a></p><p id="ww368921" class="ssh-scriptheadAPL"><a href="../FMP_Help/open-hosts.html#wwconnect_header" title="打开主机">打开主机</a></p><p id="ww368923" class="ssh-scriptheadAPL"><a href="../FMP_Help/print.html#wwconnect_header" title="打印">打印</a></p><p id="ww368925" class="ssh-scriptheadAPL"><a href="../FMP_Help/print-setup.html#wwconnect_header" title="打印设置">打印设置</a></p><p id="ww368927" class="ssh-scriptheadAPL"><a href="../FMP_Help/export-records.html#wwconnect_header" title="导出记录">导出记录</a></p><p id="ww368929" class="ssh-scriptheadAPL"><a href="../FMP_Help/export-field-contents.html#wwconnect_header" title="导出字段内容">导出字段内容</a></p><p id="ww368931" class="ssh-scriptheadAPL"><a href="../FMP_Help/import-records.html#wwconnect_header" title="导入记录">导入记录</a></p><p id="ww368933" class="ssh-scriptheadAPL"><a href="../FMP_Help/adjust-window.html#wwconnect_header" title="调整窗口">调整窗口</a></p><p id="ww368935" class="ssh-scriptheadAPL"><a href="../FMP_Help/freeze-window.html#wwconnect_header" title="冻结窗口">冻结窗口</a></p><p id="ww368937" class="ssh-scriptheadAPL"><a href="../FMP_Help/read-from-data-file.html#wwconnect_header" title="读取数据文件">读取数据文件</a></p><p id="ww368939" class="ssh-scriptheadAPL"><a href="../FMP_Help/sort-records.html#wwconnect_header" title="对记录排序">对记录排序</a></p><div class="zssa-scriptalphaheadAPL"><a name="368348">E, F, G</a></div><p id="ww368350" class="ssh-scriptheadAPL"><a href="../FMP_Help/else.html#wwconnect_header" title="Else">Else</a></p><p id="ww368352" class="ssh-scriptheadAPL"><a href="../FMP_Help/else-if.html#wwconnect_header" title="Else If">Else If</a></p><p id="ww368354" class="ssh-scriptheadAPL"><a href="../FMP_Help/end-if.html#wwconnect_header" title="End If">End If</a></p><p id="ww368356" class="ssh-scriptheadAPL"><a href="../FMP_Help/end-loop.html#wwconnect_header" title="End Loop">End Loop</a></p><p id="ww368358" class="ssh-scriptheadAPL"><a href="../FMP_Help/exit-loop-if.html#wwconnect_header" title="Exit Loop If">Exit Loop If</a></p><p id="ww368972" class="ssh-scriptheadAPL"><a href="../FMP_Help/send-dde-execute-windows.html#wwconnect_header" title="发送 DDE 执行 (Windows)">发送 DDE 执行 (Windows)</a></p><p id="ww368974" class="ssh-scriptheadAPL"><a href="../FMP_Help/send-event.html#wwconnect_header" title="发送事件">发送事件</a></p><p id="ww368976" class="ssh-scriptheadAPL"><a href="../FMP_Help/send-mail.html#wwconnect_header" title="发送邮件">发送邮件</a></p><p id="ww368978" class="ssh-scriptheadAPL"><a href="../FMP_Help/duplicate-record-request.html#wwconnect_header" title="复制记录/请求">复制记录/请求</a></p><p id="ww368980" class="ssh-scriptheadAPL"><a href="../FMP_Help/change-password.html#wwconnect_header" title="更改密码">更改密码</a></p><p id="ww368982" class="ssh-scriptheadAPL"><a href="../FMP_Help/correct-word.html#wwconnect_header" title="更正文字">更正文字</a></p><p id="ww368984" class="ssh-scriptheadAPL"><a href="../FMP_Help/close-window.html#wwconnect_header" title="关闭窗口">关闭窗口</a></p><p id="ww368986" class="ssh-scriptheadAPL"><a href="../FMP_Help/close-popover.html#wwconnect_header" title="关闭弹出框">关闭弹出框</a></p><p id="ww368988" class="ssh-scriptheadAPL"><a href="../FMP_Help/close-data-file.html#wwconnect_header" title="关闭数据文件">关闭数据文件</a></p><p id="ww368990" class="ssh-scriptheadAPL"><a href="../FMP_Help/close-file.html#wwconnect_header" title="关闭文件">关闭文件</a></p><p id="ww368992" class="ssh-scriptheadAPL"><a href="../FMP_Help/scroll-window.html#wwconnect_header" title="滚动窗口">滚动窗口</a></p><div class="zssa-scriptalphaheadAPL"><a name="368360">H, I, J</a></div><p id="ww368362" class="ssh-scriptheadAPL"><a href="../FMP_Help/if-script-step.html#wwconnect_header" title="If">If</a></p><p id="ww369033" class="ssh-scriptheadAPL"><a href="../FMP_Help/revert-record-request.html#wwconnect_header" title="还原记录/请求">还原记录/请求</a></p><p id="ww369035" class="ssh-scriptheadAPL"><a href="../FMP_Help/recover-file.html#wwconnect_header" title="恢复文件">恢复文件</a></p><p id="ww369037" class="ssh-scriptheadAPL"><a href="../FMP_Help/get-data-file-position.html#wwconnect_header" title="获取数据文件位置">获取数据文件位置</a></p><p id="ww369039" class="ssh-scriptheadAPL"><a href="../FMP_Help/get-file-exists.html#wwconnect_header" title="获取文件存在的值">获取文件存在的值</a></p><p id="ww369041" class="ssh-scriptheadAPL"><a href="../FMP_Help/get-file-size.html#wwconnect_header" title="获取文件大小">获取文件大小</a></p><p id="ww369043" class="ssh-scriptheadAPL"><a href="../FMP_Help/get-directory.html#wwconnect_header" title="获取文件夹路径">获取文件夹路径</a></p><p id="ww369045" class="ssh-scriptheadAPL"><a href="../FMP_Help/cut.html#wwconnect_header" title="剪切">剪切</a></p><p id="ww369047" class="ssh-scriptheadAPL"><a href="../FMP_Help/check-record.html#wwconnect_header" title="检查记录">检查记录</a></p><p id="ww369049" class="ssh-scriptheadAPL"><a href="../FMP_Help/check-found-set.html#wwconnect_header" title="检查搜索结果">检查搜索结果</a></p><p id="ww369051" class="ssh-scriptheadAPL"><a href="../FMP_Help/check-selection.html#wwconnect_header" title="检查选定项">检查选定项</a></p><p id="ww369053" class="ssh-scriptheadAPL"><a href="../FMP_Help/flush-cache-to-disk.html#wwconnect_header" title="将高速缓存内容清空至磁盘">将高速缓存内容清空至磁盘</a></p><p id="ww369055" class="ssh-scriptheadAPL"><a href="../FMP_Help/save-records-as-excel.html#wwconnect_header" title="将记录另存为 Excel">将记录另存为 Excel</a></p><p id="ww369057" class="ssh-scriptheadAPL"><a href="../FMP_Help/save-records-as-pdf.html#wwconnect_header" title="将记录另存为 PDF">将记录另存为 PDF</a></p><p id="ww369059" class="ssh-scriptheadAPL"><a href="../FMP_Help/save-records-as-snapshot-link.html#wwconnect_header" title="将记录另存为快照链接">将记录另存为快照链接</a></p><p id="ww369061" class="ssh-scriptheadAPL"><a href="../FMP_Help/enter-find-mode.html#wwconnect_header" title="进入查找模式">进入查找模式</a></p><p id="ww369063" class="ssh-scriptheadAPL"><a href="../FMP_Help/enter-browse-mode.html#wwconnect_header" title="进入浏览模式">进入浏览模式</a></p><p id="ww369065" class="ssh-scriptheadAPL"><a href="../FMP_Help/enter-preview-mode.html#wwconnect_header" title="进入预览模式">进入预览模式</a></p><div class="zssa-scriptalphaheadAPL"><a name="368364">K, L, M, N</a></div><p id="ww368366" class="ssh-scriptheadAPL"><a href="../FMP_Help/loop.html#wwconnect_header" title="Loop">Loop</a></p><p id="ww369100" class="ssh-scriptheadAPL"><a href="../FMP_Help/copy.html#wwconnect_header" title="拷贝">拷贝</a></p><p id="ww369102" class="ssh-scriptheadAPL"><a href="../FMP_Help/copy-record-request.html#wwconnect_header" title="拷贝记录/请求">拷贝记录/请求</a></p><p id="ww369104" class="ssh-scriptheadAPL"><a href="../FMP_Help/copy-all-records-requests.html#wwconnect_header" title="拷贝所有记录/请求">拷贝所有记录/请求</a></p><p id="ww369106" class="ssh-scriptheadAPL"><a href="../FMP_Help/extend-found-set.html#wwconnect_header" title="扩展搜索结果">扩展搜索结果</a></p><p id="ww369108" class="ssh-scriptheadAPL"><a href="../FMP_Help/speak-os-x.html#wwconnect_header" title="朗读 (macOS)">朗读 (macOS)</a></p><p id="ww369110" class="ssh-scriptheadAPL"><a href="../FMP_Help/save-a-copy-as.html#wwconnect_header" title="另存为">另存为</a></p><p id="ww369112" class="ssh-scriptheadAPL"><a href="../FMP_Help/save-a-copy-as-xml.html#wwconnect_header" title="另存为 XML">另存为 XML</a></p><div class="zssa-scriptalphaheadAPL"><a name="368368">O, P, Q, R</a></div><p id="ww369147" class="ssh-scriptheadAPL"><a href="../FMP_Help/arrange-all-windows.html#wwconnect_header" title="排列所有窗口">排列所有窗口</a></p><p id="ww369149" class="ssh-scriptheadAPL"><a href="../FMP_Help/configure-local-notification.html#wwconnect_header" title="配置本地通知">配置本地通知</a></p><p id="ww369151" class="ssh-scriptheadAPL"><a href="../FMP_Help/configure-region-monitor-script.html#wwconnect_header" title="配置区域监视脚本">配置区域监视脚本</a></p><p id="ww369153" class="ssh-scriptheadAPL"><a href="../FMP_Help/spelling-options.html#wwconnect_header" title="拼写选项">拼写选项</a></p><p id="ww369155" class="ssh-scriptheadAPL"><a href="../FMP_Help/enable-touch-keyboard.html#wwconnect_header" title="启用触控键盘">启用触控键盘</a></p><p id="ww369157" class="ssh-scriptheadAPL"><a href="../FMP_Help/enable-account.html#wwconnect_header" title="启用帐户">启用帐户</a></p><p id="ww369159" class="ssh-scriptheadAPL"><a href="../FMP_Help/clear.html#wwconnect_header" title="清除">清除</a></p><p id="ww369161" class="ssh-scriptheadAPL"><a href="../FMP_Help/truncate-table.html#wwconnect_header" title="清空表记录">清空表记录</a></p><p id="ww369163" class="ssh-scriptheadAPL"><a href="../FMP_Help/unsort-records.html#wwconnect_header" title="取消记录排序">取消记录排序</a></p><p id="ww369165" class="ssh-scriptheadAPL"><a href="../FMP_Help/select-all.html#wwconnect_header" title="全选">全选</a></p><div class="zssa-scriptalphaheadAPL"><a name="368370">S, T, U, V</a></div><p id="ww369205" class="ssh-scriptheadAPL"><a href="../FMP_Help/delete-record-request.html#wwconnect_header" title="删除记录/请求">删除记录/请求</a></p><p id="ww369207" class="ssh-scriptheadAPL"><a href="../FMP_Help/delete-portal-row.html#wwconnect_header" title="删除入口行">删除入口行</a></p><p id="ww369209" class="ssh-scriptheadAPL"><a href="../FMP_Help/delete-all-records.html#wwconnect_header" title="删除所有记录">删除所有记录</a></p><p id="ww369211" class="ssh-scriptheadAPL"><a href="../FMP_Help/delete-file.html#wwconnect_header" title="删除文件">删除文件</a></p><p id="ww369213" class="ssh-scriptheadAPL"><a href="../FMP_Help/delete-account.html#wwconnect_header" title="删除帐户">删除帐户</a></p><p id="ww369408" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-selection.html#wwconnect_header" title="设定选择范围">设定选择范围</a></p><p id="ww369215" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-web-viewer.html#wwconnect_header" title="设置 Web 查看器">设置 Web 查看器</a></p><p id="ww369217" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-variable.html#wwconnect_header" title="设置变量">设置变量</a></p><p id="ww369219" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-layout-object-animation.html#wwconnect_header" title="设置布局对象动画">设置布局对象动画</a></p><p id="ww369221" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-window-title.html#wwconnect_header" title="设置窗口标题">设置窗口标题</a></p><p id="ww369223" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-error-capture.html#wwconnect_header" title="设置错误捕获">设置错误捕获</a></p><p id="ww369225" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-error-logging.html#wwconnect_header" title="设置错误日志">设置错误日志</a></p><p id="ww369227" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-multi-user.html#wwconnect_header" title="设置多用户">设置多用户</a></p><p id="ww369229" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-use-system-formats.html#wwconnect_header" title="设置使用系统格式">设置使用系统格式</a></p><p id="ww369231" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-data-file-position.html#wwconnect_header" title="设置数据文件位置">设置数据文件位置</a></p><p id="ww369233" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-zoom-level.html#wwconnect_header" title="设置缩放级别">设置缩放级别</a></p><p id="ww369235" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-next-serial-value.html#wwconnect_header" title="设置下一个序列值">设置下一个序列值</a></p><p id="ww369239" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-field.html#wwconnect_header" title="设置字段">设置字段</a></p><p id="ww369241" class="ssh-scriptheadAPL"><a href="../FMP_Help/set-field-by-name.html#wwconnect_header" title="设置字段（按名称）">设置字段（按名称）</a></p><p id="ww369243" class="ssh-scriptheadAPL"><a href="../FMP_Help/omit-multiple-records.html#wwconnect_header" title="省略多个记录">省略多个记录</a></p><p id="ww369245" class="ssh-scriptheadAPL"><a href="../FMP_Help/omit-record.html#wwconnect_header" title="省略记录">省略记录</a></p><p id="ww369247" class="ssh-scriptheadAPL"><a href="../FMP_Help/refresh-window.html#wwconnect_header" title="刷新窗口">刷新窗口</a></p><p id="ww369249" class="ssh-scriptheadAPL"><a href="../FMP_Help/refresh-object.html#wwconnect_header" title="刷新对象">刷新对象</a></p><p id="ww369251" class="ssh-scriptheadAPL"><a href="../FMP_Help/refresh-portal.html#wwconnect_header" title="刷新入口">刷新入口</a></p><p id="ww369253" class="ssh-scriptheadAPL"><a href="../FMP_Help/commit-records-requests.html#wwconnect_header" title="提交记录/请求">提交记录/请求</a></p><p id="ww369255" class="ssh-scriptheadAPL"><a href="../FMP_Help/beep.html#wwconnect_header" title="提示音">提示音</a></p><p id="ww369257" class="ssh-scriptheadAPL"><a href="../FMP_Help/replace-field-contents.html#wwconnect_header" title="替换字段内容">替换字段内容</a></p><p id="ww369259" class="ssh-scriptheadAPL"><a href="../FMP_Help/add-account.html#wwconnect_header" title="添加帐户">添加帐户</a></p><p id="ww369261" class="ssh-scriptheadAPL"><a href="../FMP_Help/exit-script.html#wwconnect_header" title="退出脚本">退出脚本</a></p><p id="ww369263" class="ssh-scriptheadAPL"><a href="../FMP_Help/exit-application.html#wwconnect_header" title="退出应用程序">退出应用程序</a></p><div class="zssa-scriptalphaheadAPL"><a name="368372">W, X, Y</a></div><p id="ww369299" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-hide-menubar.html#wwconnect_header" title="显示/隐藏菜单栏">显示/隐藏菜单栏</a></p><p id="ww369301" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-hide-toolbars.html#wwconnect_header" title="显示/隐藏工具栏">显示/隐藏工具栏</a></p><p id="ww369303" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-hide-text-ruler.html#wwconnect_header" title="显示/隐藏文本标尺">显示/隐藏文本标尺</a></p><p id="ww369305" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-all-records.html#wwconnect_header" title="显示所有记录">显示所有记录</a></p><p id="ww369307" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-custom-dialog.html#wwconnect_header" title="显示自定义对话框">显示自定义对话框</a></p><p id="ww369309" class="ssh-scriptheadAPL"><a href="../FMP_Help/constrain-found-set.html#wwconnect_header" title="限制搜索结果">限制搜索结果</a></p><p id="ww369311" class="ssh-scriptheadAPL"><a href="../FMP_Help/write-to-data-file.html#wwconnect_header" title="写入数据文件">写入数据文件</a></p><p id="ww369313" class="ssh-scriptheadAPL"><a href="../FMP_Help/new-window.html#wwconnect_header" title="新建窗口">新建窗口</a></p><p id="ww369315" class="ssh-scriptheadAPL"><a href="../FMP_Help/new-record-request.html#wwconnect_header" title="新建记录/请求">新建记录/请求</a></p><p id="ww369317" class="ssh-scriptheadAPL"><a href="../FMP_Help/new-file.html#wwconnect_header" title="新建文件">新建文件</a></p><p id="ww369319" class="ssh-scriptheadAPL"><a href="../FMP_Help/modify-last-find.html#wwconnect_header" title="修改上次查找条件">修改上次查找条件</a></p><p id="ww369321" class="ssh-scriptheadAPL"><a href="../FMP_Help/select-window.html#wwconnect_header" title="选择窗口">选择窗口</a></p><p id="ww369323" class="ssh-scriptheadAPL"><a href="../FMP_Help/select-dictionaries.html#wwconnect_header" title="选择字典">选择字典</a></p><p id="ww369325" class="ssh-scriptheadAPL"><a href="../FMP_Help/move-resize-window.html#wwconnect_header" title="移动窗口/调整窗口大小">移动窗口/调整窗口大小</a></p><p id="ww369327" class="ssh-scriptheadAPL"><a href="../FMP_Help/allow-formatting-bar.html#wwconnect_header" title="允许格式栏">允许格式栏</a></p><p id="ww369329" class="ssh-scriptheadAPL"><a href="../FMP_Help/allow-user-abort.html#wwconnect_header" title="允许用户异常中断">允许用户异常中断</a></p><div class="zssa-scriptalphaheadAPL"><a name="368374">Z</a></div><p id="ww368662" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-script-on-server.html#wwconnect_header" title="在服务器上执行脚本">在服务器上执行脚本</a></p><p id="ww368664" class="ssh-scriptheadAPL"><a href="../FMP_Help/pause-resume-script.html#wwconnect_header" title="暂停/继续脚本">暂停/继续脚本</a></p><p id="ww368666" class="ssh-scriptheadAPL"><a href="../FMP_Help/paste.html#wwconnect_header" title="粘贴">粘贴</a></p><p id="ww368668" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-applescript-os-x.html#wwconnect_header" title="执行 AppleScript (macOS)">执行 AppleScript (macOS)</a></p><p id="ww368670" class="ssh-scriptheadAPL"><a href="../FMP_Help/execute-sql.html#wwconnect_header" title="执行 SQL 语句">执行 SQL 语句</a></p><p id="ww368672" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-find.html#wwconnect_header" title="执行查找">执行查找</a></p><p id="ww368674" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-find-replace.html#wwconnect_header" title="执行查找/替换">执行查找/替换</a></p><p id="ww368676" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-script.html#wwconnect_header" title="执行脚本">执行脚本</a></p><p id="ww368678" class="ssh-scriptheadAPL"><a href="../FMP_Help/perform-quick-find.html#wwconnect_header" title="执行快速查找">执行快速查找</a></p><p id="ww368680" class="ssh-scriptheadAPL"><a href="../FMP_Help/show-omitted-only.html#wwconnect_header" title="只显示省略内容">只显示省略内容</a></p><p id="ww368682" class="ssh-scriptheadAPL"><a href="../FMP_Help/halt-script.html#wwconnect_header" title="中断脚本">中断脚本</a></p><p id="ww368692" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-layout.html#wwconnect_header" title="转到布局">转到布局</a></p><p id="ww368694" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-object.html#wwconnect_header" title="转到对象">转到对象</a></p><p id="ww368696" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-record-request-page.html#wwconnect_header" title="转到记录/请求/页面">转到记录/请求/页面</a></p><p id="ww368698" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-portal-row.html#wwconnect_header" title="转到入口行">转到入口行</a></p><p id="ww368700" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-previous-field.html#wwconnect_header" title="转到上一个字段">转到上一个字段</a></p><p id="ww368702" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-next-field.html#wwconnect_header" title="转到下一个字段">转到下一个字段</a></p><p id="ww368704" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-related-record.html#wwconnect_header" title="转到相关记录">转到相关记录</a></p><p id="ww368706" class="ssh-scriptheadAPL"><a href="../FMP_Help/go-to-field.html#wwconnect_header" title="转到字段">转到字段</a></p><p id="ww368708" class="ssh-scriptheadAPL"><a href="../FMP_Help/convert-file.html#wwconnect_header" title="转换文件">转换文件</a></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

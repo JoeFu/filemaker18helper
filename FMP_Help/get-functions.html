@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="FileMaker Go,get 函数, get(),get" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>获取函数</title><link rel="Prev" href="getlayoutobjectattribute.html" title="上一个" /><link rel="Next" href="get-accountextendedprivileges.html" title="下一个" /><link rel="StyleSheet" href="css/func_ref1.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/func_ref1_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/get-functions.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pH33tAt7lJyAyb3m4o2PT2g" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/get-functions.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/reference.html#wwconnect_header">参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/functions-reference.html#wwconnect_header">函数参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">获取函数</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1286821" class="fch-funccatgryhead">获取函数</h1><p id="ww1286824" class="fpu-funcpurpose">Get 函数监视脚本中的错误，或捕获有关文件状态或要执行的操作的信息。</p><p id="ww1286826" class="b-body">许多 Get <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080819" title="术语表">函数</a></span>都返回定期更改的信息。例如，将 Get (当前时间) 函数放在已存储的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080972" title="术语表">计算字段</a></span>时，只有当创建新<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080975" title="术语表">记录</a></span>时才会更新时间。如果计算包含其他<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078382" title="术语表">字段</a></span>，而计算结果仍返回当前时间，那么只有在当前记录中修改那些其他字段时，才会更新已存储的计算结果。如果<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081848" title="术语表">未存储</a></span>两个计算结果中的任意一个，那么将根据需要更新时间。出于性能方面的考虑，不存储计算字段未必总是一种最佳方法。Get 函数最好用于脚本，这样即可在运行计算时实时更新 Get 函数提供的状态信息。</p><p id="ww1287715" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 469.40832pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 173.00016pt"><p id="ww1286834" class="th-tablehead">此函数</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 296.40816pt"><p id="ww1286836" class="th-tablehead">返回</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286841" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-accountextendedprivileges.html#ww1287736" title="Get (帐户扩展权限)">Get (帐户扩展权限)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286843" class="td-tabledata">已启用的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081180" title="术语表">扩展权限</a></span>的关键字列表（基于用于打开文件的帐户）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286849" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-accountgroupname.html#ww1287809" title="Get (帐户组名称)">Get (帐户组名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286851" class="td-tabledata">当前帐户的组别名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286857" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-accountname.html#ww1287859" title="Get (帐户名)">Get (帐户名)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286859" class="td-tabledata">文件当前用户所使用的经验证的帐户名。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286864" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-accountprivilegesetname.html#ww1287925" title="Get (帐户权限集名称)">Get (帐户权限集名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286867" class="td-tabledata">由用于打开文件的帐户所使用的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081538" title="术语表">权限集</a></span>名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1309477" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-accounttype.html#ww1287990" title="Get (帐户类型)">Get (帐户类型)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1309479" class="td-tabledata">当前帐户的验证类型。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286872" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activefieldcontents.html#ww1288047" title="Get (活动字段内容)">Get (活动字段内容)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286875" class="td-tabledata">具有<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081002" title="术语表">焦点</a></span>的字段的内容。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286880" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activefieldname.html#ww1288095" title="Get (活动字段名)">Get (活动字段名)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286882" class="td-tabledata">具有焦点的字段的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286887" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activefieldtablename.html#ww1288139" title="Get (活动字段表名称)">Get (活动字段表名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286890" class="td-tabledata">包含具有焦点的字段的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079986" title="术语表">表摹本</a></span>的名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286895" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activelayoutobjectname.html#ww1288187" title="Get (活动布局对象名称)">Get (活动布局对象名称)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286897" class="td-tabledata">在计算的当前窗口中具有焦点的布局对象的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286902" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activemodifierkeys.html#ww1288246" title="Get (活动的辅助键)">Get (活动的辅助键)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286904" class="td-tabledata">一个数字，表示按下的键盘辅助键。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286909" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activeportalrownumber.html#ww1288295" title="Get (活动入口行号)">Get (活动入口行号)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286912" class="td-tabledata">一个数字，表示具有焦点的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081616" title="术语表">入口</a></span>行。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286917" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activerecordnumber.html#ww1288355" title="Get (活动记录编号)">Get (活动记录编号)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286919" class="td-tabledata">一个数字，表示当前搜索结果中具有焦点的记录数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286924" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activerepetitionnumber.html#ww1288432" title="Get (活动重复项编号)">Get (活动重复项编号)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286926" class="td-tabledata">一个数字，表示在<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1082111" title="术语表">重复字段</a></span>中具有焦点的重复项。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286932" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activeselectionsize.html#ww1288479" title="Get (选择字符数目)">Get (选择字符数目)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286934" class="td-tabledata">一个数字，表示所选字符个数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286939" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-activeselectionstart.html#ww1288528" title="Get (所选文本的开始字符位置)">Get (所选文本的开始字符位置)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286941" class="td-tabledata">一个数字，表示所选文本的开始字符。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286946" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-allowabortstate.html#ww1288579" title="Get (允许终止状态)">Get (允许终止状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286948" class="td-tabledata">如果"允许用户异常中断"脚本步骤已打开，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286953" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-allowformattingbarstate.html#ww1288625" title="Get (允许格式栏状态)">Get (允许格式栏状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286955" class="td-tabledata">如果允许格式栏可见，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286960" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-applicationarchitecture.html#ww1288674" title="Get (应用程序架构)">Get (应用程序架构)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286962" class="td-tabledata">当前应用程序结构。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286967" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-applicationlanguage.html#ww1288726" title="Get (应用程序语言)">Get (应用程序语言)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286969" class="td-tabledata">表示当前应用程序语言的文本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286974" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-applicationversion.html#ww1288787" title="Get (应用程序版本)">Get (应用程序版本)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286976" class="td-tabledata">FileMaker 客户端的产品名和版本。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286981" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-calculationrepetitionnumber.html#ww1288848" title="Get (参与计算的复合字段值序号)">Get (参与计算的复合字段值序号)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286983" class="td-tabledata">一个数字，表示要计算的计算字段的重复项。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286988" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-connectionattributes.html#ww1288906" title="Get (连接属性)">Get (连接属性)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286990" class="td-tabledata">当前文件的主机名和颁发用于保护连接的 SSL 证书的认证中心的名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286995" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-connectionstate.html#ww1288958" title="Get (连接状态)">Get (连接状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1286997" class="td-tabledata">一个数字，表示当前文件的网络连接的安全状态。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287002" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currentdate.html#ww1289016" title="Get (当前日期)">Get (当前日期)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287004" class="td-tabledata">当前日期，取决于系统日历。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287009" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currentextendedprivileges.html#ww1289071" title="Get (当前扩展权限)">Get (当前扩展权限)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287011" class="td-tabledata">已启用的扩展权限的关键字列表（基于用于解析此计算的帐户）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287016" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currenthosttimestamp.html#ww1289139" title="Get (当前主机时间戳)">Get (当前主机时间戳)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287018" class="td-tabledata">主机的当前日期和时间（精确到秒），取决于系统时钟。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287023" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currentprivilegesetname.html#ww1289203" title="Get (当前权限集名称)">Get (当前权限集名称)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287025" class="td-tabledata">文件中要用于解析此计算的权限集的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287030" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currenttime.html#ww1289269" title="Get (当前时间)">Get (当前时间)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287032" class="td-tabledata">当前时间（精确到秒），取决于系统时钟。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287037" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currenttimestamp.html#ww1289339" title="Get (当前系统时间)">Get (当前系统时间)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287039" class="td-tabledata">当前日期和时间（精确到秒），取决于系统时钟。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287044" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-currenttimeutcmilliseconds.html#ww1289406" title="Get (当前时间UTC毫秒)">Get (当前时间UTC毫秒)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287046" class="td-tabledata">当前时间（世界通用时间 (UTC)，精确到毫秒）。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287051" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-custommenusetname.html#ww1289458" title="Get (自定义菜单集名称)">Get (自定义菜单集名称)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287053" class="td-tabledata">活动自定义菜单集的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287058" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-desktoppath.html#ww1289510" title="Get (桌面路径)">Get (桌面路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287060" class="td-tabledata">当前用户的桌面文件夹路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287065" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-device.html#ww1289564" title="Get (设备)">Get (设备)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287067" class="td-tabledata">一个数值，表示当前运行 Filemaker 产品的电脑或移动设备的类型。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287072" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-documentspath.html#ww1289621" title="Get (文档路径)">Get (文档路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287074" class="td-tabledata">当前用户的 Documents 文件夹路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287079" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-documentspathlisting.html#ww1289689" title="Get (文档路径列表)">Get (文档路径列表)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287081" class="td-tabledata">Get (文档路径) 函数返回的 Documents 文件夹中的所有文件和文件夹的列表。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287086" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-encryptionstate.html#ww1289747" title="Get (加密状态)">Get (加密状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287088" class="td-tabledata">一个值，表示文件的当前加密状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287093" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-errorcapturestate.html#ww1289788" title="Get (错误捕获状态)">Get (错误捕获状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287095" class="td-tabledata">如果"设置错误捕获"脚本步骤已打开，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287100" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-filemakerpath.html#ww1289834" title="Get (FileMaker 路径)">Get (FileMaker 路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287102" class="td-tabledata">返回当前运行的 FileMaker 产品副本所在的文件夹路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287107" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-filename.html#ww1289881" title="Get (文件名)">Get (文件名)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287109" class="td-tabledata">当前活动文件的名称（不包括文件扩展名）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287114" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-filepath.html#ww1289929" title="Get (文件路径)">Get (文件路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287116" class="td-tabledata">当前活动文件位置的完整路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287121" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-filesize.html#ww1289981" title="Get (文件大小)">Get (文件大小)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287123" class="td-tabledata">当前活动文件的大小（以字节为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287128" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-foundcount.html#ww1290027" title="Get (查找个数)">Get (查找个数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287131" class="td-tabledata">当前<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081706" title="术语表">搜索结果</a></span>中的记录数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287136" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-highcontrastcolor.html#ww1290079" title="Get (高对比度色彩模式)">Get (高对比度色彩模式)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287138" class="td-tabledata">当前高对比度默认色彩模式名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287143" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-highcontraststate.html#ww1290126" title="Get (高对比度状态)">Get (高对比度状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287145" class="td-tabledata">如果高对比度可用且处于活动状态，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287150" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-hostapplicationversion.html#ww1290173" title="Get (主机应用程序版本)">Get (主机应用程序版本)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287152" class="td-tabledata">FileMaker 主机的产品名和版本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287157" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-hostipaddress.html#ww1290226" title="Get (主机 IP 地址)">Get (主机 IP 地址)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287159" class="td-tabledata">当前文件的主机 IP 地址。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287164" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-hostname.html#ww1290286" title="Get (主机名)">Get (主机名)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287167" class="td-tabledata">正在<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078342" title="术语表">托管</a></span>文件的计算机的注册名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287172" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-installedfmplugins.html#ww1290334" title="Get (安装的 FM 插件)">Get (安装的 FM 插件)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287175" class="td-tabledata">已安装的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080228" title="术语表">插件</a></span>的名称、版本号和启用状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287180" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-lasterror.html#ww1290406" title="Get (上一个错误)">Get (上一个错误)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287182" class="td-tabledata">一个数字，表示在最近执行的脚本步骤的执行中出现的错误。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287187" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-lastexternalerrordetail.html#ww1290487" title="Get (上一个外部错误详情)">Get (上一个外部错误详情)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287189" class="td-tabledata">Get (上一个错误) 返回的 FileMaker 外部错误的相关文本。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287194" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-lastmessagechoice.html#ww1290546" title="Get (上次选择信息)">Get (上次选择信息)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287196" class="td-tabledata">一个数字，对应于在"显示自定义对话框"脚本步骤显示的警报信息中所点按的按钮。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287201" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layoutaccess.html#ww1290601" title="Get (布局访问权限)">Get (布局访问权限)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287204" class="td-tabledata">一个数字，基于在当前布局中可用的记录<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080593" title="术语表">访问权限</a></span>。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287209" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layoutcount.html#ww1290662" title="Get (布局个数)">Get (布局个数)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287212" class="td-tabledata">文件中的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079999" title="术语表">布局</a></span>总数。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287217" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layoutname.html#ww1290706" title="Get (布局名称)">Get (布局名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287219" class="td-tabledata">当前显示的布局的名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287224" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layoutnumber.html#ww1290762" title="Get (布局编号)">Get (布局编号)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287226" class="td-tabledata">当前显示的布局的编号（在"管理布局"对话框中指定）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287231" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layouttablename.html#ww1290813" title="Get (布局表名称)">Get (布局表名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287233" class="td-tabledata">在当前布局中显示记录的表摹本的名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287238" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-layoutviewstate.html#ww1290861" title="Get (布局浏览模式)">Get (布局浏览模式)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287240" class="td-tabledata">一个数字，表示当前活动的文件视图。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287245" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-menubarstate.html#ww1290907" title="Get (菜单栏状态)">Get (菜单栏状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287247" class="td-tabledata">一个数字，表示当前菜单栏状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287252" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-modifiedfields.html#ww1290961" title="Get (修改的字段)">Get (修改的字段)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287254" class="td-tabledata">已在当前表的当前记录中修改的字段列表。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287259" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-multiuserstate.html#ww1291008" title="Get (多用户状态)">Get (多用户状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287261" class="td-tabledata">一个数字，表示使用 FileMaker 网络的文件的共享级别。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287266" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-networkprotocol.html#ww1291070" title="Get (网络协议)">Get (网络协议)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287268" class="td-tabledata">FileMaker 正在此计算机上使用的网络协议 (TCP/IP) 的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287273" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-networktype.html#ww1291113" title="Get (网络类型)">Get (网络类型)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287275" class="td-tabledata">一个数字，表示用于访问当前文件的网络的类型。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1309514" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-opendatafileinfo.html#ww1291156" title="Get (打开数据文件信息)">Get (打开数据文件信息)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1309516" class="td-tabledata">文件 ID 和每个已打开数据文件的路径。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287280" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-pagenumber.html#ww1291195" title="Get (页码)">Get (页码)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287282" class="td-tabledata">一个数字，表示正在打印或预览的当前页面。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287287" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-persistentid.html#ww1291242" title="Get (固定 ID)">Get (固定 ID)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287289" class="td-tabledata">表示运行 FileMaker 的计算机或设备的唯一标识符的文本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287294" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-preferencespath.html#ww1291291" title="Get (参数路径)">Get (参数路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287296" class="td-tabledata">当前用户的首选项和默认选项文件夹的路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287301" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-printername.html#ww1291341" title="Get (打印机名称)">Get (打印机名称)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287303" class="td-tabledata">标识默认的打印机名称的文本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287308" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-quickfindtext.html#ww1291398" title="Get (快速查找文本)">Get (快速查找文本)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287310" class="td-tabledata">在"快速查找"框中输入的文本。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287315" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordaccess.html#ww1291448" title="Get (记录访问权限)">Get (记录访问权限)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287317" class="td-tabledata">一个数字，表示通过"自定义记录权限"对话框指定的当前记录的访问权限。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287322" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordid.html#ww1291510" title="Get (记录 ID)">Get (记录 ID)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287324" class="td-tabledata">当前记录的唯一 ID 号。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287329" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordmodificationcount.html#ww1291559" title="Get (记录修改次数)">Get (记录修改次数)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287331" class="td-tabledata">已提交的、对当前记录所做更改的总数。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287336" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordnumber.html#ww1291619" title="Get (记录编号)">Get (记录编号)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287338" class="td-tabledata">一个数字，表示当前搜索结果中记录的位置。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287343" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordopencount.html#ww1291682" title="Get (打开记录的个数)">Get (打开记录的个数)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287345" class="td-tabledata">在尚未保存的当前搜索结果中已打开的记录的总数。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287350" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-recordopenstate.html#ww1291729" title="Get (打开记录的状态)">Get (打开记录的状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287352" class="td-tabledata">一个数字，表示当前记录的状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287357" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-regionmonitorevents.html#ww1291784" title="Get (区域监视事件)">Get (区域监视事件)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287359" class="td-tabledata">一些事件，这些事件导致"配置区域监视脚本"脚本步骤中的脚本运行。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287364" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-requestcount.html#ww1291850" title="Get (请求个数)">Get (请求个数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287366" class="td-tabledata">为当前表定义的查找请求的总数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287371" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-requestomitstate.html#ww1291897" title="Get (请求忽略状态)">Get (请求忽略状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287373" class="td-tabledata">如果在当前查找请求中选择了"省略"，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287378" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-screendepth.html#ww1291941" title="Get (屏幕色度)">Get (屏幕色度)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287380" class="td-tabledata">显示主屏幕像素颜色或灰度所需的位数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287385" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-screenheight.html#ww1291991" title="Get (屏幕高度)">Get (屏幕高度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287387" class="td-tabledata">在其中打开了当前文件窗口的屏幕的高度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287392" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-screenscalefactor.html#ww1292036" title="Get (屏幕缩放系数)">Get (屏幕缩放系数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287394" class="td-tabledata">在其中打开当前文件的屏幕的缩放系数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287399" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-screenwidth.html#ww1292089" title="Get (屏幕宽度)">Get (屏幕宽度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287401" class="td-tabledata">在其中打开了当前文件窗口的屏幕的宽度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287406" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-scriptanimationstate.html#ww1292135" title="Get (脚本动画状态)">Get (脚本动画状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287408" class="td-tabledata">如果为当前脚本启用了动画，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287413" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-scriptname.html#ww1292184" title="Get (脚本名称)">Get (脚本名称)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287415" class="td-tabledata">当前运行或暂停的脚本的名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287420" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-scriptparameter.html#ww1292228" title="Get (脚本参数)">Get (脚本参数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287422" class="td-tabledata">传递到当前脚本的脚本参数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287427" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-scriptresult.html#ww1292292" title="Get (脚本结果)">Get (脚本结果)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287429" class="td-tabledata">来自已执行子脚本的脚本结果。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287434" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-sortstate.html#ww1292346" title="Get (排序状态)">Get (排序状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287436" class="td-tabledata">一个值，表示当前排序状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287441" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-statusareastate.html#ww1292402" title="Get (状态区域状态)">Get (状态区域状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287444" class="td-tabledata">一个数字，表示当前<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078367" title="术语表">状态工具栏</a></span>的状态。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287449" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemdrive.html#ww1292453" title="Get (系统驱动器)">Get (系统驱动器)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287451" class="td-tabledata">正在运行的操作系统所在的驱动器号（对于 Windows）或卷名称（对于 macOS）。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287456" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemipaddress.html#ww1292499" title="Get (系统 IP 地址)">Get (系统 IP 地址)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287459" class="td-tabledata">连接到活动 NIC（网络接口控制器）卡的所有计算机的 <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1077031" title="术语表">IP 地址</a></span>列表。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287464" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemlanguage.html#ww1292558" title="Get (系统语言)">Get (系统语言)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287466" class="td-tabledata">当前系统上所设置的语言。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287471" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemnicaddress.html#ww1292609" title="Get (系统网络硬件地址)">Get (系统网络硬件地址)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287473" class="td-tabledata">连接到计算机的所有 NIC（网络接口控制器）卡的硬件地址。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287478" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemplatform.html#ww1292661" title="Get (系统平台)">Get (系统平台)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287480" class="td-tabledata">一个数字，表示当前平台。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287485" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-systemversion.html#ww1292711" title="Get (系统版本)">Get (系统版本)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287487" class="td-tabledata">当前操作系统的版本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287492" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-temporarypath.html#ww1292778" title="Get (临时路径)">Get (临时路径)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287494" class="td-tabledata">返回当前 FileMaker 临时文件夹的路径。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287499" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-textrulervisible.html#ww1292837" title="Get (标尺可见状态)">Get (标尺可见状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287501" class="td-tabledata">如果显示文本标尺，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287506" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-totalrecordcount.html#ww1292882" title="Get (总记录数)">Get (总记录数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287508" class="td-tabledata">当前表中的记录总数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287513" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-touchkeyboardstate.html#ww1292931" title="Get (触控键盘状态)">Get (触控键盘状态)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287515" class="td-tabledata">如果触控键盘设置为在需要时自动显示，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287520" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggercurrentpanel.html#ww1292980" title="Get (触发当前面板)">Get (触发当前面板)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287522" class="td-tabledata">在激活 <span class="zh-hyper"><a href="../FMP_Help/onpanelswitch.html#ww1034646" title="OnPanelSwitch">OnPanelSwitch 脚本触发器</a></span>时自其进行切换的面板的索引和对象名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287530" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggerexternalevent.html#ww1293037" title="Get (触发外部事件)">Get (触发外部事件)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287532" class="td-tabledata">一个数字，表示激活 <span class="zh-hyper"><a href="../FMP_Help/onexternalcommandreceived.html#ww1037229" title="OnExternalCommandReceived">OnExternalCommandReceived 脚本触发器</a></span>的事件。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287540" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggergestureinfo.html#ww1293125" title="Get (触发手势信息)">Get (触发手势信息)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287544" class="td-tabledata">有关激活 <span class="zh-hyper"><a href="../FMP_Help/ongesturetap.html#ww1035389" title="OnGestureTap">OnGestureTap 脚本触发器</a></span>的手势的详细信息。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287550" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggerkeystroke.html#ww1293189" title="Get (触发击键)">Get (触发击键)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287555" class="td-tabledata">激活 <span class="zh-hyper"><a href="../FMP_Help/onobjectkeystroke.html#ww1028479" title="OnObjectKeystroke">OnObjectKeystroke 脚本触发器</a></span>或 <span class="zh-hyper"><a href="../FMP_Help/onlayoutkeystroke.html#ww1028792" title="OnLayoutKeystroke">OnLayoutKeystroke 脚本触发器</a></span>的字符。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287563" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggermodifierkeys.html#ww1293243" title="Get (触发辅助键)">Get (触发辅助键)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287565" class="td-tabledata">激活 <span class="zh-hyper"><a href="../FMP_Help/onobjectkeystroke.html#ww1028479" title="OnObjectKeystroke">OnObjectKeystroke 脚本触发器</a></span>或 <span class="zh-hyper"><a href="../FMP_Help/onlayoutkeystroke.html#ww1028792" title="OnLayoutKeystroke">OnLayoutKeystroke 脚本触发器</a></span>时键盘辅助键的状态。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287576" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-triggertargetpanel.html#ww1293306" title="Get (触发目标面板)">Get (触发目标面板)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287578" class="td-tabledata">在激活 <span class="zh-hyper"><a href="../FMP_Help/onpanelswitch.html#ww1034646" title="OnPanelSwitch">OnPanelSwitch 脚本触发器</a></span>时切换到的面板的索引和对象名称。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287586" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-usercount.html#ww1293364" title="Get (用户个数)">Get (用户个数)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287588" class="td-tabledata">当前正在访问文件的客户端个数。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287593" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-username.html#ww1293418" title="Get (用户名)">Get (用户名)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287595" class="td-tabledata">FileMaker 用户的名称，它是在"首选项"对话框的"<strong class="o-onscreen">常规</strong>"选项卡中指定的。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287600" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-usesystemformatsstate.html#ww1293482" title="Get (系统格式状态)">Get (系统格式状态)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287602" class="td-tabledata">如果"格式"菜单中的"使用系统格式"已打开，则返回"<strong class="o-onscreen">1</strong>"(真)；否则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287607" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-uuid.html#ww1293526" title="Get (UUID)">Get (UUID)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287609" class="td-tabledata">表示通用唯一标识符 (UUID) 的文本。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287614" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-uuidnumber.html#ww1293587" title="Get (UUID 号)">Get (UUID 号)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287616" class="td-tabledata">表示通用唯一标识符 (UUID) 值的数字。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287621" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowcontentheight.html#ww1293647" title="Get (工作区高度)">Get (工作区高度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287623" class="td-tabledata">窗口内容区域的高度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287628" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowcontentwidth.html#ww1293707" title="Get (工作区宽度)">Get (工作区宽度)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287630" class="td-tabledata">窗口内容区域的宽度（以磅为单位）。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287635" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowdesktopheight.html#ww1293758" title="Get (窗口桌面高度)">Get (窗口桌面高度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287637" class="td-tabledata">桌面空间的高度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287642" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowdesktopwidth.html#ww1293807" title="Get (窗口桌面宽度)">Get (窗口桌面宽度)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287644" class="td-tabledata">桌面空间的宽度（以磅为单位）。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287649" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowheight.html#ww1293855" title="Get (窗口高度)">Get (窗口高度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287651" class="td-tabledata">正在操作脚本的窗口的高度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287656" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowleft.html#ww1293903" title="Get (窗口左边距)">Get (窗口左边距)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287658" class="td-tabledata">正在操作脚本的窗口的外部边缘相对于屏幕最左边缘的水平距离（以磅为单位）。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287663" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowmode.html#ww1293956" title="Get (窗口模式)">Get (窗口模式)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287665" class="td-tabledata">一个数字，表示在解析函数时 FileMaker 产品的模式。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287670" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowname.html#ww1294013" title="Get (窗口名称)">Get (窗口名称)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287672" class="td-tabledata">正在操作脚本的窗口的名称。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287677" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windoworientation.html#ww1294065" title="Get (窗口方向)">Get (窗口方向)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287679" class="td-tabledata">一个值，表示正在操作脚本的窗口的方向。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287684" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowstyle.html#ww1294123" title="Get (窗口样式)">Get (窗口样式)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287686" class="td-tabledata">正在操作脚本的窗口的样式。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287691" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowtop.html#ww1294175" title="Get (窗口上边距)">Get (窗口上边距)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287693" class="td-tabledata">正在操作脚本的窗口的外部边缘相对于菜单栏底部边缘 (macOS) 或屏幕顶部边缘 (Windows) 的垂直距离（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287698" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowvisible.html#ww1294228" title="Get (窗口是否可见)">Get (窗口是否可见)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287700" class="td-tabledata">如果窗口可见，则返回"<strong class="o-onscreen">1</strong>"(真)；如果使用"隐藏窗口"隐藏了窗口，则返回"<strong class="o-onscreen">0</strong>"(假)。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287705" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowwidth.html#ww1294278" title="Get (窗口宽度)">Get (窗口宽度)</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287707" class="td-tabledata">正在操作脚本的窗口的宽度（以磅为单位）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287712" class="td-tabledata"><span class="zh-hyper"><a href="../FMP_Help/get-windowzoomlevel.html#ww1294326" title="Get (窗口缩放级别)">Get (窗口缩放级别)</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1287714" class="td-tabledata">当前窗口的缩放百分比。</p></td></tr></table></div><h2 id="ww1287716" class="sseh1-scriptexamhead1"><span>示例 1</span>&nbsp;</h2><p id="ww1287717" class="b-body">此脚本使用 <code class="c-code code_pre_wrap">Get (当前日期)</code> 函数检查搜索结果中的每条记录以确定是否存在过期的帐户。如果某个帐户已经过期，则该脚本显示一条消息并提示用户单击标有"省略"、"发送信函"或"发送邮件"（通过"显示自定义对话框"脚本步骤进行设置）的按钮。该脚本使用 <code class="c-code code_pre_wrap">Get (上次选择信息)</code> 函数捕获用户的响应。然后，根据用户的响应，脚本执行操作：取消脚本的其余部分、打印"付费已晚"信函或向关联帐户发送电子邮件。</p><code id="ww1287718" class="co-code code_pre_wrap">转到布局 ["布局名称"]<br />转到记录/请求/页面 [第一个]<br />Loop<br />&nbsp;&nbsp;If [数据库名称::日期 &lt; Get (当前日期) - 30]<br />&nbsp;&nbsp;&nbsp;&nbsp;显示自定义对话框 ["最近 30 天或更多天"]<br />&nbsp;&nbsp;&nbsp;&nbsp;If [Get (上次选择信息) = 1]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中断脚本<br />&nbsp;&nbsp;&nbsp;&nbsp;Else If [Get (上次选择信息) = 2]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转到布局 ["过期提醒"]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印 [ ]<br />&nbsp;&nbsp;&nbsp;&nbsp;Else<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发送邮件 [通过电子邮件客户端发送; 包括对话框: 关闭; 收件人: 数据库名称::客户; 主题: "过期提醒"; 消息: "您的帐户已过期。"]<br />&nbsp;&nbsp;&nbsp;&nbsp;End If<br />&nbsp;&nbsp;End If<br />&nbsp;&nbsp;转到记录/请求/页面 [下一步; 最后一步后退出: 打开]<br />End Loop<br />转到布局 [原始布局]</code><h2 id="ww1287719" class="rh-relatedhead"><span>相关主题</span>&nbsp;</h2><p id="ww1287723" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/functions.html#ww1030581" title="关于函数">关于函数</a></span></p><p id="ww1287727" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/formulas.html#ww1030710" title="关于公式">关于公式</a></span></p><p id="ww1287731" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/inserting-variables-on-layout.html#ww1029019" title="在布局中插入日期、页码或其他变量">在布局中插入日期、页码或其他变量</a></span></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

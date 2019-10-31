@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>在导入过程中设置导入操作和映射字段</title><link rel="Prev" href="importing-xml.html" title="上一个" /><link rel="Next" href="converting-to-new-file.html" title="下一个" /><link rel="StyleSheet" href="css/import_export.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/import_export_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/import-action-field-mapping.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="plNqtfwTE1Rt7s4bK0qLPdg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/import-action-field-mapping.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/saving-importing-exporting-data.html#wwconnect_header">保存、导入和导出数据</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/importing-data.html#wwconnect_header">将数据导入 FileMaker Pro Advanced</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">在导入过程中设置导入操作和映射字段</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1083641" class="h3-head3">在导入过程中设置导入操作和映射字段</h1><p id="ww1083642" class="b-body">将数据导入到现有 FileMaker&nbsp;Pro Advanced 文件时，在选择要导入的文件或数据源之后，将显示"导入字段映射"对话框。使用此对话框指定以下导入选项：</p><p id="ww1028747" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>导入操作：指定如何将数据导入到现有文件中。可以向文件中添加新记录，更新文件中的匹配记录，也可以替换文件中的现有记录。请参阅<span class="zh-hyper"><a href="../FMP_Help/importing-data.html#ww1074247" title="将数据导入 FileMaker Pro Advanced">将数据导入到现有文件的方法</a></span>。</p><p id="ww1028751" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>字段映射：通过将<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081313" title="术语表">目标文件</a></span>中的字段映射到要导入的源数据中的字段来指定从何处导入数据。</p><p id="ww1075263" class="b1-body1">可以将任何<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078400" title="术语表">字段类型</a></span>中的数据导入任何兼容的字段（<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080972" title="术语表">计算字段</a></span>和<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080835" title="术语表">合计字段</a></span>除外）。如果要从其他 FileMaker&nbsp;Pro Advanced 文件导入或者导入包含图像、视频或 PDF 文件的文件夹，则只能导入到<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081613" title="术语表">容器</a></span>字段。将数据导入<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081535" title="术语表">全局字段</a></span>时，从源文件中导入到该字段的最后一个项目将决定全局字段值。</p><h2 id="ww1028752" class="hs1-headsub1">要在导入过程中设置导入操作和映射字段：</h2><p id="ww1028753" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>选择要导入到现有 FileMaker&nbsp;Pro Advanced 文件的文件或数据源（前提是尚未执行此操作）。</p><p id="ww1028759" class="b1-body1">按照<span class="zh-hyper"><a href="../FMP_Help/importing-data-into-file.html#ww1028245" title="将数据导入到现有文件">将数据导入到现有文件</a></span>、<span class="zh-hyper"><a href="../FMP_Help/importing-folder.html#ww1044791" title="同时导入文件夹中的多个文件">同时导入文件夹中的多个文件</a></span>、或<span class="zh-hyper"><a href="../FMP_Help/importing-xml.html#ww1041831" title="导入 XML 数据">导入 XML 数据</a></span>中的指示操作。"导入字段映射"对话框打开。</p><div class="ww_skin_page_overflow"><p id="ww1075451" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>单击 <img class="Default" src="../FMP_Help/images/import-action-arrow.png" width="100%" style="display: inline; left: 0.0pt; max-height: 15px; max-width: 26px; top: 0.0pt" alt="匹配目标字段图标" />，选择要执行的导入操作。</p></div><p id="ww1028793" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 186.08184pt"><p id="ww1028775" class="th-tablehead">目的</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 263.91816pt"><p id="ww1028777" class="th-tablehead">选择</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028779" class="td-tabledata">将新记录添加到目标文件的末尾</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028781" class="td-tabledata"><strong class="o-onscreen">添加</strong> </p><p id="ww1028782" class="td-tabledata"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果导入操作的目标表中不包含数据，则只能选择"<strong class="o-onscreen">添加</strong>"；由于没有要更新或替换的数据，因此下面介绍的其他选项将不可用。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1083672" class="td-tabledata">使用源文件的匹配记录中的数据更新目标文件中的数据</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1083674" class="td-tabledata"><strong class="o-onscreen">更新</strong> </p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028784" class="td-tabledata">从每个文件中的第一条记录开始，使用要从源文件中导入的记录依次替换目标文件中的记录的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081706" title="术语表">搜索结果</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028786" class="td-tabledata"><strong class="o-onscreen">替换</strong> </p></td></tr></table></div><p id="ww1086016" class="b1-body1">对于"<strong class="o-onscreen">更新</strong>"或"<strong class="o-onscreen">替换</strong>"，选择"<strong class="o-onscreen">将其余数据作为新记录添加</strong>"还可以将源文件中的任何其他记录作为目标文件中的新记录进行添加。</p><p id="ww1085914" class="ni1-noteimportant1"><span class="zan-autonum">重要事项&nbsp;&nbsp;</span>更新匹配记录或替换现有记录会改写目标文件中的数据，并且无法撤消。要保护您的数据，请选择"<strong class="o-onscreen">文件</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">另存为</strong>"以创建目标 FileMaker&nbsp;Pro Advanced 文件的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079959" title="术语表">备份</a></span>副本。只能对本地文件（位于您计算机上的文件）执行此操作。请确保您了解更新或替换记录的工作方式。请参阅<span class="zh-hyper"><a href="../FMP_Help/importing-data.html#ww1027874" title="将数据导入 FileMaker Pro Advanced">将数据导入 FileMaker Pro Advanced</a></span>。</p><p id="ww1082617" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>如果要从其他 FileMaker&nbsp;Pro Advanced 文件中导入数据，并且该文件中包含多个表，请从"<strong class="o-onscreen">源</strong>"列表中选择要导入的表。</p><div class="ww_skin_page_overflow"><p id="ww1088220" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>如果您要导入的源数据中的记录包含字段名称（列标题）而不是数据，请单击 <img class="Default" src="../FMP_Help/images/icon_backward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="自动输入选项图标" /> 或 <img class="Default" src="../FMP_Help/images/icon_forward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="前进箭头" /> 直到包含字段名称的记录出现。然后选择"<strong class="o-onscreen">用作字段名称</strong>"。</p></div><p id="ww1088227" class="b1-body1">只有后续记录可用于导入。</p><p id="ww1088228" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>如果目标文件包含多个表，请从"<strong class="o-onscreen">目标</strong>"列表中选择表。</p><p id="ww1082828" class="b1-body1">或选择"<strong class="o-onscreen">新表</strong>"。请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-new-table-import.html#ww1080764" title="关于为导入数据创建新表">关于为导入数据创建新表</a></span>。</p><p id="ww1082812" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>对于"<strong class="o-onscreen">目标字段</strong>"，选择目标字段以指示导入或更新源数据的位置。</p><p id="ww1082896" class="b1-body1">您可以执行下列任意操作，将目标字段映射到源字段：</p><p id="ww1082897" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要更改选择，请单击当前目标字段名称，然后从列表中选择另一字段。要在列表中查找字段，请在搜索框中键入字段名称的几个字符。列表中目标字段名称旁边的指示符显示该字段是否可用于映射。</p><p id="ww1085319" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t2-table2" style="width: 359.24976000000003pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 84.00024pt"><p id="ww1085291" class="th-tablehead">字段映射指示符</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 275.24952pt"><p id="ww1085293" class="th-tablehead">说明</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085295" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-unmapped-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="通过添加记录进行导入的概念图" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085297" class="td-tabledata">当前未映射到源字段</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085299" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-mapped-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="管理数据库按钮" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085301" class="td-tabledata">当前映射到源字段</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085303" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-match-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="未映射的目标字段图标" /></p></div></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085305" class="td-tabledata">当前映射为匹配字段</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1085307" class="td-tabledata"><img class="Default" src="../FMP_Help/images/import-invalid-target-fields.png" width="100%" style="display: inline; left: 0.0pt; max-height: 18px; max-width: 33px; top: 0.0pt" alt="后退箭头" /></p></div></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085309" class="td-tabledata">无法映射到源字段，因为目标字段是不兼容的字段类型，或者您没有足够的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080593" title="术语表">访问权限</a></span> </p></td></tr></table></div><p id="ww1089754" class="b2-body2">目标文件中的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081458" title="术语表">匹配字段</a></span>不能是容器、合计或全局字段。匹配字段的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078400" title="术语表">字段类型</a></span>应与匹配字段中的数据类型相对应。例如，数值字段不应与包含文本的字段相匹配。如果导入操作设置为"更新"，则仅可用作匹配字段的目标字段将显示在"仅用于匹配"下的列表中。选择其中一个字段会将映射设置为"匹配字段"。</p><p id="ww1089755" class="b2-body2">无法映射到源字段的目标字段将显示在"不用于导入"下的列表中。您无法将源数据导入这些字段或将其用作匹配字段。</p><div class="ww_skin_page_overflow"><p id="ww1082882" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要预览您要导入的数据，请单击 <img class="Default" src="../FMP_Help/images/icon_backward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="自动输入选项图标" /> 或 <img class="Default" src="../FMP_Help/images/icon_forward.png" width="100%" style="display: inline; left: 0.0pt; max-height: 17px; max-width: 17px; top: 0.0pt" alt="前进箭头" />。</p></div><div class="ww_skin_page_overflow"><p id="ww1028807" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要创建或更改您要导入的表中的字段，请单击目标字段名称，然后单击 <img class="Default" src="../FMP_Help/images/import-target-manage-db.png" width="100%" style="display: inline; left: 0.0pt; max-height: 16px; max-width: 13px; top: 0.0pt" alt="前进箭头" />，或在"目标"列表中选择"<strong class="o-onscreen">管理数据库</strong>"。在"管理数据库"对话框中进行更改，然后单击"<strong class="o-onscreen">确定</strong>"。（如果该按钮显示为灰色，则可能是因为您没有足够的访问权限，或者是因为数据库在网络上共享，当前不允许进行数据库更改。请参阅<span class="zh-hyper"><a href="../FMP_Help/sharing-hosting.html#ww1029565" title="共享和托管文件">共享和托管文件</a></span>。）</p></div><p id="ww1028812" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要将相对于源字段的目标字段同时重新排序，请从"目标字段"列的菜单中选择以下选项之一：</p><p id="ww1028843" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t2-table2" style="width: 432pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 108pt"><p id="ww1028815" class="th-tablehead">选择此选项</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 324pt"><p id="ww1028817" class="th-tablehead">按下列方式列出字段</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028819" class="td-tabledata"><strong class="o-onscreen">匹配名称</strong> </p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028821" class="td-tabledata">目标表和源表中相匹配的字段名</p><p id="ww1089180" class="td-tabledata">每次选择此选项时，FileMaker&nbsp;Pro Advanced 都将动态匹配字段名。（如果源数据不包含字段名，则此选项不可用。）</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028823" class="td-tabledata"><strong class="o-onscreen">上次顺序</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028825" class="td-tabledata">FileMaker&nbsp;Pro Advanced 上次将数据导入到该表时使用的顺序，或者是默认顺序（创建顺序）</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028827" class="td-tabledata"><strong class="o-onscreen">创建顺序</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028829" class="td-tabledata">创建字段时采用的顺序</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028831" class="td-tabledata"><strong class="o-onscreen">字段名称</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028833" class="td-tabledata">字母顺序</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028835" class="td-tabledata"><strong class="o-onscreen">字段类型</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028838" class="td-tabledata"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078400" title="术语表">字段类型</a></span> </p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028840" class="td-tabledata"><strong class="o-onscreen">客户订单</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028842" class="td-tabledata">自定义顺序（通过更改目标字段创建）。</p></td></tr></table></div><p id="ww1028853" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">7.	</span></span>在列表中每对字段之间的"映射"列中，单击当前映射并选择要执行的字段映射。</p><p id="ww1028854" class="b1-body1">您可以选择是否将每个字段导入到目标字段中，也可以使用字段对作为匹配字段来更新匹配记录。</p><p id="ww1087481" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>在下列情况下，将不导入源字段中的数据：</p><p id="ww1087482" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>将"映射"设置为"<strong class="o-onscreen">不导入</strong>"。对于您要导入的每个源字段，将"映射"设置为"<strong class="o-onscreen">导入</strong>"并选择目标字段。如有必要，请创建一个新的目标字段。</p><p id="ww1087483" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>源和目标字段之间出现"<strong class="o-onscreen">无效目标</strong>"，表示目标字段类型不支持源字段数据。您无法将数据导入到计算或合计字段中，也无法将某些不匹配的数据类型（如容器数据）导入到文本字段中。（"无效目标"还可能表示访问权限不允许将数据导入到特定的目标字段中。）</p><p id="ww1028857" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">8.	</span></span>对于已定义自动数据输入（自动输入）的目标字段，选择是否在导入时执行自动输入选项（例如，在"修改日期"字段中输入日期）。</p><p id="ww1084071" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 451.4724pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 141.44832pt"><p id="ww1085114" class="th-tablehead">要在使用自动输入选项定义的字段中自动输入新数据</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 310.02408pt"><p id="ww1085116" class="th-tablehead">请执行此操作</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085118" class="td-tabledata">对于单个目标字段</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><div class="ww_skin_page_overflow"><p id="ww1089782" class="td-tabledata">单击"目标字段"列中字段旁的 <img class="Default" src="../FMP_Help/images/import-settings.png" width="100%" style="display: inline; left: 0.0pt; max-height: 14px; max-width: 13px; top: 0.0pt" alt="每个字段执行自动输入选项图标（选中）" />，并选择<strong class="o-onscreen">执行自动输入选项</strong>。<img class="Default" src="../FMP_Help/images/import-settings-orange.png" width="100%" style="display: inline; left: 0.0pt; max-height: 13px; max-width: 13px; top: 0.0pt" alt="每个字段执行自动输入选项图标" /> 表示选中的选项。否则，对于该字段，将不输入自动输入值。</p></div><div class="ww_skin_page_overflow"><p id="ww1089783" class="td-tabledata">当前未映射的目标字段不会显示在"目标字段"列中。要为具有自动输入选项的任何目标字段设置此选项，请在"导入选项"区域中单击 <img class="Default" src="../FMP_Help/images/import-settings-grey.png" width="100%" style="display: inline; left: 0.0pt; max-height: 13px; max-width: 13px; top: 0.0pt" alt="每个字段执行自动输入选项图标" /> 并选择字段。</p></div></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085125" class="td-tabledata">对于所有目标字段</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1089788" class="td-tabledata">在"导入选项"区域中，选择<strong class="o-onscreen">导入期间为字段执行自动输入选项</strong>。否则，对于所有目标字段，将不输入自动输入值。</p><div class="ww_skin_page_overflow"><p id="ww1089789" class="n-note"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果选择此选项，然后取消选择某些单个目标字段的选项，此选项将指示混合状态。要查看影响此选项状态的所有目标字段，在"导入选项"区域中，单击 <img class="Default" src="../FMP_Help/images/import-settings-grey.png" width="100%" style="display: inline; left: 0.0pt; max-height: 13px; max-width: 13px; top: 0.0pt" alt="每个字段执行自动输入选项图标" />。</p></div></td></tr></table></div><p id="ww1084159" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果您要导入设置为自动输入值（例如修改者姓名、修改日期或时间，或者<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080234" title="术语表">查找</a></span>数据）的字段，选择此选项会使用自动输入的数据改写您导入的数据。</p><p id="ww1084318" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/automatic-data-entry.html#ww1136760" title="定义自动数据输入">定义自动数据输入</a></span>。</p><p id="ww1084007" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">9.	</span></span>在"导入选项"区域中，根据需要选择其他选项。</p><p id="ww1084396" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 451.4724pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 141.44832pt"><p id="ww1084381" class="th-tablehead">目的 </p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 310.02408pt"><p id="ww1084383" class="th-tablehead">请执行此操作</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084385" class="td-tabledata">选择源文件中使用的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078418" title="术语表">字符编码</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084390" class="td-tabledata">对于"<strong class="o-onscreen">源文件的字符集</strong>"，请选择字符编码。</p><p id="ww1084546" class="td-tabledata">"字符集"列表可能呈灰色或可用状态：</p><p id="ww1084547" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果该列表呈灰色，则 FileMaker&nbsp;Pro Advanced 将确定文件的编码并自动选择。</p><p id="ww1084548" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果该列表处于可用状态，则 FileMaker&nbsp;Pro Advanced 无法确定文件编码，并根据您的操作系统和您导入的文件格式选择适当的字符编码。如果选择其他编码，FileMaker&nbsp;Pro Advanced 将扫描导入数据，如果该数据包含的字符不合法，则将显示警报消息。</p><p id="ww1084549" class="n-note"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果要导入 16 位 Unicode (UTF-16) 文本文件，则该文件必须包含 Unicode 标准"Byte Order Mark (BOM)"。如果缺少 BOM，FileMaker&nbsp;Pro Advanced 将无法正确识别文件编码。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084392" class="td-tabledata">指定源文件中使用的字段分隔符，其采用<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078428" title="术语表">自定义分隔值</a></span>格式</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084395" class="td-tabledata">对于"<strong class="o-onscreen">源文件的自动分隔符</strong>"，从列表中选择字符（或选择"<strong class="o-onscreen">其他</strong>"并键入字符）以分隔源文件中的字段值。</p><p id="ww1084688" class="td-tabledata">只有当您在步骤 <a href="../FMP_Help/import-action-field-mapping.html#ww1028753" title="在导入过程中设置导入操作和映射字段">1</a> 中为"<strong class="o-onscreen">文件类型</strong>"(Windows) 或"<strong class="o-onscreen">显示</strong>"(macOS) 选择"<strong class="o-onscreen">自定义分隔值</strong>"时，此选项才可用。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1086335" class="td-tabledata">在导入期间禁止容器字段内容的验证检查，以允许目标文件使用现有的外部容器字段内容</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084990" class="td-tabledata">选择"<strong class="o-onscreen">保留外部容器存储</strong>"。</p><p id="ww1084991" class="td-tabledata">例如，使用此选项可将数据快速导入克隆的文件副本，而不必解密再重新加密文件才能将容器数据移动到目标文件。</p><p id="ww1084992" class="td-tabledata">源字段和目标字段的基本目录必须相同。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1084958" class="td-tabledata">指定如何从源文件中的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1082111" title="术语表">重复字段</a></span>中导入数据</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1085003" class="td-tabledata">对于"<strong class="o-onscreen">重复字段</strong>"，选择：</p><p id="ww1085004" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">将值保留在原始记录中</strong>"，将字段作为重复字段进行维护。</p><p id="ww1084962" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">将值拆分到单独记录中</strong>"，将每个重复值导入到单独的记录中。（可以使用此选项处理重复字段中的各个值，例如对其进行排序或汇总。）</p><p id="ww1085032" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果将重复字段数据拆分到单独的记录中，则将在每个单独的记录中复制导入的任何非重复字段。例如，如果源文件中的某条记录有三个重复值，则通过将它们拆分到单独的记录中可导入三条记录，每条记录都是完全相同的（重复字段中的值除外）。</p></td></tr></table></div><p id="ww1089801" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">10.	</span></span>单击<strong class="o-onscreen">导入</strong>。</p><p id="ww1075357" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果要导入大量数据，则可能会看到显示导入过程进度的"导入"对话框。要停止导入，请单击"<strong class="o-onscreen">停止</strong>"。已导入的记录保留在目标文件中（并不撤消此导入）。要永久删除已导入的记录，请选择"<strong class="o-onscreen">记录</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">删除所有记录</strong>"。</p><p id="ww1028886" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">11.	</span></span>在"导入合计"对话框中，请记下导入记录的数目和跳过的任何数据。然后单击"<strong class="o-onscreen">确定</strong>"。</p><p id="ww1028887" class="b1-body1">"导入合计"对话框显示三条统计信息，详细说明了导入的记录和跳过的任何数据：</p><p id="ww1028922" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 92.00016pt"><p id="ww1028890" class="th-tablehead">统计信息</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 357.99984pt"><p id="ww1028892" class="th-tablehead">说明</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028894" class="td-tabledata">添加或更新的记录</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028896" class="td-tabledata">导入过程中在目标文件中添加或更新的记录总数。</p><p id="ww1028897" class="n-note"><span class="zan-autonum">注释&nbsp;&nbsp;</span>如果更新的是匹配记录并且源文件中有多个记录与目标文件搜索结果中的记录匹配，则该数值还将包括相同记录的多个更新。请参阅"注释"部分。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028902" class="td-tabledata">因为错误而跳过记录</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028904" class="td-tabledata">目标文件中由于以下原因跳过的记录数：</p><p id="ww1028905" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>权限错误：访问权限禁止修改一条或多条记录。</p><p id="ww1028906" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>记录被锁定：一条或多条记录由于在其他位置被访问（在其他窗口中由同一用户访问，或在文件处于共享状态时由其他<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081155" title="术语表">客户端</a></span>访问）而无法修改。</p><p id="ww1028908" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>验证错误：由于不满足记录级的字段验证要求，导致无法修改一条或多条记录，也无法提交该记录。请参阅<span class="zh-hyper"><a href="../FMP_Help/validating-data-import.html#ww1041408" title="关于在导入过程中验证数据">关于在导入过程中验证数据</a></span>。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028913" class="td-tabledata">因为错误而跳过字段</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028915" class="td-tabledata">目标文件中由于以下原因跳过的字段数：</p><p id="ww1028916" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>验证错误：由于数据不满足为字段定义的验证要求，导致无法导入一个或多个字段。请参阅<span class="zh-hyper"><a href="../FMP_Help/validating-data-import.html#ww1041408" title="关于在导入过程中验证数据">关于在导入过程中验证数据</a></span>。</p><p id="ww1028920" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>权限错误：访问权限禁止修改一个或多个字段。</p><p id="ww1028921" class="td-tabledata">跳过的字段不会阻止相同记录中其他字段的更新。</p></td></tr></table></div><h2 id="ww1028923" class="hs1n-headsub1notes"><span>注释</span>&nbsp;</h2><p id="ww1028925" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>导入的记录将成为搜索结果。导入后，检查搜索结果中的数据。选择"<strong class="o-onscreen">记录</strong>"菜单&nbsp;&gt;"<strong class="o-onscreen">显示所有记录</strong>"。</p><p id="ww1041061" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果要更新或替换记录，请在丢弃文件的备份副本之前确保记录正确。</p><p id="ww1075230" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果记录中所有指定的匹配字段均为空，则不会更新该记录。</p><p id="ww1075231" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果源文件中的记录与目标文件中的多条记录匹配，则将更新目标文件的搜索结果中所有匹配的记录。</p><p id="ww1075232" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如果源文件中的一条记录与目标文件的搜索结果中的一条记录匹配，则将使用源文件中最后一个匹配记录更新目标文件。（导入过程中，目标文件中的匹配记录实际上被多次更新（分别被源文件中的每个匹配记录更新一次），因此用于更新匹配目标记录的最后一个匹配源记录将决定其最终内容。</p><p id="ww1075233" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>无论更新前的搜索结果如何，更新后的搜索结果均包含已更新的记录（即匹配的记录）和任何新添加的记录。</p><p id="ww1086724" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要为多个字段设置字段映射，请在"源字段"列中按住 Ctrl 键并单击 (Windows) 或按住 Command 键并单击 (macOS) 每行，或按住 Shift 键并单击多行。然后单击其中一个选定字段的当前映射并选择一个映射。（您也可以按空格键，使用 Tab 键、向上箭头键或向下箭头键，然后按空格键或返回键以选择字段映射。）</p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

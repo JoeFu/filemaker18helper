@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>AVPlayer 设置选项</title><link rel="Prev" href="avplayer-play.html" title="上一个" /><link rel="Next" href="avplayer-set-playback-state.html" title="下一个" /><link rel="StyleSheet" href="css/scripts_ref1.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/scripts_ref1_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/avplayer-set-options.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pip4RdmdZPI51j8hd0_002b8Gxw" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/avplayer-set-options.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/reference.html#wwconnect_header">参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/script-steps-reference.html#wwconnect_header">脚本步骤参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/miscellaneous-script-steps.html#wwconnect_header">其他脚本步骤</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">AVPlayer 设置选项</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1218557" class="ssh-scripthead">AVPlayer 设置选项</h1><p id="ww1218561" class="sspu-scriptpurpose">更改正处于播放或暂停状态的媒体文件的设置。</p><h2 id="ww1218562" class="sah-seealsohead"><span>另请参阅</span>&nbsp;</h2><p id="ww1218566" class="sal-seealsolink"><span class="zh-hyper"><a href="../FMP_Help/container-fields.html#ww1166321" title="关于容器字段">关于容器字段</a></span></p><p id="ww1218570" class="sal-seealsolink"><span class="zh-hyper"><a href="../FMP_Help/scripts.html#ww1059423" title="使用脚本自动执行任务">使用脚本自动执行任务</a></span></p><h2 id="ww1225227" class="ssoh-scriptoptshead"><span>选项</span>&nbsp;</h2><p id="ww1218573" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">显示方式</strong>"更改显示媒体的设置。</p><p id="ww1218574" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">开始全屏显示</strong>"以全屏方式开始播放媒体，但允许将显示方式更改为嵌入式。</p><p id="ww1218575" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅支持全屏显示</strong>"以全屏方式播放媒体。</p><p id="ww1218576" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">启动嵌入式</strong>"以嵌入式方式开始播放媒体，但允许将显示方式更改为全屏。</p><p id="ww1218577" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅限嵌入</strong>"以嵌入式方式播放媒体，并且不允许将显示方式更改为全屏。</p><p id="ww1218578" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅适用于音频</strong>"仅播放音频。</p><p id="ww1218579" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">禁用交互</strong>"更改启用或禁用用户与回放的交互的设置。如果此选项设置为"是"，则无法使用回放控件或手势与媒体交互。</p><p id="ww1218580" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">是</strong>"禁用用户与回放的交互。</p><p id="ww1218581" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">否</strong>"启用用户与回放的交互。</p><p id="ww1218582" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">隐藏控件</strong>"更改在媒体播放时显示或隐藏回放控件的设置。如果隐藏回放控件但启用交互，可以使用手势代替回放控件。</p><p id="ww1218583" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">是</strong>"隐藏回放控件。</p><p id="ww1218584" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">否</strong>"显示回放控件。</p><p id="ww1218585" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">禁止外部控件</strong>"启用或禁用当媒体处于播放或暂停状态时锁屏或控制中心上的 iOS 回放控件。</p><p id="ww1218586" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">是</strong>"禁用 iOS 回放控件。</p><p id="ww1218587" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">否</strong>"启用 iOS 回放控件。</p><p id="ww1218588" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">后台暂停</strong>"将更改当 FileMaker&nbsp;Go 移动到后台时播放音频和视频的设置。如果未设置此选项并且 FileMaker&nbsp;Go 移动到后台，则音频会继续播放，但视频将暂停。</p><p id="ww1218589" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">是</strong>"将暂停音频和视频。</p><p id="ww1218590" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">否</strong>"将继续播放音频和视频。</p><p id="ww1218591" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">定位</strong>"指定从距离媒体开头多少秒处移动当前回放。</p><p id="ww1218592" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">初始偏移量</strong>"指定回放范围的开头距离媒体开头的秒数。只能播放媒体在回放范围内的内容。例如，如果将此选项设置为 30，则用户不能倒回或播放媒体的前 30 秒。此选项的默认值为 0，这允许媒体从开头开始播放。</p><p id="ww1218593" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span><strong class="o-onscreen">"结束偏移量"</strong>指定回放范围的结尾距离媒体开头的秒数。只能播放媒体在回放范围内的内容。例如，如果将此选项设置为 100，则用户不能快进或播放超过媒体的前 100 秒。此选项的默认值为 0，这允许媒体播放至结尾。</p><p id="ww1218594" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">缩放</strong>"指定视频的显示方式：</p><p id="ww1218595" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">调整</strong>"将在保持纵横比的情况下缩放视频，以适合回放区域。</p><p id="ww1218596" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">填充</strong>"将在保持纵横比的情况下缩放视频，以填充回放区域。</p><p id="ww1218597" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">拉伸</strong>"将拉伸视频以填充回放区域，但不会保留纵横比。</p><p id="ww1218598" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅限调整</strong>"不允许用户将缩放设置更改为"填充"或"拉伸"。</p><p id="ww1218599" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅限填充</strong>"不允许用户将缩放设置更改为"调整"或"拉伸"。</p><p id="ww1218600" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">仅限拉伸</strong>"不允许用户将缩放设置更改为"调整"或"填充"。</p><p id="ww1218601" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">卷</strong>"指定介于 0.0 和 1.0 之间的值作为音频的卷级。</p><p id="ww1218602" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">序列</strong>"指定接下来应播放哪个媒体文件。</p><p id="ww1218603" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">无</strong>"不播放其他媒体。</p><p id="ww1218604" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">下一步</strong>"播放下一个媒体。</p><p id="ww1218605" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"<strong class="o-onscreen">上一步</strong>"播放上一个媒体。</p><h2 id="ww1218606" class="sscoh-scriptcompathead"><span>兼容性</span>&nbsp;</h2><p id="ww1218636" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t-table" style="width: 262.8pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 166.32pt"><p id="ww1218609" class="sscoh1-scriptstepcompthead1"><span>产品</span>&nbsp;</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 96.48pt"><p id="ww1218611" class="sscoh2-scriptstepcompthead2"><span>是否支持</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218613" class="ssco1p-scriptstepcompt1pro"><span>FileMaker Pro Advanced</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218615" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218617" class="ssco1g-scriptstepcompt1go"><span>FileMaker Go</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218619" class="sscoy-scriptstepcomptyes"><span>是</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238462" class="ssco1w-scriptstepcompt1wd"><span>FileMaker WebDirect</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238464" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238466" class="ssco1s-scriptstepcompt1svr"><span>FileMaker Server</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238468" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218625" class="ssco1c-scriptstepcompt1cld"><span>FileMaker Cloud for AWS</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218627" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238474" class="ssco1a-scriptstepcompt1api"><span>FileMaker Data API</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1238476" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1248133" class="ssco1u-scriptstepcompt1cwp"><span>自定义 Web 发布</span>&nbsp;</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1248135" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218633" class="ssco1r-scriptstepcompt1run"><span>Runtime 解决方案</span>&nbsp;</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1218635" class="sscon-scriptstepcomptno"><span>否</span>&nbsp;</p></td></tr></table></div><h2 id="ww1218637" class="orh-originhead"><span>源于</span>&nbsp;</h2><p id="ww1218638" class="or-origin">FileMaker&nbsp;Pro 14.0</p><h2 id="ww1218639" class="ssdh-scriptdeschead"><span>说明</span>&nbsp;</h2><p id="ww1218640" class="b-body">使用此脚本步骤可在文件处于播放或暂停状态时更改音频、视频或图像文件的设置。</p><h2 id="ww1218641" class="sseh1-scriptexamhead1"><span>示例 1</span>&nbsp;</h2><p id="ww1218642" class="b-body">将当前正在播放的视频的设置更改为从文件开头开始回放 50 秒。视频将被拉伸以填充回放区域，但不会保留纵横比。</p><code id="ww1218643" class="co-code code_pre_wrap">AVPlayer 设置选项 [定位: 50; 缩放: 拉伸]</code><h2 id="ww1218644" class="ssehn-scriptexamheadn"><span>示例 2</span>&nbsp;</h2><p id="ww1218645" class="b-body">在视频播放 30 秒后启用用户与回放的交互。</p><code id="ww1218646" class="co-code code_pre_wrap">AVPlayer 播放 [对象名称: "容器"; 禁用交互: 是]<br />暂停/继续脚本 [持续时间(秒): 30]<br />AVPlayer 设置选项 [禁用交互: 否]</code><h2 id="ww1218647" class="ssehn-scriptexamheadn"><span>示例 3</span>&nbsp;</h2><p id="ww1218648" class="b-body">如果 FileMaker&nbsp;Go 移动到后台，暂停正在播放的音频文件。</p><code id="ww1218649" class="co-code code_pre_wrap">AVPlayer 设置选项 [后台暂停: 是]</code><h2 id="ww1218650" class="rh-relatedhead"><span>相关主题</span>&nbsp;</h2><p id="ww1218654" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/script-steps-alphabetical.html#ww66468" title="脚本步骤参考（按字母顺序排序的列表）">脚本步骤参考（按字母顺序排序的列表）</a></span></p><p id="ww1218658" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/script-steps-category.html#ww947337" title="脚本步骤参考（类别列表）">脚本步骤参考（类别列表）</a></span></p><p id="ww1218662" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/avplayer-play.html#ww1218451" title="AVPlayer 播放">AVPlayer 播放脚本步骤</a></span></p><p id="ww1218666" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/avplayer-set-playback-state.html#ww1218674" title="AVPlayer 设置回放状态">AVPlayer 设置回放状态脚本步骤</a></span></p><p id="ww1218670" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/getavplayerattribute.html#ww1300533" title="GetAVPlayerAttribute">GetAVPlayerAttribute 函数</a></span></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

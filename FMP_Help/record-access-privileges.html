@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>编辑记录访问权限</title><link rel="Prev" href="creating-editing-privilege-sets.html" title="上一个" /><link rel="Next" href="layouts-privileges.html" title="下一个" /><link rel="StyleSheet" href="css/security.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/security_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/record-access-privileges.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pu6acPG9Txc1h5aWmdJMavQ" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/record-access-privileges.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/protecting-databases.html#wwconnect_header">管理安全性</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/creating-editing-privilege-sets.html#wwconnect_header">创建和编辑权限集</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">编辑记录访问权限</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1028570" class="h3-head3">编辑记录访问权限</h1><p id="ww1028574" class="b-body"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081538" title="术语表">权限集</a></span>可以限制对文件中<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080975" title="术语表">记录</a></span>的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080593" title="术语表">访问</a></span>。对于文件，您可以设置：</p><p id="ww1028575" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>所有表的权限：可以限制权限集是否允许创建、编辑和删除某个文件的所有<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079977" title="术语表">表</a></span>中的记录。</p><p id="ww1028577" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>每个表的自定义权限：可以为每个表设置单独的记录访问限制。例如，权限集可限制下列能力：</p><p id="ww1028578" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>查看、编辑、创建或删除每个表中的所有记录。</p><p id="ww1028579" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>查看、编辑或删除每个表中的特定记录。权限通过为每条记录返回<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079996" title="术语表">布尔值</a></span>结果的计算加以限制。当计算结果为"真" (True) 时，允许访问特定的活动（例如查看记录）。当计算结果为"假"(False) 时，禁止访问该活动。</p><p id="ww1028582" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>访问或修改每个表中的特定<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078382" title="术语表">字段</a></span>。如果在不可见的表中限制对一个或多个字段的访问，则用户将看到 <code class="c-code code_pre_wrap">&lt;不可访问&gt;</code> 而不是字段数据。</p><p id="ww1106322" class="b-body">您只能对当前文件中定义的表设置记录访问权限。如果该文件与要保护的其他文件中的表之间存在关系，则必须创建<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1082917" title="术语表">帐户访问权限</a></span>条目和权限集来保护这些表。请参阅<span class="zh-hyper"><a href="../FMP_Help/accounts-privilege-sets-privileges.html#ww1082057" title="关于帐户、权限集和扩展权限">关于帐户、权限集和扩展权限</a></span>。</p><h2 id="ww1028588" class="hs1-headsub1">要编辑所有表的记录访问权限：</h2><p id="ww1028589" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>在"编辑权限集"对话框中开始编辑新的或现有的权限集。</p><p id="ww1028595" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352" title="创建和编辑权限集">创建和编辑权限集</a></span>。</p><p id="ww1028597" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>在"数据访问和设计"区域中，为"<strong class="o-onscreen">记录</strong>"选择一个选项。</p><p id="ww1028635" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.2pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 210.6pt"><p id="ww1028600" class="th-tablehead">编辑权限集要实现的目的</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 210.6pt"><p id="ww1028602" class="th-tablehead">选择</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028604" class="td-tabledata">允许在所有表中创建、编辑和删除记录</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028606" class="td-tabledata"><strong class="o-onscreen">在所有表中创建、编辑和删除</strong></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028611" class="td-tabledata">只允许创建和编辑所有表中的记录（禁止删除记录）</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028613" class="td-tabledata"><strong class="o-onscreen">在所有表中创建和编辑</strong></p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028618" class="td-tabledata">只允许查看所有表中的记录（禁止创建、编辑和删除记录）</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028620" class="td-tabledata"><strong class="o-onscreen">仅在所有表中查看</strong></p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028625" class="td-tabledata">禁止访问所有表中的记录</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028630" class="td-tabledata"><strong class="o-onscreen">全部不可访问</strong></p></td></tr></table></div><h2 id="ww1079615" class="hs1-headsub1">要编辑个别表的记录访问权限：</h2><p id="ww1079616" class="s1f-step1first"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">1.	</span></span>在"编辑权限集"对话框中开始编辑新的或现有的权限集。</p><p id="ww1079620" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352" title="创建和编辑权限集">创建和编辑权限集</a></span>。</p><p id="ww1079621" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">2.	</span></span>在"数据访问和设计"区域中，为"<strong class="o-onscreen">记录</strong>"选择"<strong class="o-onscreen">自定义权限</strong>"。</p><p id="ww1079862" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">3.	</span></span>在"自定义记录权限"对话框中，选择一个或多个要为其编辑自定义权限的表。（或者选择"<strong class="o-onscreen">任何新表</strong>"为以后创建的任何表设置权限。）</p><p id="ww1080203" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">4.	</span></span>要设置查看、编辑、创建和删除记录的自定义权限，请从"设置权限"区域中的"<strong class="o-onscreen">查看</strong>"、"<strong class="o-onscreen">编辑</strong>"、"<strong class="o-onscreen">创建</strong>"和"<strong class="o-onscreen">删除</strong>"列表中选择下列某个选项：</p><p id="ww1079688" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.20000000000004pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 135.83304pt"><p id="ww1079669" class="th-tablehead">选择</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 285.36696pt"><p id="ww1079671" class="th-tablehead">目的</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079673" class="td-tabledata"><strong class="o-onscreen">是</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079675" class="td-tabledata">允许权限（查看、编辑、创建或删除记录）。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079677" class="td-tabledata"><strong class="o-onscreen">受限的</strong>（仅当只选择一个表时可用）</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079679" class="td-tabledata">允许或禁止对表内特定记录的权限（查看、编辑和删除记录）。</p><p id="ww1079680" class="td-tabledata">在"指定计算方式"对话框中，输入一个计算，然后单击"<strong class="o-onscreen">确定</strong>"。请参阅<span class="zh-hyper"><a href="../FMP_Help/record-access-privileges.html#ww1028797" title="编辑记录访问权限">输入公式对记录逐一限制访问</a></span>，如下所示。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079685" class="td-tabledata"><strong class="o-onscreen">否</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079687" class="td-tabledata">禁止权限（查看、编辑、创建或删除记录）。</p></td></tr></table></div><p id="ww1079689" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>避免创建出现不一致的查看、编辑、创建和删除权限的组合。例如，您可能非常不希望允许用户删除他们不能查看的记录。</p><p id="ww1079690" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">5.	</span></span>要限制对表内特定字段的访问或修改，请继续下一步。</p><p id="ww1079691" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">6.	</span></span>选择包含希望限制访问的字段的表。然后，对于"<strong class="o-onscreen">字段访问权限</strong>"，选择"<strong class="o-onscreen">受限的</strong>"。</p><p id="ww1079692" class="s1r-step1reg"><span class="WebWorks_Number" style="width: 1.5em"><span class="zan-autonum">7.	</span></span>在"自定义字段权限"对话框中，选择希望限制访问的每个字段（或者选择"<strong class="o-onscreen">任何新字段</strong>"为以后创建的任何字段设置自定义权限）。然后选择下列某个选项：</p><p id="ww1079711" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 421.20000000000004pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 69.66648pt"><p id="ww1079695" class="th-tablehead">选择</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 351.53352pt"><p id="ww1079697" class="th-tablehead">目的</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079699" class="td-tabledata"><strong class="o-onscreen">可修改</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079701" class="td-tabledata">允许查看和编辑字段数据。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079703" class="td-tabledata"><strong class="o-onscreen">只可查看</strong></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079705" class="td-tabledata">允许查看字段数据。（不允许编辑字段数据。）</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079707" class="td-tabledata"><strong class="o-onscreen">不可访问</strong></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1079709" class="td-tabledata">禁止访问字段。</p><p id="ww1079710" class="td-tabledata"><span class="zan-autonum">注释</span>&nbsp;&nbsp;如果某个表可见但其中的一个或多个字段是禁止访问的，用户将看到 <code class="c-code code_pre_wrap">&lt;不可访问&gt;</code>，而不是字段数据。</p></td></tr></table></div><h2 id="ww1028728" class="hs1n-headsub1notes"><span>注释</span>&nbsp;</h2><p id="ww1028738" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>不能查看特定记录的用户仍可以浏览这些记录，但这些用户将看到 <code class="c-code code_pre_wrap">&lt;不可访问&gt;</code>，而不是每条记录内的字段数据。</p><p id="ww1028739" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>当限制访问文件中的记录、字段和表时，FileMaker <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081155" title="术语表">客户端</a></span>中的许多功能都会受到影响。下表总结了对部分功能的影响。</p><p id="ww1028795" class="ta-tableanchor">&nbsp;</p><div class="ww_skin_page_overflow"><table class="t1-table1" style="width: 450pt" cellspacing="0" summary=""><tr><td style="background-color: #DFDFDF; border-left-color: #bfbfbf; border-left-style: solid; border-left-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 103.01328pt"><p id="ww1028742" class="th-tablehead">功能</p></td><td style="background-color: #DFDFDF; border-right-color: #bfbfbf; border-right-style: solid; border-right-width: 0.5pt; border-top-color: #bfbfbf; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: bottom; width: 346.98672pt"><p id="ww1028744" class="th-tablehead">限制数据访问的影响</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028747" class="td-tabledata"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080234" title="术语表">查找</a></span>和重新查找</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028749" class="td-tabledata">查找和重新查找由三个组件定义，所有组件都会受到数据访问权限的影响：</p><p id="ww1028752" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>最低要求是，<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080727" title="术语表">关系</a></span>中使用的<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081458" title="术语表">匹配字段</a></span>必须具备查看权限。此外，不能查找在源表和目标表中均无法查看的任何记录，因为在这些情况下，不能进行匹配。这包括第一个相关的匹配记录以及用于拷贝下一个较大值或较小值的任何记录。</p><p id="ww1028753" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>最低要求是，查找的源字段必须具备查看权限。</p><p id="ww1028754" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>查找的目标字段必须具备编辑权限。</p><p id="ww1028755" class="td-tabledata">如果查找操作由于访问权限的限制而跳过某些记录，FileMaker 客户端并不显示错误消息。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028757" class="td-tabledata">访问相关数据</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028759" class="td-tabledata">最低要求是，关系中相匹配的两个字段必须同时具备查看权限，这样该关系才能工作。要显示的、基于匹配字段的任何<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081931" title="术语表">相关字段</a></span>必须至少具备查看权限。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028762" class="td-tabledata">查找</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028765" class="td-tabledata"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081706" title="术语表">搜索结果</a></span>总是经过筛选，只显示至少具备查看权限的记录。如果访问受到限制，Get (查找个数) <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080819" title="术语表">函数</a></span>的结果也会受到影响。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028769" class="td-tabledata"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078321" title="术语表">值列表</a></span></p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028771" class="td-tabledata">如果值列表基于字段的内容，并且对该字段的查看权限被禁止，那么该值列表不会显示任何值。正因如此，用户才不会无意间访问到机密信息。当访问受限制时，<code class="c-code code_pre_wrap">ValueListItems </code>函数的结果也会隐藏起来。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028774" class="td-tabledata"><span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080835" title="术语表">合计字段</a></span>和<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080972" title="术语表">计算字段</a></span></p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028777" class="td-tabledata">合计字段和汇总多条记录的计算字段中显示的结果会将查看权限被禁止的记录中的数据排除在外。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028779" class="td-tabledata">查找/替换、替换内容和拼写检查</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028781" class="td-tabledata">用户只能使用这些功能更改下列项目中的数据：</p><p id="ww1028782" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>具备编辑权限的记录。</p><p id="ww1028783" class="tb1-tablebullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>可修改的字段。</p></td></tr><tr><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028785" class="td-tabledata">脚本</p></td><td style="padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028787" class="td-tabledata">您可以设置脚本选项，使其以完全访问权限运行，这样就允许脚本执行权限有限的用户通常无法执行的操作。如果不启用此选项，任何试图访问或更改受限数据的脚本步骤都将失败。请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-scripts.html#ww1059866" title="创建并编辑脚本">创建并编辑脚本</a></span>。</p></td></tr><tr><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028792" class="td-tabledata">Apple 事件</p></td><td style="background-color: #F2F2F2; padding-bottom: 2pt; padding-left: 10px; padding-right: 10px; padding-top: 4pt; vertical-align: top"><p id="ww1028794" class="td-tabledata">数据访问权限会影响用户使用 Apple 事件获取、设置和删除数据的能力。如果用户没有相应的访问权限，某些 Apple 事件命令可能会失败。</p></td></tr></table></div><h2 id="ww1028797" class="hs1-headsub1">输入公式对记录逐一限制访问</h2><p id="ww1028798" class="b-body">要允许或禁止对表内特定记录的查看、编辑和删除权限，需要指定一个用于确定是否允许该权限的<span class="g-glosslink">布尔值</span>计算公式。对于数据库中的每条记录，当计算结果为"真" (True) 或非零值时，则允许访问；当计算结果为"假"(False) 或零时，则禁止访问。下面举两个例子：</p><p id="ww1028800" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要使访问仅限于当前帐户创建的记录：定义名为 <code class="c-code code_pre_wrap">Record_Created_By</code> 的文本字段，为该字段设置自动输入选项以便在创建记录时自动输入帐户名。（请参阅<span class="zh-hyper"><a href="../FMP_Help/automatic-data-entry.html#ww1136760" title="定义自动数据输入">定义自动数据输入</a></span>。）然后，在定义自定义记录访问权限时使用以下计算公式：</p><code id="ww1028804" class="co1-code1 code_pre_wrap">Record_Created_By = Get (帐户名)</code><p id="ww1028805" class="b1-body1">对于上面的计算结果为"真" (True) 的记录，用户将只具有浏览访问权限。</p><p id="ww1028806" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要使访问仅限于当前日期创建的记录：定义名为 <code class="c-code code_pre_wrap">Record_creation_date</code> 的日期字段，为该字段设置自动输入选项以便在创建记录时自动输入创建日期。（请参阅<span class="zh-hyper"><a href="../FMP_Help/automatic-data-entry.html#ww1136760" title="定义自动数据输入">定义自动数据输入</a></span>。）然后，在定义自定义记录访问权限时使用以下计算公式：</p><code id="ww1028810" class="co1-code1 code_pre_wrap">Record_creation_date = Get (当前日期)</code><p id="ww1028811" class="b1-body1">对于上面的计算结果为"真" (True) 的记录，用户将只具有浏览访问权限。</p><p id="ww1085558" class="nt-notetip"><span class="zan-autonum">提示&nbsp;</span>如果指定计算公式禁止查看表中的特定记录，那么在大多数情况下，应使用相同的计算公式禁止编辑和删除相同类型的记录。否则，您可能会无意中允许用户编辑或删除他们不能查看的记录。</p><h2 id="ww1085559" class="hs1n-headsub1notes"><span>注释</span>&nbsp;</h2><p id="ww1085560" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>确定记录访问权限的布尔值计算公式可能会返回意外的结果，尤其是当该公式基于用户可编辑的字段时。例如，只对特定记录享有访问权限的用户有可能在编辑记录后无意中拒绝访问此记录。用户可能会更改记录的内容，这会更改布尔记录访问算式的结果，导致其解析为"False"；然后当该用户退出该记录后便再也无法查看、编辑或删除它了。</p><p id="ww1085531" class="b1-body1">因为这些更改会在用户退出记录时立即提交，所以做出此类更改的用户将再也无法返回该记录。（在大多数情况下，应该针对用户不能直接编辑的字段设置记录访问计算公式，例如包含帐户名、创建日期和修改日期的自动输入字段。）</p><p id="ww1028816" class="b1-body1">此外，如果该文件是<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080724" title="术语表">共享</a></span>的，并且确定记录访问权限的布尔值计算公式包含一个或多个<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081535" title="术语表">全局字段</a></span>，则可以通过将某些全局字段移动到独立的表中来提高网络性能。请参阅<span class="zh-hyper"><a href="../FMP_Help/global-fields.html#ww1029739" title="定义全局字段（具有全局存储的字段）">定义全局字段（具有全局存储的字段）</a></span>中的"注释"部分。</p><p id="ww1050981" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要完全支持多窗口，让每个窗口包含各自的搜索结果，合计值应作为搜索结果的一部分。一条记录可以出现在多个窗口中，并且每个窗口都有自己的搜索结果和排序顺序。出于这些原因，请不要在权限计算公式中使用合计或 Get 函数，这些函数依赖于使用特定搜索结果的值。</p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

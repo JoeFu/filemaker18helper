@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="keywords" content="FileMaker Go" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>FileMaker Pro 18 Advanced 中的新功能</title><link rel="Prev" href="basics.html" title="上一个" /><link rel="Next" href="using-help.html" title="下一个" /><link rel="StyleSheet" href="css/fmp_basics.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/fmp_basics_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/new-features.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pEFNhW7tslyK_002fac20FHYqlw" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/new-features.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/basics.html#wwconnect_header">FileMaker Pro Advanced 基础</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">FileMaker Pro 18 Advanced 中的新功能</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1133564" class="h2-head2">FileMaker Pro 18 Advanced 中的新功能</h1><p id="ww1155975" class="b-body">FileMaker&nbsp;Pro&nbsp;18 Advanced 包括以下新功能和改进。</p><h2 id="ww1159656" class="hs1-headsub1">改善数据导入和文件转换</h2><p id="ww1159657" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>凭借新的"导入字段映射"对话框，您可以：</p><p id="ww1160299" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>从可以搜索的列表中选择目标字段</p><p id="ww1160300" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>选择源文件中的任何记录以用作某些导入文件类型的字段名称</p><p id="ww1160301" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>对于每个目标字段，选择是否在导入时执行自动输入选项</p><p id="ww1158914" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>导入使用自定义字符分隔字段值的数据</p><p id="ww1158920" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/importing-data.html#ww1027874" title="将数据导入 FileMaker Pro Advanced">将数据导入 FileMaker Pro Advanced</a></span> 和<span class="zh-hyper"><a href="../FMP_Help/import-export-formats.html#ww1046089" title="支持的导入/导出文件格式">支持的导入/导出文件格式</a></span>。</p><p id="ww1158922" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>更多转换选项 - 在转换某些支持的文件类型时，您现在可以指定用于分隔字段值的自定义字符、选择要用作字段名称的任何记录、选择要包含的字段、指定目标表名称。请参阅<span class="zh-hyper"><a href="../FMP_Help/converting-to-new-file.html#ww1041065" title="将数据文件转换为新的 FileMaker Pro Advanced 文件">将数据文件转换为新的 FileMaker Pro Advanced 文件</a></span>。</p><h2 id="ww1158967" class="hs1-headsub1">安全性增强</h2><p id="ww1158968" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>凭借新的"管理安全性"对话框，您可以：</p><p id="ww1161047" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>使用按帐户类型筛选的帐户访问权限列表、直接在列表中为用户和群组分配权限集、在不退出列表的情况下在详情面板中执行其他常见任务</p><p id="ww1158970" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>在"高级安全性设置"对话框中管理权限集、扩展权限和文件访问权限</p><p id="ww1158971" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>查看文件的当前主机是否支持选定的验证类型</p><p id="ww1159021" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-accounts.html#ww1098372" title="创建和编辑帐户访问">创建和编辑帐户访问</a></span>、<span class="zh-hyper"><a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352" title="创建和编辑权限集">创建和编辑权限集</a></span>、<span class="zh-hyper"><a href="../FMP_Help/managing-extended-privileges.html#ww1103551" title="创建和编辑扩展权限">创建和编辑扩展权限</a></span>和<span class="zh-hyper"><a href="../FMP_Help/authorizing-access.html#ww1043154" title="对文件授予访问权限">对文件授予访问权限</a></span>。</p><p id="ww1158995" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>管理没有完全访问权限的帐户的权限 - 您现在可以授予用户创建和删除文件访问权限的有限权限，并分配现有权限集，但不允许其修改具有完全访问权限集的用户或群组或创建或编辑权限集。请参阅<span class="zh-hyper"><a href="../FMP_Help/other-privileges.html#ww1029402" title="编辑其他权限">编辑其他权限</a></span>。</p><p id="ww1158999" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>未签名的插件通知 - 如果插件未经其开发人员数字签名，FileMaker&nbsp;Pro Advanced 会向您发送通知。请参阅<span class="zh-hyper"><a href="../FMP_Help/permitted-hosts-preferences.html#ww1032163" title="设置信任的主机和插件首选项">设置信任的主机和插件首选项</a></span>。</p><p id="ww1159478" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>默认情况下需要完全访问权限以引用文件 - 现在，在新建的文件中默认启用要求完全访问权限集使用文件引用的选项。该选项在现有文件中保持不变。请参阅<span class="zh-hyper"><a href="../FMP_Help/authorizing-access.html#ww1043154" title="对文件授予访问权限">对文件授予访问权限</a></span>。</p><p id="ww1159482" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>用于对数据进行数字签名的功能 - 新功能允许您使用加密密钥对数据进行数字签名并验证签名数据的签名。请参阅下面的"新功能"。</p><h2 id="ww1160153" class="hs1-headsub1">改进的易用性</h2><p id="ww1160154" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>使用 Shift-箭头键移动对象 - 现在，在布局模式下使用 Shift-箭头键来移动对象的增量要比使用箭头键大 10 倍。请参阅<span class="zh-hyper"><a href="../FMP_Help/mode-shortcuts-windows.html#ww1042904" title="模式键盘快捷方式 (Windows)">模式键盘快捷方式 (Windows)</a></span> 和<span class="zh-hyper"><a href="../FMP_Help/mode-shortcuts-os-x.html#ww1028037" title="模式键盘快捷方式 (macOS)">模式键盘快捷方式 (macOS)</a></span>。</p><p id="ww1160161" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>读取和写入外部数据文件 - 创建读取、写入和管理外部数据文件的脚本 - 例如，以自定义格式写入日志文件或导出数据。请参阅下面的"新脚本步骤"。</p><p id="ww1157930" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>使用特定于版本的 URL 打开文件 - 您现在可以使用 URL 中的 fmp18 架构专门使用 FileMaker&nbsp;Pro 18 Advanced 或 FileMaker&nbsp;Go 18 打开文件。请参阅<span class="zh-hyper"><a href="../FMP_Help/opening-files-url.html#ww1077454" title="使用 URL 打开文件">使用 URL 打开文件</a></span>。</p><p id="ww1160148" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>启动时打开定制化 App - 您现在可以在命令行安装期间使用个性化文件来指定 FileMaker&nbsp;Pro Advanced 启动时打开的定制化 App。请参阅《<span class="h-hyperlink"><a href="https://www.filemaker.com/redirects/fmp18_admin.html?page=doc_net_install&amp;lang=zh" target="external_window">FileMaker Pro Advanced 网络安装设置指南</a></span>》。</p><p id="ww1160150" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>将文件另存为 XML - 您现在可将 FileMaker&nbsp;Pro Advanced 文件另存为 XML 格式，以表示文件的架构、布局、脚本和其他部分。您可以使用 XML 文件记录版本之间定制化 App 的变更，还可以使用基于标准文本的工具来比较版本。请参阅<span class="zh-hyper"><a href="../FMP_Help/documenting-schemas.html#ww1071440" title="记录数据库架构">记录数据库架构</a></span>、<span class="zh-hyper"><a href="../FMP_Help/save-a-copy-as-xml.html#ww1273800" title="另存为 XML">另存为 XML脚本步骤</a></span>。</p><h2 id="ww1157537" class="hs1-headsub1">脚本步骤</h2><p id="ww1155979" class="b-body">新脚本步骤</p><p id="ww1155980" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>关闭数据文件 - 关闭已打开的数据文件。请参阅<span class="zh-hyper"><a href="../FMP_Help/close-data-file.html#ww1258775" title="关闭数据文件">关闭数据文件脚本步骤</a></span>。</p><p id="ww1155981" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>创建数据文件 - 创建一个关闭的空数据文件，然后用"打开数据文件"脚本步骤将其打开，再使用"写入数据文件"脚本步骤添加数据。请参阅<span class="zh-hyper"><a href="../FMP_Help/create-data-file.html#ww1258616" title="创建数据文件">创建数据文件脚本步骤</a></span>。</p><p id="ww1155983" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>删除文件 - 删除文件。请参阅<span class="zh-hyper"><a href="../FMP_Help/delete-file.html#ww1259051" title="删除文件">删除文件脚本步骤</a></span>。</p><p id="ww1155984" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>获取数据文件位置 - 返回已打开的数据文件的读写位置。请参阅<span class="zh-hyper"><a href="../FMP_Help/get-data-file-position.html#ww1259105" title="获取数据文件位置">获取数据文件位置脚本步骤</a></span>。</p><p id="ww1155985" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>获取文件存在的值 - 如果文件存在，则返回"1"(真)；否则返回"0"(假)。请参阅<span class="zh-hyper"><a href="../FMP_Help/get-file-exists.html#ww1259229" title="获取文件存在的值">获取文件存在的值脚本步骤</a></span>。</p><p id="ww1156175" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>获取文件大小 - 返回文件的大小（以字节为单位）。请参阅<span class="zh-hyper"><a href="../FMP_Help/get-file-size.html#ww1259358" title="获取文件大小">获取文件大小脚本步骤</a></span>。</p><p id="ww1160513" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>打开数据文件 - 打开数据文件，用于其他数据文件脚本步骤。请参阅<span class="zh-hyper"><a href="../FMP_Help/open-data-file.html#ww1259483" title="打开数据文件">打开数据文件脚本步骤</a></span>。</p><p id="ww1160518" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>打开个人收藏 - 打开个人收藏窗口。请参阅<span class="zh-hyper"><a href="../FMP_Help/open-my-apps.html#ww1260222" title="打开个人收藏">打开个人收藏脚本步骤</a></span>。</p><p id="ww1155988" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>读取数据文件 - 从已打开的数据文件读取数据。请参阅<span class="zh-hyper"><a href="../FMP_Help/read-from-data-file.html#ww1259757" title="读取数据文件">读取数据文件脚本步骤</a></span>。</p><p id="ww1155989" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>重命名文件 - 重命名文件。请参阅<span class="zh-hyper"><a href="../FMP_Help/rename-file.html#ww1259783" title="重命名文件">重命名文件脚本步骤</a></span>。</p><p id="ww1156599" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>另存为 XML - 将当前的文件另存为 XML 格式表示的架构、布局和脚本。请参阅<span class="zh-hyper"><a href="../FMP_Help/save-a-copy-as-xml.html#ww1273800" title="另存为 XML">另存为 XML脚本步骤</a></span>。</p><p id="ww1155990" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>设置数据文件位置 - 设置已打开的数据文件的读写位置。请参阅<span class="zh-hyper"><a href="../FMP_Help/set-data-file-position.html#ww1259908" title="设置数据文件位置">设置数据文件位置脚本步骤</a></span>。</p><p id="ww1158750" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>设置错误日志 - 控制当前文件的脚本运行时是否记录错误。请参阅<span class="zh-hyper"><a href="../FMP_Help/set-error-logging.html#ww1269257" title="设置错误日志">设置错误日志脚本步骤</a></span>。</p><p id="ww1155991" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>写入数据文件 - 将数据写入已打开的数据文件。请参阅<span class="zh-hyper"><a href="../FMP_Help/write-to-data-file.html#ww1260033" title="写入数据文件">写入数据文件脚本步骤</a></span>。</p><p id="ww1155992" class="b-body">更改的脚本步骤</p><p id="ww1155993" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>打开我的 App - 该脚本步骤现变为"打开个人收藏"。请参阅<span class="zh-hyper"><a href="../FMP_Help/open-my-apps.html#ww1260222" title="打开个人收藏">打开个人收藏脚本步骤</a></span>。</p><p id="ww1156509" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>上传到 FileMaker Server - 该脚本步骤现变为"打开上传到主机"。请参阅<span class="zh-hyper"><a href="../FMP_Help/upload-to-server.html#ww1275158" title="打开上传到主机">打开上传到主机脚本步骤</a></span>。</p><p id="ww1156888" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>从 URL 插入</p><p id="ww1159825" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>支持的 URL 协议现包括 smb、smtp、smtps、ldap 和 ldaps。</p><p id="ww1159844" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>现在，借助 cURL 以及 <code class="c-code code_pre_wrap">--mail-auth</code>、<code class="c-code code_pre_wrap">--mail-from</code> 和 <code class="c-code code_pre_wrap">--mail-rcpt</code> 选项，支持通过 SMTP 发送电子邮件。包括发送 HTML 格式的电子邮件。</p><p id="ww1159858" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>现在，借助 <code class="c-code code_pre_wrap">--no-compressed</code> cURL 选项，支持从服务器请求未压缩的响应。</p><p id="ww1157314" class="bu2-bullet2"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>当 cURL 库返回错误时，如果目标是文本字段或文本变量，则返回的数据现在将存储在目标中。</p><p id="ww1159874" class="b1-body1">请参阅<span class="zh-hyper"><a href="../FMP_Help/insert-from-url.html#ww1210738" title="从 URL 插入">从 URL 插入脚本步骤</a></span>和<span class="zh-hyper"><a href="../FMP_Help/curl-options.html#ww1127302" title="支持的 cURL 选项">支持的 cURL 选项</a></span>。</p><p id="ww1157140" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>打开帮助 - FileMaker&nbsp;WebDirect 不再支持该脚本步骤，因为 FileMaker&nbsp;WebDirect 不再包含"帮助"。请参阅<span class="zh-hyper"><a href="../FMP_Help/open-help.html#ww1217432" title="打开帮助">打开帮助脚本步骤</a></span>。</p><p id="ww1157258" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>从设备插入 - 该脚本步骤现在可识别 PDF417、ITF-14、Aztec 和数据矩阵条形码类型。请参阅<span class="zh-hyper"><a href="../FMP_Help/insert-from-device.html#ww1210454" title="从设备插入">从设备插入脚本步骤</a></span>。</p><p id="ww1157289" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>将记录另存为 PDF - 该脚本步骤现在支持"<strong class="o-onscreen">追加至现有 PDF</strong>"选项和 FileMaker&nbsp;Go 中的"安全性"选项卡选项。请参阅<span class="zh-hyper"><a href="../FMP_Help/save-records-as-pdf.html#ww1212730" title="将记录另存为 PDF">将记录另存为 PDF脚本步骤</a></span>。</p><p id="ww1157359" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>导入记录 - 该脚本步骤现在支持"导入字段映射"对话框中可用的新选项。请参阅<span class="zh-hyper"><a href="../FMP_Help/import-records.html#ww1212259" title="导入记录">导入记录脚本步骤</a></span>。</p><p id="ww1157432" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>转换文件 - 对于支持的文件格式，该脚本步骤现在支持使用源文件中的任何一行作为转换文件中的字段名称，选择要导入的字段，指定目标表名称。请参阅<span class="zh-hyper"><a href="../FMP_Help/convert-file.html#ww1215464" title="转换文件">转换文件脚本步骤</a></span>。</p><h2 id="ww1157436" class="hs1-headsub1">函数</h2><p id="ww1159530" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>"指定计算方式"对话框和"帮助"中的某些函数组已经过重新组织，以更好地反映其用途。请参阅<span class="zh-hyper"><a href="../FMP_Help/japanese-functions.html#ww1301415" title="日语函数">日语函数</a></span>、<span class="zh-hyper"><a href="../FMP_Help/json-functions-category.html#ww1282789" title="JSON 函数">JSON 函数</a></span>和<span class="zh-hyper"><a href="../FMP_Help/miscellaneous-functions.html#ww1286624" title="其他函数">其他函数</a></span>。</p><p id="ww1156016" class="b-body">新函数</p><p id="ww1159388" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>CryptGenerateSignature - 生成数据的数字签名。请参阅 <span class="zh-hyper"><a href="../FMP_Help/cryptgeneratesignature.html#ww1281421" title="CryptGenerateSignature">CryptGenerateSignature 函数</a></span>。</p><p id="ww1160975" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>CryptVerifySignature - 验证数字签名对数据是否有效。请参阅 <span class="zh-hyper"><a href="../FMP_Help/cryptverifysignature.html#ww1281466" title="CryptVerifySignature">CryptVerifySignature 函数</a></span>。</p><p id="ww1160979" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get (帐户类型) - 返回当前帐户的验证类型。请参阅 <span class="zh-hyper"><a href="../FMP_Help/get-accounttype.html#ww1287990" title="Get (帐户类型)">Get (帐户类型) 函数</a></span>。</p><p id="ww1160982" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get (打开数据文件信息) - 返回文件 ID 和每个已打开数据文件的路径。请参阅 <span class="zh-hyper"><a href="../FMP_Help/get-opendatafileinfo.html#ww1291156" title="Get (打开数据文件信息)">Get (打开数据文件信息) 函数</a></span>。</p><p id="ww1156941" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>SetRecursion - 设置表达式中递归和循环的最大迭代次数。请参阅 <span class="zh-hyper"><a href="../FMP_Help/set-recursion.html#ww1286394" title="SetRecursion">SetRecursion 函数</a></span>。</p><p id="ww1156020" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>While - 条件为真时，重复逻辑并返回结果。请参阅 <span class="zh-hyper"><a href="../FMP_Help/while.html#ww1286452" title="While">While 函数</a></span>。</p><p id="ww1157169" class="b-body">更改的函数</p><p id="ww1157197" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>Get (上一个外部错误详情) - 此函数现在在插件未安装或加载时返回信息。请参阅 <span class="zh-hyper"><a href="../FMP_Help/get-lastexternalerrordetail.html#ww1290487" title="Get (上一个外部错误详情)">Get (上一个外部错误详情) 函数</a></span>。</p><p id="ww1161088" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>GetLayoutObjectAttribute - 在 FileMaker&nbsp;WebDirect 中，此函数在作用于图表时将返回 <code class="c-code code_pre_wrap">content</code> 和 <code class="c-code code_pre_wrap">source</code> 属性的结果，在作用于 Web 查看器时将返回 <code class="c-code code_pre_wrap">source</code> 属性的结果。请参阅 <span class="zh-hyper"><a href="../FMP_Help/getlayoutobjectattribute.html#ww1299938" title="GetLayoutObjectAttribute">GetLayoutObjectAttribute 函数</a></span>。</p><h2 id="ww1156021" class="hs1-headsub1">更改和删除的功能</h2><p id="ww1157000" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>现在，使用非尾递归的自定义函数默认限制为 50,000 次而非 10,000 次迭代，具体取决于内存中可用的调用堆栈空间。可使用 <span class="zh-hyper"><a href="../FMP_Help/set-recursion.html#ww1286394" title="SetRecursion">SetRecursion 函数</a></span>来增大或减小此限制。</p><p id="ww1157216" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>macOS 已恢复对 Photoshop 图像格式的支持。请参阅<span class="zh-hyper"><a href="../FMP_Help/data-in-container-fields.html#ww1053046" title="使用容器字段中的数据">使用容器字段中的数据</a></span>。</p><p id="ww1159580" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>FileMaker&nbsp;Pro Advanced 应用程序的名称现包含版本号。如果使用依赖于应用程序名称的外部脚本，可能需要对其进行更新。</p><h2 id="ww1128712" class="rh-relatedhead"><span>相关主题</span>&nbsp;</h2><p id="ww1128716" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/feature-compatibility.html#ww1032935" title="FileMaker Pro Advanced 与以前版本不兼容的功能">FileMaker Pro Advanced 与以前版本不兼容的功能</a></span></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>使用脚本自动执行任务</title><link rel="Prev" href="example-charting-delimited-data.html" title="上一个" /><link rel="Next" href="creating-editing-scripts.html" title="下一个" /><link rel="StyleSheet" href="css/create_script.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/create_script_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/scripts.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pP0eQqP2Ak_002bppp1HHr16duw" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/scripts.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_current">使用脚本自动执行任务</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww1059423" class="h1-head1">使用脚本自动执行任务</h1><p id="ww1059425" class="b-body">脚本可以执行像设置打印方向这样的简单任务，也可以执行像准备给每个客户端发送自定义邮件这样的复杂任务。</p><p id="ww1040861" class="b-body">例如，您可以定义一套复杂的任务，为"客户端"数据库中上周进行购买的客户创建一封感谢邮件。脚本会根据每个客户撰写适合的电子邮件。该脚本会在发送消息前切换到预览模式并暂停，以便您可以查看其外观。单击"销售条目"布局上的按钮，启动整个任务。</p><p id="ww1059875" class="b-body">您可以按以下方式生成脚本：从一个称为脚本步骤的 FileMaker&nbsp;Pro Advanced 命令列表中进行选择，指定必要的选项，然后按执行任务的正确顺序安排步骤。</p><p id="ww1070206" class="b-body">脚本通常在<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081155" title="术语表">客户端</a></span>上运行，但是您可能希望在 FileMaker&nbsp;Server 或 <span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1083449" title="术语表">FileMaker&nbsp;Cloud for AWS</a></span> 上运行某些脚本以改善性能或自动定期运行脚本。请参阅<span class="zh-hyper"><a href="../FMP_Help/running-scripts-on-server.html#ww1070228" title="关于在 FileMaker Server 和 FileMaker Cloud for AWS 上运行脚本">关于在 FileMaker Server 和 FileMaker Cloud for AWS 上运行脚本</a></span>。</p><h2 id="ww1059876" class="hs1-headsub1">计划脚本</h2><p id="ww1059878" class="b-body">花费在计划脚本上的时间越多，脚本按您的需求完成的可能性就越大。在进行计划时，请回答下列问题：</p><p id="ww1027611" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>是否可以将任务分解为若干小任务？您可以为每个小任务定义<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078377" title="术语表">子脚本</a></span>，然后定义执行子脚本的脚本。设计和测试若干小脚本要比设计和测试一个复杂的脚本更为容易。您还可以在其他领域重复使用这些子脚本。（使用<span class="zh-hyper"><a href="../FMP_Help/perform-script.html#ww1207665" title="执行脚本">执行脚本脚本步骤</a></span>执行其他脚本内部的子脚本。）</p><p id="ww1027616" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>在何种情况下应该运行什么脚本步骤？需要始终运行每个脚本步骤吗？某些脚本是否应该运行若干次，直到满足某个条件？脚本是否调用其他脚本和子脚本？可以按照多种不同方法来控制脚本进度。有关创建具有条件步骤脚本的更多信息，请参阅<span class="zh-hyper"><a href="../FMP_Help/control-script-steps.html#ww1206576" title="控制脚本步骤">控制脚本步骤</a></span>。</p><p id="ww1046443" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>想要让脚本在某个特定<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079999" title="术语表">布局</a></span>上运行？因为脚本是在文件级别下定义的，并且可以从任何布局调用，所以您应确保脚本可以在预期的布局中执行。使用<span class="zh-hyper"><a href="../FMP_Help/go-to-layout.html#ww1208509" title="转到布局">转到布局脚本步骤</a></span>更改布局。</p><p id="ww1046404" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>应该针对数据库中的所有记录、当前搜索结果、还是特定记录集执行脚本？（使用<span class="zh-hyper"><a href="../FMP_Help/found-sets-script-steps.html#ww1213032" title="搜索结果脚本步骤">搜索结果脚本步骤</a></span>仅包括希望在搜索结果中处理的记录。）</p><p id="ww1046359" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>您需要的所有数据是否在一个<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081689" title="术语表">数据库文件</a></span>中，如果不在一个文件中，脚本是否会在多个文件中执行？如果使用多个文件，脚本会打开哪些文件？应该在哪个文件中定义脚本？在大多数情况下，应该在处理数据的文件中定义脚本。具有多个文件的数据库解决方案可能需要在每个文件中有单独的脚本，这取决于尝试利用脚本执行的任务的复杂程度。</p><p id="ww1027636" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>脚本以哪条<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080975" title="术语表">记录</a></span>开始？例如，使用 <span class="zh-hyper"><a href="../FMP_Help/loop.html#ww1207500" title="Loop">Loop脚本步骤</a></span>时，您必须决定循环是从第一条或最后一条记录、特定记录、还是<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081706" title="术语表">搜索结果</a></span>中的当前记录开始。（使用<span class="zh-hyper"><a href="../FMP_Help/go-to-record-request-page.html#ww1208953" title="转到记录/请求/页面">转到记录/请求/页面脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/go-to-related-record.html#ww1209048" title="转到相关记录">转到相关记录脚本步骤</a></span>或<span class="zh-hyper"><a href="../FMP_Help/go-to-portal-row.html#ww1208790" title="转到入口行">转到入口行脚本步骤</a></span>指定起始记录。如果没有包括确定当前记录的导航脚本步骤，则在执行脚本时循环从当前记录开始。） </p><p id="ww1034308" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>要使用哪个窗口？脚本最初附加到一个特定窗口，该窗口可能在背景中。脚本保留在该窗口中，直到脚本化操作切换到另一个窗口为止。例如，使用<span class="zh-hyper"><a href="../FMP_Help/select-window.html#ww1214773" title="选择窗口">选择窗口脚本步骤</a></span>指定另一个窗口。如果指定的窗口不可用，则脚本将切换到文件的前台窗口。当您暂停一个脚本时，关联的窗口会变成前台窗口（如果它可用）。请参阅<span class="zh-hyper"><a href="../FMP_Help/windows-script-steps.html#ww1214101" title="窗口脚本步骤">窗口脚本步骤</a></span>。</p><p id="ww1027649" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>脚本是否应该在<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081307" title="术语表">模式</a></span>之间切换？脚本可以在浏览、查找、布局或预览模式中运行。在脚本执行任务前，请确保其处于正确的模式下。例如，使用<span class="zh-hyper"><a href="../FMP_Help/enter-browse-mode.html#ww1208206" title="进入浏览模式">进入浏览模式脚本步骤</a></span>修改字段和记录中的数据，使用<span class="zh-hyper"><a href="../FMP_Help/enter-find-mode.html#ww1208277" title="进入查找模式">进入查找模式脚本步骤</a></span>设置或执行<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1080244" title="术语表">查找请求</a></span>。</p><p id="ww1027657" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>在布局模式下执行的脚本会在执行之前自动切换到浏览模式。</p><p id="ww1027660" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>脚本需要哪些<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1078382" title="术语表">字段</a></span>和布局？某些步骤（如<span class="zh-hyper"><a href="../FMP_Help/go-to-field.html#ww1208429" title="转到字段">转到字段脚本步骤</a></span>和<span class="zh-hyper"><a href="../FMP_Help/insert-text.html#ww1211013" title="插入文本">插入文本脚本步骤</a></span>）要求字段位于当前布局上，而其他步骤（如<span class="zh-hyper"><a href="../FMP_Help/set-field.html#ww1211284" title="设置字段">设置字段脚本步骤</a></span>）则不要求。使用<span class="zh-hyper"><a href="../FMP_Help/go-to-layout.html#ww1208509" title="转到布局">转到布局脚本步骤</a></span>切换到具有脚本所要求字段的布局，或者将灰色区域上的字段放到布局的右侧以使字段可用于脚本步骤而不是用户。</p><p id="ww1027699" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>是否应该按特定顺序处理记录？在当前<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081455" title="术语表">排序顺序</a></span>、指定的排序顺序或未排序（按记录的创建顺序）之间选择。在处理记录前输入循环以正确对其进行排序时，使用<span class="zh-hyper"><a href="../FMP_Help/sort-records.html#ww1213847" title="对记录排序">对记录排序脚本步骤</a></span>或<span class="zh-hyper"><a href="../FMP_Help/unsort-records.html#ww1214030" title="取消记录排序">取消记录排序脚本步骤</a></span>。</p><p id="ww1027708" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>脚本应该如何在多个字段或记录中执行？（使用<span class="zh-hyper"><a href="../FMP_Help/go-to-record-request-page.html#ww1208953" title="转到记录/请求/页面">转到记录/请求/页面脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/loop.html#ww1207500" title="Loop">Loop脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/exit-loop-if.html#ww1207066" title="Exit Loop If">Exit Loop If脚本步骤</a></span>和 <span class="zh-hyper"><a href="../FMP_Help/end-loop.html#ww1206990" title="End Loop">End Loop脚本步骤</a></span>控制所处理的多个字段或记录）。</p><p id="ww1027719" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>脚本应该在何时结束？在所有脚本都已运行之后？在处理完所有记录后结束？（使用<span class="zh-hyper"><a href="../FMP_Help/if-script-step.html#ww1207308" title="If">If脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/else-if.html#ww1206839" title="Else If">Else If脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/else.html#ww1206763" title="Else">Else脚本步骤</a></span>，在脚本满足指定条件时执行<span class="zh-hyper"><a href="../FMP_Help/exit-script.html#ww1207151" title="退出脚本">退出脚本脚本步骤</a></span>等任务。）</p><p id="ww1027732" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>用户是否应该能在脚本运行时停止脚本？脚本是否包含当脚本完成过早时导致数据不完整或不正确的过程？使用<span class="zh-hyper"><a href="../FMP_Help/allow-user-abort.html#ww1206591" title="允许用户异常中断">允许用户异常中断脚本步骤</a></span>来控制用户是否可停止脚本。</p><p id="ww1052504" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如何测试脚本？使用<span class="zh-hyper"><a href="../FMP_Help/pause-resume-script.html#ww1207588" title="暂停/继续脚本">暂停/继续脚本脚本步骤</a></span>在脚本中的预定义位置暂停。保存数据库的副本，然后在数据库中定义并测试脚本以保留原始数据。</p><p id="ww1046295" class="n1-note1"><span class="zan-autonum">注释&nbsp;&nbsp;</span>您可以使用<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081014" title="术语表">脚本调试器</a></span>来测试脚本和解决相关问题。请参阅<span class="zh-hyper"><a href="../FMP_Help/debugging-scripts.html#ww1033267" title="调试脚本">调试脚本</a></span>。</p><p id="ww1027734" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>如何处理错误条件（如空的搜索结果）？可以使用 <span class="zh-hyper"><a href="../FMP_Help/get-lasterror.html#ww1290406" title="Get (上一个错误)">Get (上一个错误) 函数</a></span>捕获 FileMaker&nbsp;Pro Advanced 报告的上一个错误条件。使用此函数和 <span class="zh-hyper"><a href="../FMP_Help/if-script-step.html#ww1207308" title="If">If脚本步骤</a></span>、<span class="zh-hyper"><a href="../FMP_Help/else-if.html#ww1206839" title="Else If">Else If脚本步骤</a></span>以及 <span class="zh-hyper"><a href="../FMP_Help/else.html#ww1206763" title="Else">Else脚本步骤</a></span>创建脚本，对用户错误或意外结果做出合理地反应。要获得更大的控制，请使用<span class="zh-hyper"><a href="../FMP_Help/set-error-capture.html#ww1207877" title="设置错误捕获">设置错误捕获脚本步骤</a></span>来禁止显示通常会在下列情况下显示的错误警告，然后使用<span class="zh-hyper"><a href="../FMP_Help/show-custom-dialog.html#ww1220335" title="显示自定义对话框">显示自定义对话框脚本步骤</a></span>。</p><p id="ww1027754" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>是否应该允许所有用户执行全部脚本？使用<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081538" title="术语表">权限集</a></span>控制用户对脚本的访问。通过使用权限集，用户可以执行或修改单个脚本或所有脚本，也可以不执行或修改任何脚本。还可以为以后在文件中定义的新脚本的每个权限集设置默认权限。设置脚本以完全访问权限运行将允许该脚本在用户所分配的权限通常不允许的情况下代表用户执行任务。请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-privilege-sets.html#ww1088352" title="创建和编辑权限集">创建和编辑权限集</a></span>。</p><p id="ww1027759" class="bu1-bullet1"><span class="WebWorks_Number" style="width: 1.5em"><span>•</span></span>用户如何执行脚本？您需要创建<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1079825" title="术语表">按钮</a></span>来执行脚本，或指定要添加到"脚本"菜单中的脚本。脚本还可以从"脚本工作区"中运行，也可以在<span class="g-glosslink"><a href="../FMP_Help/glossary.html#ww1081011" title="术语表">脚本触发器</a></span>处于激活状态时运行。例如，可以在数据库打开时使用 <span class="zh-hyper"><a href="../FMP_Help/onfirstwindowopen.html#ww1033390" title="OnFirstWindowOpen">OnFirstWindowOpen 脚本触发器</a></span>运行脚本。</p><p id="ww1027763" class="b-body">当您考虑过这些问题之后，便可以在数据库中管理脚本。请参阅<span class="zh-hyper"><a href="../FMP_Help/creating-editing-scripts.html#ww1059866" title="创建并编辑脚本">创建并编辑脚本</a></span>。</p><h2 id="ww1059796" class="rh-relatedhead"><span>相关主题</span>&nbsp;</h2><p id="ww1059800" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/script-steps-alphabetical.html#ww66468" title="脚本步骤参考（按字母顺序排序的列表）">脚本步骤参考（按字母顺序排序的列表）</a></span></p><p id="ww1059804" class="rt-relatedtopic"><span class="zh-hyper"><a href="../FMP_Help/script-steps-category.html#ww947337" title="脚本步骤参考（类别列表）">脚本步骤参考（类别列表）</a></span></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>

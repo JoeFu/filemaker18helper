@@ -1,0 +1,846 @@
+<!DOCTYPE html ><html xml:lang="zh" lang="zh" data-highlight-require-whitespace="false" xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- saved from url=(0016)http://localhost -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>函数参考（类别列表）</title><link rel="Prev" href="functions-reference.html" title="上一个" /><link rel="Next" href="functions-alphabetical.html" title="下一个" /><link rel="StyleSheet" href="css/help_func_cat.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/skin.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/social.css" type="text/css" media="all" /><link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" /><!--[if IE 7]><link rel="StyleSheet" href="css/help_func_cat_IE7.css" type="text/css" media="all" /><![endif]--><link rel="StyleSheet" href="css/print.css" type="text/css" media="print" /><script type="text/javascript">
+    'use strict';
+
+    var redirect_url, page_hash;
+
+    if ((window === window.top) && (window.navigator.userAgent.indexOf('bot/') === -1)) {
+        // Redirect
+        //
+        redirect_url = "../index.html#page/FMP_Help/functions-category.html";
+        if (window.document.location.hash.length > 1) {
+            // Sanitize and append it
+            //
+            page_hash = window.document.location.hash.substring(1);
+            page_hash = page_hash.replace(/[\\><:;"]|%5C|%3C|%3E|%3A|%3B|%22/gi, '');
+            redirect_url += '#' + page_hash;
+        }
+        window.document.location.replace(redirect_url);
+    }
+</script><script type="text/javascript" src="scripts/common.js"></script><script type="text/javascript" src="scripts/page.js"></script><script type="text/javascript" src="scripts/search-client.js"></script><script type="text/javascript" src="scripts/unidata.js"></script><script type="text/javascript" src="scripts/unibreak.js"></script><script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-15064788-14', 'auto');
+       ga('set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('send', 'pageview');
+       ga('create', 'UA-15064788-10', 'auto', 'globalProperty');
+       ga('globalProperty.set', {
+       'dimension2': '18',
+       'dimension3': 'zh'
+       });
+       ga('globalProperty.send', 'pageview');</script><script type="text/javascript"><!--
+    //FMI - tracking events for GA
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", function AddGaqPush() {
+        var links = document.getElementsByTagName("a");
+        for (var i=0; i < links.length; i++)
+        {
+            if (links[i].href.indexOf("page=help_zip") !== -1) { 
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Download', 'ZIP', '');");
+            } else if (links[i].href.indexOf("documentation") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Documentation Page', '');");
+            } else if (links[i].href.indexOf("page=doc_") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Document', '');");
+            } else if (links[i].href.indexOf("page=helphome_support") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Link', 'Support', '');");
+            } else if (links[i].href.indexOf("page=feedback") !== -1) {
+              links[i].setAttribute("onclick", "ga('send', 'event', 'Feedback', location.href, '');");
+            }
+        }
+      }
+      , false)
+    }
+    // --></script><style type="text/css">
+/*FMI CSS*/
+      <!--
+/* General */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+	line-height: 170%;
+	background-color: rgb(245, 245, 245);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+img.Default {
+	vertical-align: text-bottom;
+}
+
+/* Page */
+div.feedbacklink
+{
+	margin:2em 0 0;
+	font-size:90%;
+	border-top:1px solid #bfbfbf;
+	padding:8px 12px 8px 12px;
+	color:#8d8d8d
+}
+
+.code_pre_wrap {
+	white-space: pre-wrap;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.g-glosslink a:link, .g-glosslink a:visited
+{
+	color: #000000;
+}
+
+.ti-title
+{
+	display: none;
+}
+
+span.c-code {
+  font-size: 9pt;
+}
+
+/* Page toolbar margin-top under breadcrumb */
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+}
+
+.ww_skin_toolbar {
+	padding-top: 20px;
+}
+
+.ti-title
+{
+	display: none;
+}
+.layout_wide {
+    padding: 0 0px 18px 0px;
+}
+
+div#layout_div.layout_narrow input.ww_skin_search_input,
+div#layout_div.layout_wide div#presentation_div.panel_overlay input.ww_skin_search_input {
+    display: inline;
+	visibility: visible;
+}
+
+div#container_div {
+	max-width: 1200px;
+    margin: 0px auto;
+    background-color: rgb(255, 255, 255);
+	width:100%;
+	margin-top: 12px;
+}
+
+div#layout_div.layout_wide div#container_div {
+    left: 0px;
+    right: 0px;
+}
+
+div#index_content {
+  padding: 12px;
+}
+
+div#search {
+  background-color: white;
+}
+
+div#search {
+  background-color: white;
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+
+/* Search */
+body#searchBody {
+	background-color: transparent;
+}
+
+button#back_button {
+  float: left;
+  background: none;
+  background-image: url('../images/back_grey.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  border: 0;
+  text-decoration: none;
+  -webkit-apperance: none;
+  outline: 0;
+  text-display: none;
+  width: 20px;
+  height: 30px;
+  color: rgba(0,0,0,0);
+}
+
+button#back_button:hover {
+    cursor: pointer;
+	background-image: url('../images/back.png');
+}
+
+.back_button_hidden {
+	display: none;
+}
+
+#search-input-text {
+  width: 50%;
+  background: #fff url('../images/search-50.png');
+  margin: 0;
+padding: 2px 0 2px 30px;
+height: 25px;
+background-color: #fff;
+background-size: 15px 15px;
+background-position: 5px 7px;
+background-repeat: no-repeat;
+font-size: 1.2em;
+border: 1px solid rgba(233,233,233,1);
+-webkit-appearance: none;
+border-radius: 3px;
+}
+
+#search-button {
+display: none;	/* original value: inline-block;*/
+overflow: hidden;
+width: 67px;
+height: 31px;
+color: white;
+background-image:linear-gradient(to bottom, #1681c3, #1066a1);
+border-radius: 0 4px 4px 0;
+border: 0px;
+font-size: 1em;
+padding: 3px 6px 3px 6px;
+position: absolute;
+}
+
+#search-results-container {
+  padding: 0.5em 0.5em;
+}
+
+.search-result-title {
+  margin-top: 12px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.search-result-title > a {
+  color: rgb(67,114,255);
+  text-decoration: none;
+}
+
+.search-result-title > a:active {
+  color: rgb(67,114,255);
+}
+
+.search-result-title > a:visited {
+  color: rgb(67,114,255);
+}
+
+.search-result-summary {
+  padding-top: 4px;
+}
+
+.search-result-highlight{
+	padding:2px;
+	margin:-2px;
+	background-color: #ffffc7;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #ffffc7;
+	padding:2px;
+	margin:-2px;
+}
+
+/*tab size for code snippets - ID Custom */
+.co-code, .co1-code1, ff-funcformat, .ssf-scriptformat{
+	tab-size:3;
+}
+@media only screen and (min-width : 481px) {
+  /*see also "widget" - ID Custom */
+  .sah-seealsohead{
+	float: right;
+	width: 200px;
+	clear: both;
+	margin: 1.6em 0 0 1.8em;
+	padding: 5px 10px;
+	background-color: #F2F2F2;
+  }
+  
+  .sal-seealsolink{
+	float: right;
+	width: 200px;
+	clear: both;
+	background-color: #F2F2F2;
+	margin-top: 0 !important;
+	margin-left: 1.8em;
+	padding: 0 10px 10px;
+	line-height: 120%;
+  }
+}
+/*homepage - ID Custom */
+.welcome {
+  padding-top: 0;
+}
+
+.wol-outlinelinks,
+.wom-outlinemenu {
+  display:flex;
+  flex-wrap:wrap;
+  min-width: 140px;
+}
+.wom-outlinemenu .h-hyperlink{
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  font-size: 11pt;
+  width: 40%;
+  background: -moz-linear-gradient(top, #f5f5f5, #fafafa); 
+  background: -webkit-linear-gradient(top,#f5f5f5, #fafafa);
+  background: linear-gradient(to bottom, #f5f5f5, #fafafa);
+  margin: 0 5px 10px 5px;
+}
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  font-size: 10pt;
+  width: 28%;
+}
+.wom-outlinemenu .h-hyperlink,
+.wol-outlinelinks .h-hyperlink,
+.wol-outlinelinks .zh-hyper{
+  padding: 10px;
+  text-align:center;
+  flex-grow: 1;
+
+}
+.wom-outlinemenu .h-hyperlink a,
+.wol-outlinelinks .h-hyperlink a,
+.wol-outlinelinks .zh-hyper a{
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/*Skin.css*/
+a#banner {
+  background-image: url('images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 38px;
+  width: 300px;
+  margin-bottom: -5px;
+  display:block;
+}
+
+.ww_skin_company_logo > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_logo > a:link:hover, .ww_skin_company_logo > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_name > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_name > a:link:hover, .ww_skin_company_name > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_company_email > a:link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_company_email > a:link:hover, .ww_skin_company_email > a:visited:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_progress_bar {
+    border: 1px solid #353535;
+}
+
+.ww_skin_progress_segment_complete {
+    background-color: #353535;
+}
+
+.ww_skin {
+	background-size: 600px auto;
+}
+
+.ww_skin_toc {
+    width: 38px;
+    height: 38px;
+    background-position: -306px -32px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_toc:hover {
+    background-position: -378px -32px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_toc {
+    background-position: -451px -32px;
+}
+
+a.ww_skin_toc_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_index {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -128px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_index:hover {
+    background-position: -376px -128px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_index {
+    background-position: -448px -128px;
+}
+
+a.ww_skin_index_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_home {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_home {
+    background-position: -304px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_home:hover {
+    background-position: -376px -1376px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_home {
+    background-position: -448px -1376px;
+}
+
+a.ww_skin_home_spacer {
+    background-image: none;
+    width: 12px;
+}
+
+.ww_skin_search {
+    height: 38px;
+	background-image: none !important;
+	width: 10px;
+  background-position: -100px -100px;
+  margin-left:3px;
+}
+
+.layout_wide .ww_skin_search{
+  width: 10px;
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_wide .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.layout_narrow .ww_skin_search:hover {
+  background-image: none;
+  background-position: 9999px 9999px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_search {
+    background-position: -450px -224px;
+}
+
+.ww_skin_globe {
+    width: 38px;
+    height: 38px;
+    background-position: -304px -320px;
+}
+
+.ww_skin_toolbar_background_default > .ww_skin_globe:hover {
+    background-position: -376px -320px;
+}
+
+.ww_skin_toolbar_background_selected > .ww_skin_globe {
+    background-position: -448px -320px;
+}
+
+a.ww_skin_globe_spacer {
+    background-image: none;
+    width: 24px;
+}
+
+.ww_skin_next {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -416px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_next {
+    background-position: -304px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_next:hover {
+    background-position: -376px -416px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_next {
+    background-position: -448px -416px;
+}
+
+a.ww_skin_next_spacer {
+    display: none;
+}
+
+.layout_narrow a.ww_skin_next_spacer {
+    display: none;
+}
+
+.ww_skin_prev {
+    width: 38px;
+    height: 38px;
+    background-position: -520px -512px;
+}
+
+.ww_skin_toolbar_button_enabled > .ww_skin_prev {
+    background-position: -304px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_default > .ww_skin_prev:hover {
+    background-position: -376px -512px;
+}
+
+.ww_skin_toolbar_button_enabled.ww_skin_toolbar_background_selected > .ww_skin_prev {
+    background-position: -448px -512px;
+}
+
+#toolbar_div {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.ww_skin_toolbar {
+	padding-top: 15px;
+}
+
+.ww_skin_toolbar_button_left {
+	padding-left: 5px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_center {
+    height: 38px;
+	border: none;
+}
+
+.ww_skin_toolbar_button_right {
+	border: none;
+}
+
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+    background: #757575;
+}
+
+.ww_skin_search_form .ww_skin_toolbar_background_selected {
+	display: none !important;
+}
+
+.ww_skin_toolbar_left_background {
+    margin-left: 0;
+}
+.ww_skin_toolbar_background_selected,
+.ww_skin_toolbar_background_selected:hover {
+	background: transparent;
+}
+
+.ww_skin_toolbar_background_default {
+	background: transparent;
+}
+
+.ww_skin_search_input {
+  color: #525252;
+  height: 20px;
+  font-size: 13px;
+  margin: 5px 0 0 18px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  background-image: url('images/search-50.png');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
+  padding: 3px;
+  text-indent: 20px;
+  width: 250px;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_toc_container {
+	background-color: transparent;
+	border: none;
+}
+
+.ww_skin_toc_level_1 > li > div {
+    padding-left: 23px;
+}
+
+.ww_skin_toc_level_2 > li > div {
+    padding-left: 43px;
+}
+
+.ww_skin_toc_level_3 > li > div {
+    padding-left: 63px;
+}
+
+.ww_skin_toc_level_4 > li > div {
+    padding-left: 83px;
+}
+
+.ww_skin_toc_level_5 > li > div {
+    padding-left: 103px;
+}
+
+.ww_skin_toc_level_6 > li > div {
+    padding-left: 123px;
+}
+
+.ww_skin_toc_level_7 > li > div {
+    padding-left: 138px;
+}
+
+.ww_skin_toc_entry {
+    font-family: Helvetica, Arial, sans-serif;
+    border-width: 0px 0 0 0;
+    margin: 0;
+    padding: 8px 20px 8px 0;
+	line-height: 15px;
+}
+
+.ww_skin_toc_level_1:first-child > li:first-child > .ww_skin_toc_entry:first-child {
+    border-width: 0;
+}
+
+.ww_skin_toc_entry:hover {
+    background: #E0E0E0;
+}
+
+.ww_skin_toc_entry > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.ww_skin_toc_entry > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry:hover > a {
+    color: black;
+}
+
+.ww_skin_toc_entry:hover > a:visited {
+    color: #000;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+    background-color: rgb(67,114,255);
+}
+
+.ww_skin_toc_dropdown {
+    margin: 2px 4px 0 0px;
+}
+
+.ww_skin_index_link {
+    color: #0088CC;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:visited {
+    color: #99CCFF;
+    text-decoration: none;
+}
+
+.ww_skin_index_link:hover {
+    text-decoration: underline;
+}
+
+.ww_skin_panel_frame {
+    padding: 9px 0 0 0;
+  background-color: #fcfcfc;
+  border: 1px solid rgba(233,233,233,1);
+}
+
+.ww_skin_panel_content {
+  border-width: 0px;
+  background-color: #fcfcfc;
+}
+
+.ww_skin_lightbox_frame {
+    top: 0;
+    left: 0;
+}
+
+.ww_skin_page_body {
+    padding: 30px 30px;
+	background-color: #fff;
+}
+
+.ww_skin_breadcrumbs {
+    margin: -6px -6px 0 -8px;
+    padding: 4px 24px 4px 12px;
+    color: #a4a4a4;
+    font-weight: normal;
+	max-width: 85%;
+	background: transparent;
+}
+
+.ww_skin_breadcrumbs a:link {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:visited {
+    color: rgb(67,114,255);
+    text-decoration: none;
+}
+
+.ww_skin_breadcrumbs a:link:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_breadcrumbs a:visited:hover {
+    color: rgb(67,114,255);
+}
+
+.ww_skin_page_toolbar {
+	margin-top: 1px;
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+#wwconnect_header {
+  margin-bottom: 20px;
+}
+
+.ww_skin_breadcrumbs ~ .ww_skin_page_toolbar {
+  margin-top: -20px;
+}
+
+.ww_skin_toc_entry{
+	border: none;
+}
+
+.ww_skin_toc_entry_selected,
+.ww_skin_toc_entry_selected:hover {
+	background: rgb(67,114,255);
+}
+
+
+/* medium */
+@media only screen
+and (max-width : 769px) {
+  .ww_skin_search_input {
+    width: 170px;
+}
+
+}
+
+/* small */
+@media only screen
+and (max-width: 535px) {
+  .ww_skin_search_input {
+    width: 150px;
+  }
+
+a#banner{
+  height: 30px;
+  width: 160px;
+  margin-left: 15px;
+}
+
+div#container_div {
+  margin-top: 5px;
+}
+
+table.ww_skin_toolbar {
+  padding-top: 10px;
+}
+
+}
+
+/*phone*/
+@media only screen
+and (max-width : 435px) {
+
+  a#banner {
+    width: 129px;
+  }
+
+  .ww_skin_search_input {
+    width: 130px;
+  }
+   
+  body { 
+    overflow-x: hidden;
+  }
+  
+  .layout_narrow {
+    overflow-x: hidden;
+  }
+  
+  #presentation_div {
+    overflow-x:hidden;
+  }
+  
+  #page_div {
+    overflow-x:hidden;
+  }
+    div#page_div {
+    overflow-x: hidden;
+  }
+  html {
+   overflow-x: hidden;
+  }
+  body.ww_skin_page_body {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  
+}
+--></style></head><body id="pzLFD02_002f6Fz0k7xOK_002buz7dg" class="ww_skin_page_body" onload="Page.OnLoad('../index.html#page/FMP_Help/functions-category.html');"><header id="wwconnect_header"><div class="ww_skin_breadcrumbs"><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/reference.html#wwconnect_header">参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_parent"><a href="../FMP_Help/functions-reference.html#wwconnect_header">函数参考</a></span><span class="ww_skin_breadcrumbs_divider"> &gt; </span><span class="ww_skin_breadcrumbs_current">函数参考（类别列表）</span></div><div class="ww_skin_page_toolbar"><a class="ww_behavior_print ww_skin ww_skin_print" title="打印" href="#">&nbsp;</a></div></header><h1 id="ww707904" class="h3-head3">函数参考（类别列表）</h1><h2 id="ww1259349" class="fch-funccatgryheadTOC"><a href="../FMP_Help/json-functions-category.html#wwconnect_header" title="JSON 函数">JSON 函数</a></h2><p id="ww1259351" class="fh-funcheadTOC"><a href="../FMP_Help/jsondeleteelement.html#wwconnect_header" title="JSONDeleteElement">JSONDeleteElement</a></p><p id="ww1259353" class="fh-funcheadTOC"><a href="../FMP_Help/jsonformatelements.html#wwconnect_header" title="JSONFormatElements">JSONFormatElements</a></p><p id="ww1259355" class="fh-funcheadTOC"><a href="../FMP_Help/jsongetelement.html#wwconnect_header" title="JSONGetElement">JSONGetElement</a></p><p id="ww1259357" class="fh-funcheadTOC"><a href="../FMP_Help/jsonlistkeys.html#wwconnect_header" title="JSONListKeys">JSONListKeys</a></p><p id="ww1259359" class="fh-funcheadTOC"><a href="../FMP_Help/jsonlistvalues.html#wwconnect_header" title="JSONListValues">JSONListValues</a></p><p id="ww1259361" class="fh-funcheadTOC"><a href="../FMP_Help/jsonsetelement.html#wwconnect_header" title="JSONSetElement">JSONSetElement</a></p><h2 id="ww1259413" class="fch-funccatgryheadTOC"><a href="../FMP_Help/financial-functions.html#wwconnect_header" title="财务函数">财务函数</a></h2><p id="ww1259415" class="fh-funcheadTOC"><a href="../FMP_Help/fv.html#wwconnect_header" title="FV">FV</a></p><p id="ww1259417" class="fh-funcheadTOC"><a href="../FMP_Help/npv.html#wwconnect_header" title="NPV">NPV</a></p><p id="ww1259419" class="fh-funcheadTOC"><a href="../FMP_Help/pmt.html#wwconnect_header" title="PMT">PMT</a></p><p id="ww1259421" class="fh-funcheadTOC"><a href="../FMP_Help/pv.html#wwconnect_header" title="PV">PV</a></p><h2 id="ww1259459" class="fch-funccatgryheadTOC"><a href="../FMP_Help/repeating-functions.html#wwconnect_header" title="重复函数">重复函数</a></h2><p id="ww1259461" class="fh-funcheadTOC"><a href="../FMP_Help/extend.html#wwconnect_header" title="Extend">Extend</a></p><p id="ww1259463" class="fh-funcheadTOC"><a href="../FMP_Help/getrepetition.html#wwconnect_header" title="GetRepetition">GetRepetition</a></p><p id="ww1259465" class="fh-funcheadTOC"><a href="../FMP_Help/last.html#wwconnect_header" title="Last">Last</a></p><h2 id="ww1259507" class="fch-funccatgryheadTOC"><a href="../FMP_Help/get-functions.html#wwconnect_header" title="获取函数">获取函数</a></h2><p id="ww1259509" class="fh-funcheadTOC"><a href="../FMP_Help/get-filemakerpath.html#wwconnect_header" title="Get (FileMaker 路径)">Get (FileMaker 路径)</a></p><p id="ww1259511" class="fh-funcheadTOC"><a href="../FMP_Help/get-uuidnumber.html#wwconnect_header" title="Get (UUID 号)">Get (UUID 号)</a></p><p id="ww1259513" class="fh-funcheadTOC"><a href="../FMP_Help/get-uuid.html#wwconnect_header" title="Get (UUID)">Get (UUID)</a></p><p id="ww1259515" class="fh-funcheadTOC"><a href="../FMP_Help/get-installedfmplugins.html#wwconnect_header" title="Get (安装的 FM 插件)">Get (安装的 FM 插件)</a></p><p id="ww1259517" class="fh-funcheadTOC"><a href="../FMP_Help/get-textrulervisible.html#wwconnect_header" title="Get (标尺可见状态)">Get (标尺可见状态)</a></p><p id="ww1259519" class="fh-funcheadTOC"><a href="../FMP_Help/get-layoutnumber.html#wwconnect_header" title="Get (布局编号)">Get (布局编号)</a></p><p id="ww1259521" class="fh-funcheadTOC"><a href="../FMP_Help/get-layouttablename.html#wwconnect_header" title="Get (布局表名称)">Get (布局表名称)</a></p><p id="ww1259523" class="fh-funcheadTOC"><a href="../FMP_Help/get-layoutaccess.html#wwconnect_header" title="Get (布局访问权限)">Get (布局访问权限)</a></p><p id="ww1259525" class="fh-funcheadTOC"><a href="../FMP_Help/get-layoutcount.html#wwconnect_header" title="Get (布局个数)">Get (布局个数)</a></p><p id="ww1259527" class="fh-funcheadTOC"><a href="../FMP_Help/get-layoutviewstate.html#wwconnect_header" title="Get (布局浏览模式)">Get (布局浏览模式)</a></p><p id="ww1259529" class="fh-funcheadTOC"><a href="../FMP_Help/get-layoutname.html#wwconnect_header" title="Get (布局名称)">Get (布局名称)</a></p><p id="ww1259531" class="fh-funcheadTOC"><a href="../FMP_Help/get-menubarstate.html#wwconnect_header" title="Get (菜单栏状态)">Get (菜单栏状态)</a></p><p id="ww1259533" class="fh-funcheadTOC"><a href="../FMP_Help/get-preferencespath.html#wwconnect_header" title="Get (参数路径)">Get (参数路径)</a></p><p id="ww1259535" class="fh-funcheadTOC"><a href="../FMP_Help/get-calculationrepetitionnumber.html#wwconnect_header" title="Get (参与计算的复合字段值序号)">Get (参与计算的复合字段值序号)</a></p><p id="ww1259537" class="fh-funcheadTOC"><a href="../FMP_Help/get-foundcount.html#wwconnect_header" title="Get (查找个数)">Get (查找个数)</a></p><p id="ww1259539" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggercurrentpanel.html#wwconnect_header" title="Get (触发当前面板)">Get (触发当前面板)</a></p><p id="ww1259541" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggermodifierkeys.html#wwconnect_header" title="Get (触发辅助键)">Get (触发辅助键)</a></p><p id="ww1259543" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggerkeystroke.html#wwconnect_header" title="Get (触发击键)">Get (触发击键)</a></p><p id="ww1259545" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggertargetpanel.html#wwconnect_header" title="Get (触发目标面板)">Get (触发目标面板)</a></p><p id="ww1259547" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggergestureinfo.html#wwconnect_header" title="Get (触发手势信息)">Get (触发手势信息)</a></p><p id="ww1259549" class="fh-funcheadTOC"><a href="../FMP_Help/get-triggerexternalevent.html#wwconnect_header" title="Get (触发外部事件)">Get (触发外部事件)</a></p><p id="ww1259551" class="fh-funcheadTOC"><a href="../FMP_Help/get-touchkeyboardstate.html#wwconnect_header" title="Get (触控键盘状态)">Get (触控键盘状态)</a></p><p id="ww1259553" class="fh-funcheadTOC"><a href="../FMP_Help/get-windoworientation.html#wwconnect_header" title="Get (窗口方向)">Get (窗口方向)</a></p><p id="ww1259555" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowheight.html#wwconnect_header" title="Get (窗口高度)">Get (窗口高度)</a></p><p id="ww1259557" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowwidth.html#wwconnect_header" title="Get (窗口宽度)">Get (窗口宽度)</a></p><p id="ww1259559" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowname.html#wwconnect_header" title="Get (窗口名称)">Get (窗口名称)</a></p><p id="ww1259561" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowmode.html#wwconnect_header" title="Get (窗口模式)">Get (窗口模式)</a></p><p id="ww1259563" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowtop.html#wwconnect_header" title="Get (窗口上边距)">Get (窗口上边距)</a></p><p id="ww1259565" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowvisible.html#wwconnect_header" title="Get (窗口是否可见)">Get (窗口是否可见)</a></p><p id="ww1259567" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowzoomlevel.html#wwconnect_header" title="Get (窗口缩放级别)">Get (窗口缩放级别)</a></p><p id="ww1259569" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowstyle.html#wwconnect_header" title="Get (窗口样式)">Get (窗口样式)</a></p><p id="ww1259571" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowdesktopheight.html#wwconnect_header" title="Get (窗口桌面高度)">Get (窗口桌面高度)</a></p><p id="ww1259573" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowdesktopwidth.html#wwconnect_header" title="Get (窗口桌面宽度)">Get (窗口桌面宽度)</a></p><p id="ww1259575" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowleft.html#wwconnect_header" title="Get (窗口左边距)">Get (窗口左边距)</a></p><p id="ww1259577" class="fh-funcheadTOC"><a href="../FMP_Help/get-errorcapturestate.html#wwconnect_header" title="Get (错误捕获状态)">Get (错误捕获状态)</a></p><p id="ww1259579" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordopencount.html#wwconnect_header" title="Get (打开记录的个数)">Get (打开记录的个数)</a></p><p id="ww1259581" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordopenstate.html#wwconnect_header" title="Get (打开记录的状态)">Get (打开记录的状态)</a></p><p id="ww1259583" class="fh-funcheadTOC"><a href="../FMP_Help/get-opendatafileinfo.html#wwconnect_header" title="Get (打开数据文件信息)">Get (打开数据文件信息)</a></p><p id="ww1259585" class="fh-funcheadTOC"><a href="../FMP_Help/get-printername.html#wwconnect_header" title="Get (打印机名称)">Get (打印机名称)</a></p><p id="ww1259587" class="fh-funcheadTOC"><a href="../FMP_Help/get-currentextendedprivileges.html#wwconnect_header" title="Get (当前扩展权限)">Get (当前扩展权限)</a></p><p id="ww1259589" class="fh-funcheadTOC"><a href="../FMP_Help/get-currentprivilegesetname.html#wwconnect_header" title="Get (当前权限集名称)">Get (当前权限集名称)</a></p><p id="ww1259591" class="fh-funcheadTOC"><a href="../FMP_Help/get-currentdate.html#wwconnect_header" title="Get (当前日期)">Get (当前日期)</a></p><p id="ww1259593" class="fh-funcheadTOC"><a href="../FMP_Help/get-currenttime.html#wwconnect_header" title="Get (当前时间)">Get (当前时间)</a></p><p id="ww1259595" class="fh-funcheadTOC"><a href="../FMP_Help/get-currenttimeutcmilliseconds.html#wwconnect_header" title="Get (当前时间UTC毫秒)">Get (当前时间UTC毫秒)</a></p><p id="ww1259597" class="fh-funcheadTOC"><a href="../FMP_Help/get-currenttimestamp.html#wwconnect_header" title="Get (当前系统时间)">Get (当前系统时间)</a></p><p id="ww1259599" class="fh-funcheadTOC"><a href="../FMP_Help/get-currenthosttimestamp.html#wwconnect_header" title="Get (当前主机时间戳)">Get (当前主机时间戳)</a></p><p id="ww1259601" class="fh-funcheadTOC"><a href="../FMP_Help/get-multiuserstate.html#wwconnect_header" title="Get (多用户状态)">Get (多用户状态)</a></p><p id="ww1259603" class="fh-funcheadTOC"><a href="../FMP_Help/get-highcontrastcolor.html#wwconnect_header" title="Get (高对比度色彩模式)">Get (高对比度色彩模式)</a></p><p id="ww1259605" class="fh-funcheadTOC"><a href="../FMP_Help/get-highcontraststate.html#wwconnect_header" title="Get (高对比度状态)">Get (高对比度状态)</a></p><p id="ww1259607" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowcontentheight.html#wwconnect_header" title="Get (工作区高度)">Get (工作区高度)</a></p><p id="ww1259609" class="fh-funcheadTOC"><a href="../FMP_Help/get-windowcontentwidth.html#wwconnect_header" title="Get (工作区宽度)">Get (工作区宽度)</a></p><p id="ww1259611" class="fh-funcheadTOC"><a href="../FMP_Help/get-persistentid.html#wwconnect_header" title="Get (固定 ID)">Get (固定 ID)</a></p><p id="ww1259613" class="fh-funcheadTOC"><a href="../FMP_Help/get-activelayoutobjectname.html#wwconnect_header" title="Get (活动布局对象名称)">Get (活动布局对象名称)</a></p><p id="ww1259615" class="fh-funcheadTOC"><a href="../FMP_Help/get-activemodifierkeys.html#wwconnect_header" title="Get (活动的辅助键)">Get (活动的辅助键)</a></p><p id="ww1259617" class="fh-funcheadTOC"><a href="../FMP_Help/get-activerecordnumber.html#wwconnect_header" title="Get (活动记录编号)">Get (活动记录编号)</a></p><p id="ww1259619" class="fh-funcheadTOC"><a href="../FMP_Help/get-activeportalrownumber.html#wwconnect_header" title="Get (活动入口行号)">Get (活动入口行号)</a></p><p id="ww1259621" class="fh-funcheadTOC"><a href="../FMP_Help/get-activerepetitionnumber.html#wwconnect_header" title="Get (活动重复项编号)">Get (活动重复项编号)</a></p><p id="ww1259623" class="fh-funcheadTOC"><a href="../FMP_Help/get-activefieldtablename.html#wwconnect_header" title="Get (活动字段表名称)">Get (活动字段表名称)</a></p><p id="ww1259625" class="fh-funcheadTOC"><a href="../FMP_Help/get-activefieldname.html#wwconnect_header" title="Get (活动字段名)">Get (活动字段名)</a></p><p id="ww1259627" class="fh-funcheadTOC"><a href="../FMP_Help/get-activefieldcontents.html#wwconnect_header" title="Get (活动字段内容)">Get (活动字段内容)</a></p><p id="ww1260547" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordid.html#wwconnect_header" title="Get (记录 ID)">Get (记录 ID)</a></p><p id="ww1259629" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordnumber.html#wwconnect_header" title="Get (记录编号)">Get (记录编号)</a></p><p id="ww1259633" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordaccess.html#wwconnect_header" title="Get (记录访问权限)">Get (记录访问权限)</a></p><p id="ww1259635" class="fh-funcheadTOC"><a href="../FMP_Help/get-recordmodificationcount.html#wwconnect_header" title="Get (记录修改次数)">Get (记录修改次数)</a></p><p id="ww1259637" class="fh-funcheadTOC"><a href="../FMP_Help/get-encryptionstate.html#wwconnect_header" title="Get (加密状态)">Get (加密状态)</a></p><p id="ww1259639" class="fh-funcheadTOC"><a href="../FMP_Help/get-scriptparameter.html#wwconnect_header" title="Get (脚本参数)">Get (脚本参数)</a></p><p id="ww1259641" class="fh-funcheadTOC"><a href="../FMP_Help/get-scriptanimationstate.html#wwconnect_header" title="Get (脚本动画状态)">Get (脚本动画状态)</a></p><p id="ww1259643" class="fh-funcheadTOC"><a href="../FMP_Help/get-scriptresult.html#wwconnect_header" title="Get (脚本结果)">Get (脚本结果)</a></p><p id="ww1259645" class="fh-funcheadTOC"><a href="../FMP_Help/get-scriptname.html#wwconnect_header" title="Get (脚本名称)">Get (脚本名称)</a></p><p id="ww1259647" class="fh-funcheadTOC"><a href="../FMP_Help/get-quickfindtext.html#wwconnect_header" title="Get (快速查找文本)">Get (快速查找文本)</a></p><p id="ww1259649" class="fh-funcheadTOC"><a href="../FMP_Help/get-connectionattributes.html#wwconnect_header" title="Get (连接属性)">Get (连接属性)</a></p><p id="ww1259651" class="fh-funcheadTOC"><a href="../FMP_Help/get-connectionstate.html#wwconnect_header" title="Get (连接状态)">Get (连接状态)</a></p><p id="ww1259653" class="fh-funcheadTOC"><a href="../FMP_Help/get-temporarypath.html#wwconnect_header" title="Get (临时路径)">Get (临时路径)</a></p><p id="ww1259655" class="fh-funcheadTOC"><a href="../FMP_Help/get-sortstate.html#wwconnect_header" title="Get (排序状态)">Get (排序状态)</a></p><p id="ww1259657" class="fh-funcheadTOC"><a href="../FMP_Help/get-screenheight.html#wwconnect_header" title="Get (屏幕高度)">Get (屏幕高度)</a></p><p id="ww1259659" class="fh-funcheadTOC"><a href="../FMP_Help/get-screenwidth.html#wwconnect_header" title="Get (屏幕宽度)">Get (屏幕宽度)</a></p><p id="ww1259661" class="fh-funcheadTOC"><a href="../FMP_Help/get-screendepth.html#wwconnect_header" title="Get (屏幕色度)">Get (屏幕色度)</a></p><p id="ww1259663" class="fh-funcheadTOC"><a href="../FMP_Help/get-screenscalefactor.html#wwconnect_header" title="Get (屏幕缩放系数)">Get (屏幕缩放系数)</a></p><p id="ww1259665" class="fh-funcheadTOC"><a href="../FMP_Help/get-requestcount.html#wwconnect_header" title="Get (请求个数)">Get (请求个数)</a></p><p id="ww1259667" class="fh-funcheadTOC"><a href="../FMP_Help/get-requestomitstate.html#wwconnect_header" title="Get (请求忽略状态)">Get (请求忽略状态)</a></p><p id="ww1259669" class="fh-funcheadTOC"><a href="../FMP_Help/get-regionmonitorevents.html#wwconnect_header" title="Get (区域监视事件)">Get (区域监视事件)</a></p><p id="ww1259671" class="fh-funcheadTOC"><a href="../FMP_Help/get-lastmessagechoice.html#wwconnect_header" title="Get (上次选择信息)">Get (上次选择信息)</a></p><p id="ww1259673" class="fh-funcheadTOC"><a href="../FMP_Help/get-lasterror.html#wwconnect_header" title="Get (上一个错误)">Get (上一个错误)</a></p><p id="ww1259675" class="fh-funcheadTOC"><a href="../FMP_Help/get-lastexternalerrordetail.html#wwconnect_header" title="Get (上一个外部错误详情)">Get (上一个外部错误详情)</a></p><p id="ww1259677" class="fh-funcheadTOC"><a href="../FMP_Help/get-device.html#wwconnect_header" title="Get (设备)">Get (设备)</a></p><p id="ww1259679" class="fh-funcheadTOC"><a href="../FMP_Help/get-activeselectionstart.html#wwconnect_header" title="Get (所选文本的开始字符位置)">Get (所选文本的开始字符位置)</a></p><p id="ww1259681" class="fh-funcheadTOC"><a href="../FMP_Help/get-networktype.html#wwconnect_header" title="Get (网络类型)">Get (网络类型)</a></p><p id="ww1259683" class="fh-funcheadTOC"><a href="../FMP_Help/get-networkprotocol.html#wwconnect_header" title="Get (网络协议)">Get (网络协议)</a></p><p id="ww1259685" class="fh-funcheadTOC"><a href="../FMP_Help/get-documentspath.html#wwconnect_header" title="Get (文档路径)">Get (文档路径)</a></p><p id="ww1259687" class="fh-funcheadTOC"><a href="../FMP_Help/get-documentspathlisting.html#wwconnect_header" title="Get (文档路径列表)">Get (文档路径列表)</a></p><p id="ww1259689" class="fh-funcheadTOC"><a href="../FMP_Help/get-filesize.html#wwconnect_header" title="Get (文件大小)">Get (文件大小)</a></p><p id="ww1259691" class="fh-funcheadTOC"><a href="../FMP_Help/get-filepath.html#wwconnect_header" title="Get (文件路径)">Get (文件路径)</a></p><p id="ww1259693" class="fh-funcheadTOC"><a href="../FMP_Help/get-filename.html#wwconnect_header" title="Get (文件名)">Get (文件名)</a></p><p id="ww1259695" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemipaddress.html#wwconnect_header" title="Get (系统 IP 地址)">Get (系统 IP 地址)</a></p><p id="ww1259697" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemversion.html#wwconnect_header" title="Get (系统版本)">Get (系统版本)</a></p><p id="ww1259699" class="fh-funcheadTOC"><a href="../FMP_Help/get-usesystemformatsstate.html#wwconnect_header" title="Get (系统格式状态)">Get (系统格式状态)</a></p><p id="ww1259701" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemplatform.html#wwconnect_header" title="Get (系统平台)">Get (系统平台)</a></p><p id="ww1259703" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemdrive.html#wwconnect_header" title="Get (系统驱动器)">Get (系统驱动器)</a></p><p id="ww1259705" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemnicaddress.html#wwconnect_header" title="Get (系统网络硬件地址)">Get (系统网络硬件地址)</a></p><p id="ww1259707" class="fh-funcheadTOC"><a href="../FMP_Help/get-systemlanguage.html#wwconnect_header" title="Get (系统语言)">Get (系统语言)</a></p><p id="ww1259709" class="fh-funcheadTOC"><a href="../FMP_Help/get-modifiedfields.html#wwconnect_header" title="Get (修改的字段)">Get (修改的字段)</a></p><p id="ww1259711" class="fh-funcheadTOC"><a href="../FMP_Help/get-activeselectionsize.html#wwconnect_header" title="Get (选择字符数目)">Get (选择字符数目)</a></p><p id="ww1259713" class="fh-funcheadTOC"><a href="../FMP_Help/get-pagenumber.html#wwconnect_header" title="Get (页码)">Get (页码)</a></p><p id="ww1259715" class="fh-funcheadTOC"><a href="../FMP_Help/get-applicationversion.html#wwconnect_header" title="Get (应用程序版本)">Get (应用程序版本)</a></p><p id="ww1259717" class="fh-funcheadTOC"><a href="../FMP_Help/get-applicationarchitecture.html#wwconnect_header" title="Get (应用程序架构)">Get (应用程序架构)</a></p><p id="ww1259719" class="fh-funcheadTOC"><a href="../FMP_Help/get-applicationlanguage.html#wwconnect_header" title="Get (应用程序语言)">Get (应用程序语言)</a></p><p id="ww1259721" class="fh-funcheadTOC"><a href="../FMP_Help/get-usercount.html#wwconnect_header" title="Get (用户个数)">Get (用户个数)</a></p><p id="ww1259723" class="fh-funcheadTOC"><a href="../FMP_Help/get-username.html#wwconnect_header" title="Get (用户名)">Get (用户名)</a></p><p id="ww1259725" class="fh-funcheadTOC"><a href="../FMP_Help/get-allowformattingbarstate.html#wwconnect_header" title="Get (允许格式栏状态)">Get (允许格式栏状态)</a></p><p id="ww1259727" class="fh-funcheadTOC"><a href="../FMP_Help/get-allowabortstate.html#wwconnect_header" title="Get (允许终止状态)">Get (允许终止状态)</a></p><p id="ww1259729" class="fh-funcheadTOC"><a href="../FMP_Help/get-accountextendedprivileges.html#wwconnect_header" title="Get (帐户扩展权限)">Get (帐户扩展权限)</a></p><p id="ww1259731" class="fh-funcheadTOC"><a href="../FMP_Help/get-accounttype.html#wwconnect_header" title="Get (帐户类型)">Get (帐户类型)</a></p><p id="ww1259733" class="fh-funcheadTOC"><a href="../FMP_Help/get-accountname.html#wwconnect_header" title="Get (帐户名)">Get (帐户名)</a></p><p id="ww1259735" class="fh-funcheadTOC"><a href="../FMP_Help/get-accountprivilegesetname.html#wwconnect_header" title="Get (帐户权限集名称)">Get (帐户权限集名称)</a></p><p id="ww1259737" class="fh-funcheadTOC"><a href="../FMP_Help/get-accountgroupname.html#wwconnect_header" title="Get (帐户组名称)">Get (帐户组名称)</a></p><p id="ww1259739" class="fh-funcheadTOC"><a href="../FMP_Help/get-hostipaddress.html#wwconnect_header" title="Get (主机 IP 地址)">Get (主机 IP 地址)</a></p><p id="ww1259741" class="fh-funcheadTOC"><a href="../FMP_Help/get-hostname.html#wwconnect_header" title="Get (主机名)">Get (主机名)</a></p><p id="ww1259743" class="fh-funcheadTOC"><a href="../FMP_Help/get-hostapplicationversion.html#wwconnect_header" title="Get (主机应用程序版本)">Get (主机应用程序版本)</a></p><p id="ww1259745" class="fh-funcheadTOC"><a href="../FMP_Help/get-statusareastate.html#wwconnect_header" title="Get (状态区域状态)">Get (状态区域状态)</a></p><p id="ww1259747" class="fh-funcheadTOC"><a href="../FMP_Help/get-desktoppath.html#wwconnect_header" title="Get (桌面路径)">Get (桌面路径)</a></p><p id="ww1259749" class="fh-funcheadTOC"><a href="../FMP_Help/get-custommenusetname.html#wwconnect_header" title="Get (自定义菜单集名称)">Get (自定义菜单集名称)</a></p><p id="ww1259751" class="fh-funcheadTOC"><a href="../FMP_Help/get-totalrecordcount.html#wwconnect_header" title="Get (总记录数)">Get (总记录数)</a></p><h2 id="ww1259830" class="fch-funccatgryheadTOC"><a href="../FMP_Help/aggregate-functions.html#wwconnect_header" title="聚合函数">聚合函数</a></h2><p id="ww1259832" class="fh-funcheadTOC"><a href="../FMP_Help/average.html#wwconnect_header" title="Average">Average</a></p><p id="ww1259834" class="fh-funcheadTOC"><a href="../FMP_Help/count.html#wwconnect_header" title="Count">Count</a></p><p id="ww1259836" class="fh-funcheadTOC"><a href="../FMP_Help/list.html#wwconnect_header" title="List">List</a></p><p id="ww1259838" class="fh-funcheadTOC"><a href="../FMP_Help/max.html#wwconnect_header" title="Max">Max</a></p><p id="ww1259840" class="fh-funcheadTOC"><a href="../FMP_Help/min.html#wwconnect_header" title="Min">Min</a></p><p id="ww1259842" class="fh-funcheadTOC"><a href="../FMP_Help/stdev.html#wwconnect_header" title="StDev">StDev</a></p><p id="ww1259844" class="fh-funcheadTOC"><a href="../FMP_Help/stdevp.html#wwconnect_header" title="StDevP">StDevP</a></p><p id="ww1259846" class="fh-funcheadTOC"><a href="../FMP_Help/sum.html#wwconnect_header" title="Sum">Sum</a></p><p id="ww1259848" class="fh-funcheadTOC"><a href="../FMP_Help/variance.html#wwconnect_header" title="Variance">Variance</a></p><p id="ww1259850" class="fh-funcheadTOC"><a href="../FMP_Help/variancep.html#wwconnect_header" title="VarianceP">VarianceP</a></p><h2 id="ww1259884" class="fch-funccatgryheadTOC"><a href="../FMP_Help/logical-functions.html#wwconnect_header" title="逻辑函数">逻辑函数</a></h2><p id="ww1259886" class="fh-funcheadTOC"><a href="../FMP_Help/case.html#wwconnect_header" title="Case">Case</a></p><p id="ww1259888" class="fh-funcheadTOC"><a href="../FMP_Help/choose.html#wwconnect_header" title="Choose">Choose</a></p><p id="ww1259890" class="fh-funcheadTOC"><a href="../FMP_Help/evaluate.html#wwconnect_header" title="Evaluate">Evaluate</a></p><p id="ww1259892" class="fh-funcheadTOC"><a href="../FMP_Help/evaluationerror.html#wwconnect_header" title="EvaluationError">EvaluationError</a></p><p id="ww1259894" class="fh-funcheadTOC"><a href="../FMP_Help/executesql.html#wwconnect_header" title="ExecuteSQL">ExecuteSQL</a></p><p id="ww1259896" class="fh-funcheadTOC"><a href="../FMP_Help/getasboolean.html#wwconnect_header" title="GetAsBoolean">GetAsBoolean</a></p><p id="ww1259898" class="fh-funcheadTOC"><a href="../FMP_Help/getfield.html#wwconnect_header" title="GetField">GetField</a></p><p id="ww1259900" class="fh-funcheadTOC"><a href="../FMP_Help/getnthrecord.html#wwconnect_header" title="GetNthRecord">GetNthRecord</a></p><p id="ww1259902" class="fh-funcheadTOC"><a href="../FMP_Help/getsummary.html#wwconnect_header" title="GetSummary">GetSummary</a></p><p id="ww1259904" class="fh-funcheadTOC"><a href="../FMP_Help/if-function.html#wwconnect_header" title="If">If</a></p><p id="ww1259906" class="fh-funcheadTOC"><a href="../FMP_Help/isempty.html#wwconnect_header" title="IsEmpty">IsEmpty</a></p><p id="ww1259908" class="fh-funcheadTOC"><a href="../FMP_Help/isvalid.html#wwconnect_header" title="IsValid">IsValid</a></p><p id="ww1259910" class="fh-funcheadTOC"><a href="../FMP_Help/isvalidexpression.html#wwconnect_header" title="IsValidExpression">IsValidExpression</a></p><p id="ww1259912" class="fh-funcheadTOC"><a href="../FMP_Help/let.html#wwconnect_header" title="Let">Let</a></p><p id="ww1259914" class="fh-funcheadTOC"><a href="../FMP_Help/lookup.html#wwconnect_header" title="Lookup">Lookup</a></p><p id="ww1259916" class="fh-funcheadTOC"><a href="../FMP_Help/lookupnext.html#wwconnect_header" title="LookupNext">LookupNext</a></p><p id="ww1259918" class="fh-funcheadTOC"><a href="../FMP_Help/self.html#wwconnect_header" title="Self">Self</a></p><p id="ww1259920" class="fh-funcheadTOC"><a href="../FMP_Help/set-recursion.html#wwconnect_header" title="SetRecursion">SetRecursion</a></p><p id="ww1259922" class="fh-funcheadTOC"><a href="../FMP_Help/while.html#wwconnect_header" title="While">While</a></p><h2 id="ww1259951" class="fch-funccatgryheadTOC"><a href="../FMP_Help/miscellaneous-functions.html#wwconnect_header" title="其他函数">其他函数</a></h2><p id="ww1259953" class="fh-funcheadTOC"><a href="../FMP_Help/getfieldname.html#wwconnect_header" title="GetFieldName">GetFieldName</a></p><p id="ww1259955" class="fh-funcheadTOC"><a href="../FMP_Help/getlayoutobjectattribute.html#wwconnect_header" title="GetLayoutObjectAttribute">GetLayoutObjectAttribute</a></p><h2 id="ww1259992" class="fch-funccatgryheadTOC"><a href="../FMP_Help/date-functions.html#wwconnect_header" title="日期函数">日期函数</a></h2><p id="ww1259994" class="fh-funcheadTOC"><a href="../FMP_Help/date.html#wwconnect_header" title="Date">Date</a></p><p id="ww1259996" class="fh-funcheadTOC"><a href="../FMP_Help/day.html#wwconnect_header" title="Day">Day</a></p><p id="ww1259998" class="fh-funcheadTOC"><a href="../FMP_Help/dayname.html#wwconnect_header" title="DayName">DayName</a></p><p id="ww1260000" class="fh-funcheadTOC"><a href="../FMP_Help/dayofweek.html#wwconnect_header" title="DayOfWeek">DayOfWeek</a></p><p id="ww1260002" class="fh-funcheadTOC"><a href="../FMP_Help/dayofyear.html#wwconnect_header" title="DayOfYear">DayOfYear</a></p><p id="ww1260004" class="fh-funcheadTOC"><a href="../FMP_Help/month.html#wwconnect_header" title="Month">Month</a></p><p id="ww1260006" class="fh-funcheadTOC"><a href="../FMP_Help/monthname.html#wwconnect_header" title="MonthName">MonthName</a></p><p id="ww1260008" class="fh-funcheadTOC"><a href="../FMP_Help/weekofyear.html#wwconnect_header" title="WeekOfYear">WeekOfYear</a></p><p id="ww1260010" class="fh-funcheadTOC"><a href="../FMP_Help/weekofyearfiscal.html#wwconnect_header" title="WeekOfYearFiscal">WeekOfYearFiscal</a></p><p id="ww1260012" class="fh-funcheadTOC"><a href="../FMP_Help/year.html#wwconnect_header" title="Year">Year</a></p><h2 id="ww1260046" class="fch-funccatgryheadTOC"><a href="../FMP_Help/japanese-functions.html#wwconnect_header" title="日语函数">日语函数</a></h2><p id="ww1260048" class="fh-funcheadTOC"><a href="../FMP_Help/daynamej.html#wwconnect_header" title="DayNameJ">DayNameJ</a></p><p id="ww1260050" class="fh-funcheadTOC"><a href="../FMP_Help/furigana.html#wwconnect_header" title="Furigana">Furigana</a></p><p id="ww1260052" class="fh-funcheadTOC"><a href="../FMP_Help/hiragana.html#wwconnect_header" title="Hiragana">Hiragana</a></p><p id="ww1260054" class="fh-funcheadTOC"><a href="../FMP_Help/kanahankaku.html#wwconnect_header" title="KanaHankaku">KanaHankaku</a></p><p id="ww1260056" class="fh-funcheadTOC"><a href="../FMP_Help/kanazenkaku.html#wwconnect_header" title="KanaZenkaku">KanaZenkaku</a></p><p id="ww1260058" class="fh-funcheadTOC"><a href="../FMP_Help/kanjinumeral.html#wwconnect_header" title="KanjiNumeral">KanjiNumeral</a></p><p id="ww1260060" class="fh-funcheadTOC"><a href="../FMP_Help/katakana.html#wwconnect_header" title="Katakana">Katakana</a></p><p id="ww1260062" class="fh-funcheadTOC"><a href="../FMP_Help/monthnamej.html#wwconnect_header" title="MonthNameJ">MonthNameJ</a></p><p id="ww1260064" class="fh-funcheadTOC"><a href="../FMP_Help/numtojtext.html#wwconnect_header" title="NumToJText">NumToJText</a></p><p id="ww1260066" class="fh-funcheadTOC"><a href="../FMP_Help/romanhankaku.html#wwconnect_header" title="RomanHankaku">RomanHankaku</a></p><p id="ww1260068" class="fh-funcheadTOC"><a href="../FMP_Help/romanzenkaku.html#wwconnect_header" title="RomanZenkaku">RomanZenkaku</a></p><p id="ww1260070" class="fh-funcheadTOC"><a href="../FMP_Help/yearname.html#wwconnect_header" title="YearName">YearName</a></p><h2 id="ww1260105" class="fch-funccatgryheadTOC"><a href="../FMP_Help/container-functions.html#wwconnect_header" title="容器函数">容器函数</a></h2><p id="ww1260107" class="fh-funcheadTOC"><a href="../FMP_Help/base64decode.html#wwconnect_header" title="Base64Decode">Base64Decode</a></p><p id="ww1260109" class="fh-funcheadTOC"><a href="../FMP_Help/base64encode.html#wwconnect_header" title="Base64Encode">Base64Encode</a></p><p id="ww1260111" class="fh-funcheadTOC"><a href="../FMP_Help/base64encoderfc.html#wwconnect_header" title="Base64EncodeRFC">Base64EncodeRFC</a></p><p id="ww1260113" class="fh-funcheadTOC"><a href="../FMP_Help/cryptauthcode.html#wwconnect_header" title="CryptAuthCode">CryptAuthCode</a></p><p id="ww1260115" class="fh-funcheadTOC"><a href="../FMP_Help/cryptdecrypt.html#wwconnect_header" title="CryptDecrypt">CryptDecrypt</a></p><p id="ww1260117" class="fh-funcheadTOC"><a href="../FMP_Help/cryptdecryptbase64.html#wwconnect_header" title="CryptDecryptBase64">CryptDecryptBase64</a></p><p id="ww1260119" class="fh-funcheadTOC"><a href="../FMP_Help/cryptdigest.html#wwconnect_header" title="CryptDigest">CryptDigest</a></p><p id="ww1260121" class="fh-funcheadTOC"><a href="../FMP_Help/cryptencrypt.html#wwconnect_header" title="CryptEncrypt">CryptEncrypt</a></p><p id="ww1260123" class="fh-funcheadTOC"><a href="../FMP_Help/cryptencryptbase64.html#wwconnect_header" title="CryptEncryptBase64">CryptEncryptBase64</a></p><p id="ww1260125" class="fh-funcheadTOC"><a href="../FMP_Help/cryptgeneratesignature.html#wwconnect_header" title="CryptGenerateSignature">CryptGenerateSignature</a></p><p id="ww1260127" class="fh-funcheadTOC"><a href="../FMP_Help/cryptverifysignature.html#wwconnect_header" title="CryptVerifySignature">CryptVerifySignature</a></p><p id="ww1260129" class="fh-funcheadTOC"><a href="../FMP_Help/getcontainerattribute.html#wwconnect_header" title="GetContainerAttribute">GetContainerAttribute</a></p><p id="ww1260131" class="fh-funcheadTOC"><a href="../FMP_Help/getheight.html#wwconnect_header" title="GetHeight">GetHeight</a></p><p id="ww1260133" class="fh-funcheadTOC"><a href="../FMP_Help/getthumbnail.html#wwconnect_header" title="GetThumbnail">GetThumbnail</a></p><p id="ww1260135" class="fh-funcheadTOC"><a href="../FMP_Help/getwidth.html#wwconnect_header" title="GetWidth">GetWidth</a></p><p id="ww1260137" class="fh-funcheadTOC"><a href="../FMP_Help/hexdecode.html#wwconnect_header" title="HexDecode">HexDecode</a></p><p id="ww1260139" class="fh-funcheadTOC"><a href="../FMP_Help/hexencode.html#wwconnect_header" title="HexEncode">HexEncode</a></p><p id="ww1260141" class="fh-funcheadTOC"><a href="../FMP_Help/textdecode.html#wwconnect_header" title="TextDecode">TextDecode</a></p><p id="ww1260143" class="fh-funcheadTOC"><a href="../FMP_Help/textencode.html#wwconnect_header" title="TextEncode">TextEncode</a></p><p id="ww1260145" class="fh-funcheadTOC"><a href="../FMP_Help/verifycontainer.html#wwconnect_header" title="VerifyContainer">VerifyContainer</a></p><h2 id="ww1260178" class="fch-funccatgryheadTOC"><a href="../FMP_Help/trigonometric-functions.html#wwconnect_header" title="三角函数">三角函数</a></h2><p id="ww1260180" class="fh-funcheadTOC"><a href="../FMP_Help/acos.html#wwconnect_header" title="Acos">Acos</a></p><p id="ww1260182" class="fh-funcheadTOC"><a href="../FMP_Help/asin.html#wwconnect_header" title="Asin">Asin</a></p><p id="ww1260184" class="fh-funcheadTOC"><a href="../FMP_Help/atan.html#wwconnect_header" title="Atan">Atan</a></p><p id="ww1260186" class="fh-funcheadTOC"><a href="../FMP_Help/cos.html#wwconnect_header" title="Cos">Cos</a></p><p id="ww1260188" class="fh-funcheadTOC"><a href="../FMP_Help/degrees.html#wwconnect_header" title="Degrees">Degrees</a></p><p id="ww1260190" class="fh-funcheadTOC"><a href="../FMP_Help/pi.html#wwconnect_header" title="Pi">Pi</a></p><p id="ww1260192" class="fh-funcheadTOC"><a href="../FMP_Help/radians.html#wwconnect_header" title="Radians">Radians</a></p><p id="ww1260194" class="fh-funcheadTOC"><a href="../FMP_Help/sin.html#wwconnect_header" title="Sin">Sin</a></p><p id="ww1260196" class="fh-funcheadTOC"><a href="../FMP_Help/tan.html#wwconnect_header" title="Tan">Tan</a></p><h2 id="ww1260222" class="fch-funccatgryheadTOC"><a href="../FMP_Help/design-functions.html#wwconnect_header" title="设计函数">设计函数</a></h2><p id="ww1260224" class="fh-funcheadTOC"><a href="../FMP_Help/databasenames.html#wwconnect_header" title="DatabaseNames">DatabaseNames</a></p><p id="ww1260226" class="fh-funcheadTOC"><a href="../FMP_Help/fieldbounds.html#wwconnect_header" title="FieldBounds">FieldBounds</a></p><p id="ww1260228" class="fh-funcheadTOC"><a href="../FMP_Help/fieldcomment.html#wwconnect_header" title="FieldComment">FieldComment</a></p><p id="ww1260230" class="fh-funcheadTOC"><a href="../FMP_Help/fieldids.html#wwconnect_header" title="FieldIDs">FieldIDs</a></p><p id="ww1260232" class="fh-funcheadTOC"><a href="../FMP_Help/fieldnames.html#wwconnect_header" title="FieldNames">FieldNames</a></p><p id="ww1260234" class="fh-funcheadTOC"><a href="../FMP_Help/fieldrepetitions.html#wwconnect_header" title="FieldRepetitions">FieldRepetitions</a></p><p id="ww1260236" class="fh-funcheadTOC"><a href="../FMP_Help/fieldstyle.html#wwconnect_header" title="FieldStyle">FieldStyle</a></p><p id="ww1260238" class="fh-funcheadTOC"><a href="../FMP_Help/fieldtype.html#wwconnect_header" title="FieldType">FieldType</a></p><p id="ww1260240" class="fh-funcheadTOC"><a href="../FMP_Help/getnextserialvalue.html#wwconnect_header" title="GetNextSerialValue">GetNextSerialValue</a></p><p id="ww1260242" class="fh-funcheadTOC"><a href="../FMP_Help/layoutids.html#wwconnect_header" title="LayoutIDs">LayoutIDs</a></p><p id="ww1260244" class="fh-funcheadTOC"><a href="../FMP_Help/layoutnames.html#wwconnect_header" title="LayoutNames">LayoutNames</a></p><p id="ww1260246" class="fh-funcheadTOC"><a href="../FMP_Help/layoutobjectnames.html#wwconnect_header" title="LayoutObjectNames">LayoutObjectNames</a></p><p id="ww1260248" class="fh-funcheadTOC"><a href="../FMP_Help/relationinfo.html#wwconnect_header" title="RelationInfo">RelationInfo</a></p><p id="ww1260250" class="fh-funcheadTOC"><a href="../FMP_Help/scriptids.html#wwconnect_header" title="ScriptIDs">ScriptIDs</a></p><p id="ww1260252" class="fh-funcheadTOC"><a href="../FMP_Help/scriptnames.html#wwconnect_header" title="ScriptNames">ScriptNames</a></p><p id="ww1260254" class="fh-funcheadTOC"><a href="../FMP_Help/tableids.html#wwconnect_header" title="TableIDs">TableIDs</a></p><p id="ww1260256" class="fh-funcheadTOC"><a href="../FMP_Help/tablenames.html#wwconnect_header" title="TableNames">TableNames</a></p><p id="ww1260258" class="fh-funcheadTOC"><a href="../FMP_Help/valuelistids.html#wwconnect_header" title="ValueListIDs">ValueListIDs</a></p><p id="ww1260260" class="fh-funcheadTOC"><a href="../FMP_Help/valuelistitems.html#wwconnect_header" title="ValueListItems">ValueListItems</a></p><p id="ww1260262" class="fh-funcheadTOC"><a href="../FMP_Help/valuelistnames.html#wwconnect_header" title="ValueListNames">ValueListNames</a></p><p id="ww1260264" class="fh-funcheadTOC"><a href="../FMP_Help/windownames.html#wwconnect_header" title="WindowNames">WindowNames</a></p><h2 id="ww1260292" class="fch-funccatgryheadTOC"><a href="../FMP_Help/timestamp-functions.html#wwconnect_header" title="时间戳函数">时间戳函数</a></h2><p id="ww1260294" class="fh-funcheadTOC"><a href="../FMP_Help/timestamp.html#wwconnect_header" title="Timestamp">Timestamp</a></p><h2 id="ww1260323" class="fch-funccatgryheadTOC"><a href="../FMP_Help/time-functions.html#wwconnect_header" title="时间函数">时间函数</a></h2><p id="ww1260325" class="fh-funcheadTOC"><a href="../FMP_Help/hour.html#wwconnect_header" title="Hour">Hour</a></p><p id="ww1260327" class="fh-funcheadTOC"><a href="../FMP_Help/minute.html#wwconnect_header" title="Minute">Minute</a></p><p id="ww1260329" class="fh-funcheadTOC"><a href="../FMP_Help/seconds.html#wwconnect_header" title="Seconds">Seconds</a></p><p id="ww1260331" class="fh-funcheadTOC"><a href="../FMP_Help/time.html#wwconnect_header" title="Time">Time</a></p><h2 id="ww1260360" class="fch-funccatgryheadTOC"><a href="../FMP_Help/number-functions.html#wwconnect_header" title="数值函数">数值函数</a></h2><p id="ww1260362" class="fh-funcheadTOC"><a href="../FMP_Help/abs.html#wwconnect_header" title="Abs">Abs</a></p><p id="ww1260364" class="fh-funcheadTOC"><a href="../FMP_Help/ceiling.html#wwconnect_header" title="Ceiling">Ceiling</a></p><p id="ww1260366" class="fh-funcheadTOC"><a href="../FMP_Help/combination.html#wwconnect_header" title="Combination">Combination</a></p><p id="ww1260368" class="fh-funcheadTOC"><a href="../FMP_Help/div.html#wwconnect_header" title="Div">Div</a></p><p id="ww1260370" class="fh-funcheadTOC"><a href="../FMP_Help/exp.html#wwconnect_header" title="Exp">Exp</a></p><p id="ww1260372" class="fh-funcheadTOC"><a href="../FMP_Help/factorial.html#wwconnect_header" title="Factorial">Factorial</a></p><p id="ww1260374" class="fh-funcheadTOC"><a href="../FMP_Help/floor.html#wwconnect_header" title="Floor">Floor</a></p><p id="ww1260376" class="fh-funcheadTOC"><a href="../FMP_Help/int.html#wwconnect_header" title="Int">Int</a></p><p id="ww1260378" class="fh-funcheadTOC"><a href="../FMP_Help/lg.html#wwconnect_header" title="Lg">Lg</a></p><p id="ww1260380" class="fh-funcheadTOC"><a href="../FMP_Help/ln.html#wwconnect_header" title="Ln">Ln</a></p><p id="ww1260382" class="fh-funcheadTOC"><a href="../FMP_Help/log.html#wwconnect_header" title="Log">Log</a></p><p id="ww1260384" class="fh-funcheadTOC"><a href="../FMP_Help/mod.html#wwconnect_header" title="Mod">Mod</a></p><p id="ww1260386" class="fh-funcheadTOC"><a href="../FMP_Help/random.html#wwconnect_header" title="Random">Random</a></p><p id="ww1260388" class="fh-funcheadTOC"><a href="../FMP_Help/round.html#wwconnect_header" title="Round">Round</a></p><p id="ww1260390" class="fh-funcheadTOC"><a href="../FMP_Help/setprecision.html#wwconnect_header" title="SetPrecision">SetPrecision</a></p><p id="ww1260392" class="fh-funcheadTOC"><a href="../FMP_Help/sign.html#wwconnect_header" title="Sign">Sign</a></p><p id="ww1260394" class="fh-funcheadTOC"><a href="../FMP_Help/sqrt.html#wwconnect_header" title="Sqrt">Sqrt</a></p><p id="ww1260396" class="fh-funcheadTOC"><a href="../FMP_Help/truncate.html#wwconnect_header" title="Truncate">Truncate</a></p><h2 id="ww1260422" class="fch-funccatgryheadTOC"><a href="../FMP_Help/text-formatting-functions.html#wwconnect_header" title="文本格式化函数">文本格式化函数</a></h2><p id="ww1260424" class="fh-funcheadTOC"><a href="../FMP_Help/rgb.html#wwconnect_header" title="RGB">RGB</a></p><p id="ww1260426" class="fh-funcheadTOC"><a href="../FMP_Help/textcolor.html#wwconnect_header" title="TextColor">TextColor</a></p><p id="ww1260428" class="fh-funcheadTOC"><a href="../FMP_Help/textcolorremove.html#wwconnect_header" title="TextColorRemove">TextColorRemove</a></p><p id="ww1260430" class="fh-funcheadTOC"><a href="../FMP_Help/textfont.html#wwconnect_header" title="TextFont">TextFont</a></p><p id="ww1260432" class="fh-funcheadTOC"><a href="../FMP_Help/textfontremove.html#wwconnect_header" title="TextFontRemove">TextFontRemove</a></p><p id="ww1260434" class="fh-funcheadTOC"><a href="../FMP_Help/textformatremove.html#wwconnect_header" title="TextFormatRemove">TextFormatRemove</a></p><p id="ww1260436" class="fh-funcheadTOC"><a href="../FMP_Help/textsize.html#wwconnect_header" title="TextSize">TextSize</a></p><p id="ww1260438" class="fh-funcheadTOC"><a href="../FMP_Help/textsizeremove.html#wwconnect_header" title="TextSizeRemove">TextSizeRemove</a></p><p id="ww1260440" class="fh-funcheadTOC"><a href="../FMP_Help/textstyleadd.html#wwconnect_header" title="TextStyleAdd">TextStyleAdd</a></p><p id="ww1260442" class="fh-funcheadTOC"><a href="../FMP_Help/textstyleremove.html#wwconnect_header" title="TextStyleRemove">TextStyleRemove</a></p><h2 id="ww1258256" class="fch-funccatgryheadTOC"><a href="../FMP_Help/text-functions.html#wwconnect_header" title="文本函数">文本函数</a></h2><p id="ww1258258" class="fh-funcheadTOC"><a href="../FMP_Help/char.html#wwconnect_header" title="Char">Char</a></p><p id="ww1258260" class="fh-funcheadTOC"><a href="../FMP_Help/code.html#wwconnect_header" title="Code">Code</a></p><p id="ww1258262" class="fh-funcheadTOC"><a href="../FMP_Help/exact.html#wwconnect_header" title="Exact">Exact</a></p><p id="ww1258264" class="fh-funcheadTOC"><a href="../FMP_Help/filter.html#wwconnect_header" title="Filter">Filter</a></p><p id="ww1258266" class="fh-funcheadTOC"><a href="../FMP_Help/filtervalues.html#wwconnect_header" title="FilterValues">FilterValues</a></p><p id="ww1258268" class="fh-funcheadTOC"><a href="../FMP_Help/getascss.html#wwconnect_header" title="GetAsCSS">GetAsCSS</a></p><p id="ww1258270" class="fh-funcheadTOC"><a href="../FMP_Help/getasdate.html#wwconnect_header" title="GetAsDate">GetAsDate</a></p><p id="ww1258272" class="fh-funcheadTOC"><a href="../FMP_Help/getasnumber.html#wwconnect_header" title="GetAsNumber">GetAsNumber</a></p><p id="ww1258274" class="fh-funcheadTOC"><a href="../FMP_Help/getassvg.html#wwconnect_header" title="GetAsSVG">GetAsSVG</a></p><p id="ww1258276" class="fh-funcheadTOC"><a href="../FMP_Help/getastext.html#wwconnect_header" title="GetAsText">GetAsText</a></p><p id="ww1258278" class="fh-funcheadTOC"><a href="../FMP_Help/getastime.html#wwconnect_header" title="GetAsTime">GetAsTime</a></p><p id="ww1258280" class="fh-funcheadTOC"><a href="../FMP_Help/getastimestamp.html#wwconnect_header" title="GetAsTimestamp">GetAsTimestamp</a></p><p id="ww1258282" class="fh-funcheadTOC"><a href="../FMP_Help/getasurlencoded.html#wwconnect_header" title="GetAsURLEncoded">GetAsURLEncoded</a></p><p id="ww1258284" class="fh-funcheadTOC"><a href="../FMP_Help/getvalue.html#wwconnect_header" title="GetValue">GetValue</a></p><p id="ww1258286" class="fh-funcheadTOC"><a href="../FMP_Help/left.html#wwconnect_header" title="Left">Left</a></p><p id="ww1258288" class="fh-funcheadTOC"><a href="../FMP_Help/leftvalues.html#wwconnect_header" title="LeftValues">LeftValues</a></p><p id="ww1258290" class="fh-funcheadTOC"><a href="../FMP_Help/leftwords.html#wwconnect_header" title="LeftWords">LeftWords</a></p><p id="ww1258292" class="fh-funcheadTOC"><a href="../FMP_Help/length.html#wwconnect_header" title="Length">Length</a></p><p id="ww1258294" class="fh-funcheadTOC"><a href="../FMP_Help/lower.html#wwconnect_header" title="Lower">Lower</a></p><p id="ww1258296" class="fh-funcheadTOC"><a href="../FMP_Help/middle.html#wwconnect_header" title="Middle">Middle</a></p><p id="ww1258298" class="fh-funcheadTOC"><a href="../FMP_Help/middlevalues.html#wwconnect_header" title="MiddleValues">MiddleValues</a></p><p id="ww1258300" class="fh-funcheadTOC"><a href="../FMP_Help/middlewords.html#wwconnect_header" title="MiddleWords">MiddleWords</a></p><p id="ww1258302" class="fh-funcheadTOC"><a href="../FMP_Help/patterncount.html#wwconnect_header" title="PatternCount">PatternCount</a></p><p id="ww1258304" class="fh-funcheadTOC"><a href="../FMP_Help/position.html#wwconnect_header" title="Position">Position</a></p><p id="ww1258306" class="fh-funcheadTOC"><a href="../FMP_Help/proper.html#wwconnect_header" title="Proper">Proper</a></p><p id="ww1258308" class="fh-funcheadTOC"><a href="../FMP_Help/quote.html#wwconnect_header" title="Quote">Quote</a></p><p id="ww1258310" class="fh-funcheadTOC"><a href="../FMP_Help/replace.html#wwconnect_header" title="Replace">Replace</a></p><p id="ww1258312" class="fh-funcheadTOC"><a href="../FMP_Help/right.html#wwconnect_header" title="Right">Right</a></p><p id="ww1258314" class="fh-funcheadTOC"><a href="../FMP_Help/rightvalues.html#wwconnect_header" title="RightValues">RightValues</a></p><p id="ww1258316" class="fh-funcheadTOC"><a href="../FMP_Help/rightwords.html#wwconnect_header" title="RightWords">RightWords</a></p><p id="ww1258318" class="fh-funcheadTOC"><a href="../FMP_Help/serialincrement.html#wwconnect_header" title="SerialIncrement">SerialIncrement</a></p><p id="ww1258320" class="fh-funcheadTOC"><a href="../FMP_Help/sortvalues.html#wwconnect_header" title="SortValues">SortValues</a></p><p id="ww1258322" class="fh-funcheadTOC"><a href="../FMP_Help/substitute.html#wwconnect_header" title="Substitute">Substitute</a></p><p id="ww1258324" class="fh-funcheadTOC"><a href="../FMP_Help/trim.html#wwconnect_header" title="Trim">Trim</a></p><p id="ww1258326" class="fh-funcheadTOC"><a href="../FMP_Help/trimall.html#wwconnect_header" title="TrimAll">TrimAll</a></p><p id="ww1258328" class="fh-funcheadTOC"><a href="../FMP_Help/uniquevalues.html#wwconnect_header" title="UniqueValues">UniqueValues</a></p><p id="ww1258330" class="fh-funcheadTOC"><a href="../FMP_Help/upper.html#wwconnect_header" title="Upper">Upper</a></p><p id="ww1258332" class="fh-funcheadTOC"><a href="../FMP_Help/valuecount.html#wwconnect_header" title="ValueCount">ValueCount</a></p><p id="ww1258334" class="fh-funcheadTOC"><a href="../FMP_Help/wordcount.html#wwconnect_header" title="WordCount">WordCount</a></p><h2 id="ww1258910" class="fch-funccatgryheadTOC"><a href="../FMP_Help/mobile-functions.html#wwconnect_header" title="移动函数">移动函数</a></h2><p id="ww1258912" class="fh-funcheadTOC"><a href="../FMP_Help/getavplayerattribute.html#wwconnect_header" title="GetAVPlayerAttribute">GetAVPlayerAttribute</a></p><p id="ww1258914" class="fh-funcheadTOC"><a href="../FMP_Help/getsensor.html#wwconnect_header" title="GetSensor">GetSensor</a></p><p id="ww1258916" class="fh-funcheadTOC"><a href="../FMP_Help/location.html#wwconnect_header" title="Location">Location</a></p><p id="ww1258918" class="fh-funcheadTOC"><a href="../FMP_Help/locationvalues.html#wwconnect_header" title="LocationValues">LocationValues</a></p><p id="ww1258920" class="fh-funcheadTOC"><a href="../FMP_Help/rangebeacons.html#wwconnect_header" title="RangeBeacons">RangeBeacons</a></p><!-- FMI - Feedback Link --><footer><!-- Related Topics --><!--                --><!-- Disqus --><!--        --><!-- Google Translation --><!--                    --><br /></footer></body></html>
